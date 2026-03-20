@@ -80,6 +80,7 @@ public partial class WriterClient : Meai.IChatClient
                     ChatCompletionFinishReason.Stop => Meai.ChatFinishReason.Stop,
                     ChatCompletionFinishReason.Length => Meai.ChatFinishReason.Length,
                     ChatCompletionFinishReason.ToolCalls => Meai.ChatFinishReason.ToolCalls,
+                    ChatCompletionFinishReason.ContentFilter => Meai.ChatFinishReason.ContentFilter,
                     _ => null,
                 }
                 : null,
@@ -103,6 +104,7 @@ public partial class WriterClient : Meai.IChatClient
         IEnumerable<Meai.ChatMessage> messages, Meai.ChatOptions? options, [EnumeratorCancellation] CancellationToken cancellationToken)
     {
         var request = CreateChatRequest(messages, options);
+        request.StreamOptions ??= new StreamOptions { IncludeUsage = true };
 
         // Accumulate tool call chunks by index so we can emit complete arguments
         var toolCallBuilders = new Dictionary<int, (string Id, string Name, StringBuilder Args)>();
@@ -184,6 +186,7 @@ public partial class WriterClient : Meai.IChatClient
                             ChatCompletionFinishReason.Stop => Meai.ChatFinishReason.Stop,
                             ChatCompletionFinishReason.Length => Meai.ChatFinishReason.Length,
                             ChatCompletionFinishReason.ToolCalls => Meai.ChatFinishReason.ToolCalls,
+                            ChatCompletionFinishReason.ContentFilter => Meai.ChatFinishReason.ContentFilter,
                             _ => null,
                         };
 

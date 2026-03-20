@@ -4,16 +4,13 @@ namespace Writer
 {
     public partial interface IGenerationApiClient
     {
-
         /// <summary>
         /// Chat completion<br/>
         /// Generate a chat completion based on the provided messages. The response shown below is for non-streaming. To learn about streaming responses, see the [chat completion guide](https://dev.writer.com/home/chat-completion).
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/chat \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -24,7 +21,6 @@ namespace Writer
 
             global::Writer.ChatRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Chat completion<br/>
         /// Generate a chat completion based on the provided messages. The response shown below is for non-streaming. To learn about streaming responses, see the [chat completion guide](https://dev.writer.com/home/chat-completion).

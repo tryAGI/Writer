@@ -21,7 +21,6 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retry job execution<br/>
         /// Re-triggers the async execution of a single job previously created via the Async api and terminated in error.
@@ -29,7 +28,6 @@ namespace Writer
         /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/applications/jobs/{job_id}/retry \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

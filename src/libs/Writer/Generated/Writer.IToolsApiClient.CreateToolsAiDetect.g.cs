@@ -4,16 +4,13 @@ namespace Writer
 {
     public partial interface IToolsApiClient
     {
-
         /// <summary>
         /// AI detection<br/>
         /// Detects if content is AI- or human-generated, with a confidence score. Content must have at least 350 characters
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/tools/ai-detect \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -24,7 +21,6 @@ namespace Writer
 
             global::Writer.AiDetectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// AI detection<br/>
         /// Detects if content is AI- or human-generated, with a confidence score. Content must have at least 350 characters

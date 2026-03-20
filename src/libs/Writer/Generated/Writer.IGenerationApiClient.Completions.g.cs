@@ -4,16 +4,13 @@ namespace Writer
 {
     public partial interface IGenerationApiClient
     {
-
         /// <summary>
         /// Text generation<br/>
         /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/completions \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -24,7 +21,6 @@ namespace Writer
 
             global::Writer.CompletionsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Text generation<br/>
         /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.

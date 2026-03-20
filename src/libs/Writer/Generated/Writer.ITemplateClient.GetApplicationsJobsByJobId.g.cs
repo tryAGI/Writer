@@ -4,7 +4,6 @@ namespace Writer
 {
     public partial interface ITemplateClient
     {
-
         /// <summary>
         /// Retrieve a single job<br/>
         /// Retrieves a single job created via the Async API.
@@ -12,7 +11,6 @@ namespace Writer
         /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request GET https://api.writer.com/v1/applications/jobs/{job_id} \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

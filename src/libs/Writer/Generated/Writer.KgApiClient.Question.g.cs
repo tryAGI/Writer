@@ -21,16 +21,13 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Question<br/>
         /// Ask a question to specified Knowledge Graphs.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/graphs/question \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -198,7 +195,6 @@ namespace Writer
                 }
             }
         }
-
         /// <summary>
         /// Question<br/>
         /// Ask a question to specified Knowledge Graphs.

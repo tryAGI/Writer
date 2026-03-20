@@ -21,7 +21,6 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref byte[] content);
 
-
         /// <summary>
         /// Download file<br/>
         /// Download the binary content of a file. The response will contain the file data in the appropriate MIME type.
@@ -29,7 +28,6 @@ namespace Writer
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request GET https://api.writer.com/v1/files/{file_id}/download \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

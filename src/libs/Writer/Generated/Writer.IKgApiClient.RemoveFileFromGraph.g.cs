@@ -4,7 +4,6 @@ namespace Writer
 {
     public partial interface IKgApiClient
     {
-
         /// <summary>
         /// Remove file from graph<br/>
         /// Remove a file from a Knowledge Graph.
@@ -13,7 +12,6 @@ namespace Writer
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request DELETE https://api.writer.com/v1/graphs/{graph_id}/file/{file_id} \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

@@ -21,16 +21,13 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Context-aware text splitting<br/>
         /// Splits a long block of text (maximum 4000 words) into smaller chunks while preserving the semantic meaning of the text and context between the chunks.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/tools/context-aware-splitting \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -189,7 +186,6 @@ namespace Writer
                 }
             }
         }
-
         /// <summary>
         /// Context-aware text splitting<br/>
         /// Splits a long block of text (maximum 4000 words) into smaller chunks while preserving the semantic meaning of the text and context between the chunks.

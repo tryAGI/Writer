@@ -21,16 +21,13 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retry failed files<br/>
         /// Retry processing of files that previously failed to process. This will re-attempt the processing of the specified files.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/files/retry \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -189,7 +186,6 @@ namespace Writer
                 }
             }
         }
-
         /// <summary>
         /// Retry failed files<br/>
         /// Retry processing of files that previously failed to process. This will re-attempt the processing of the specified files.

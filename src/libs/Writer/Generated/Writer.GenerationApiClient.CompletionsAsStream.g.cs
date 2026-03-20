@@ -16,16 +16,13 @@ namespace Writer
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Text generation<br/>
         /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/completions \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -174,7 +171,6 @@ namespace Writer
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// Text generation<br/>
         /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.

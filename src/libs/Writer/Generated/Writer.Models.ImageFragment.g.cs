@@ -1,0 +1,58 @@
+
+#nullable enable
+
+namespace Writer
+{
+    /// <summary>
+    /// Represents an image content fragment within a chat message. Note: This content type is only supported with the Palmyra X5 model.
+    /// </summary>
+    public sealed partial class ImageFragment
+    {
+        /// <summary>
+        /// The type of content fragment. Must be `image_url` for image fragments.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Writer.JsonConverters.ImageFragmentTypeJsonConverter))]
+        public global::Writer.ImageFragmentType Type { get; set; }
+
+        /// <summary>
+        /// The image URL object containing the location of the image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Writer.ImageFragmentImageUrl ImageUrl { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageFragment" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of content fragment. Must be `image_url` for image fragments.
+        /// </param>
+        /// <param name="imageUrl">
+        /// The image URL object containing the location of the image.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ImageFragment(
+            global::Writer.ImageFragmentImageUrl imageUrl,
+            global::Writer.ImageFragmentType type)
+        {
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageFragment" /> class.
+        /// </summary>
+        public ImageFragment()
+        {
+        }
+    }
+}

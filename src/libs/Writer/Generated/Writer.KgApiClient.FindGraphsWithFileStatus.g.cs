@@ -27,7 +27,6 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List graphs<br/>
         /// Retrieve a list of Knowledge Graphs.
@@ -42,7 +41,6 @@ namespace Writer
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request GET https://api.writer.com/v1/graphs \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

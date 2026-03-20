@@ -4,17 +4,14 @@ namespace Writer
 {
     public partial interface ITemplateClient
     {
-
         /// <summary>
         /// Associate graphs<br/>
         /// Updates the list of Knowledge Graphs associated with a no-code chat agent.
         /// </summary>
         /// <param name="applicationId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request PUT https://api.writer.com/v1/applications/{application_id}/graphs \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -26,7 +23,6 @@ namespace Writer
 
             global::Writer.ApplicationGraphIdsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Associate graphs<br/>
         /// Updates the list of Knowledge Graphs associated with a no-code chat agent.

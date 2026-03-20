@@ -29,7 +29,6 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List applications<br/>
         /// Retrieves a paginated list of no-code agents (formerly called no-code applications) with optional filtering and sorting capabilities.
@@ -47,7 +46,6 @@ namespace Writer
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request GET https://api.writer.com/v1/applications \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

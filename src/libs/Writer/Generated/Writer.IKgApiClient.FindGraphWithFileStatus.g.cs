@@ -4,7 +4,6 @@ namespace Writer
 {
     public partial interface IKgApiClient
     {
-
         /// <summary>
         /// Retrieve graph<br/>
         /// Retrieve a Knowledge Graph.
@@ -12,7 +11,6 @@ namespace Writer
         /// <param name="graphId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request GET https://api.writer.com/v1/graphs/{graph_id} \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

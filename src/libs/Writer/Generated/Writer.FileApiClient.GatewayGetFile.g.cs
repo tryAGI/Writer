@@ -21,7 +21,6 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve file<br/>
         /// Retrieve detailed information about a specific file, including its metadata, status, and associated graphs.
@@ -29,7 +28,6 @@ namespace Writer
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request GET https://api.writer.com/v1/files/{file_id} \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

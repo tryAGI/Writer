@@ -29,7 +29,6 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Upload file<br/>
         /// Upload a new file to the system. Supports various file formats including PDF, DOC, DOCX, PPT, PPTX, JPG, PNG, EML, HTML, SRT, CSV, XLS, and XLSX.
@@ -38,11 +37,9 @@ namespace Writer
         /// <param name="contentType"></param>
         /// <param name="contentLength"></param>
         /// <param name="graphId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/files \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"<br/>

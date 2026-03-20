@@ -4,16 +4,13 @@ namespace Writer
 {
     public partial interface IVisionClient
     {
-
         /// <summary>
         /// Analyze images<br/>
         /// Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/vision \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -24,7 +21,6 @@ namespace Writer
 
             global::Writer.VisionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Analyze images<br/>
         /// Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.

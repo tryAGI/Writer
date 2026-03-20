@@ -4,17 +4,14 @@ namespace Writer
 {
     public partial interface IKgApiClient
     {
-
         /// <summary>
         /// Add file to graph<br/>
         /// Add a file to a Knowledge Graph.
         /// </summary>
         /// <param name="graphId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/graphs/{graph_id}/file \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -26,7 +23,6 @@ namespace Writer
 
             global::Writer.GraphFileRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add file to graph<br/>
         /// Add a file to a Knowledge Graph.

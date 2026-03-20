@@ -21,7 +21,6 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve graphs<br/>
         /// Retrieve Knowledge Graphs associated with a no-code agent that has chat capabilities.
@@ -29,7 +28,6 @@ namespace Writer
         /// <param name="applicationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request GET https://api.writer.com/v1/applications/{application_id}/graphs \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;"

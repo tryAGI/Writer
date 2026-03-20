@@ -21,16 +21,13 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Text-to-graph<br/>
         /// Performs name entity recognition on the supplied text accepting a maximum of 35000 words.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/tools/text-to-graph \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -189,7 +186,6 @@ namespace Writer
                 }
             }
         }
-
         /// <summary>
         /// Text-to-graph<br/>
         /// Performs name entity recognition on the supplied text accepting a maximum of 35000 words.

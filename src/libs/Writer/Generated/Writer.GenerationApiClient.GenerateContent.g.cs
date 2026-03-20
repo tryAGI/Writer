@@ -23,17 +23,14 @@ namespace Writer
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Generate from application<br/>
         /// Generate content from an existing no-code agent (formerly called no-code applications) with inputs.
         /// </summary>
         /// <param name="applicationId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/applications/{application_id} \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -201,7 +198,6 @@ namespace Writer
                 }
             }
         }
-
         /// <summary>
         /// Generate from application<br/>
         /// Generate content from an existing no-code agent (formerly called no-code applications) with inputs.

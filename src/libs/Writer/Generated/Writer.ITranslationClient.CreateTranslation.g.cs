@@ -4,16 +4,13 @@ namespace Writer
 {
     public partial interface ITranslationClient
     {
-
         /// <summary>
         /// Translate text<br/>
         /// Translate text from one language to another.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
-
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/translation \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
@@ -24,7 +21,6 @@ namespace Writer
 
             global::Writer.TranslationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Translate text<br/>
         /// Translate text from one language to another.

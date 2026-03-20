@@ -1,6 +1,7 @@
 #nullable enable
 
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Text.Json;
 using Meai = Microsoft.Extensions.AI;
 
@@ -103,12 +104,29 @@ public partial class WriterClient : Meai.IChatClient
     {
         var request = CreateChatRequest(messages, options);
 
+        // Accumulate tool call chunks by index so we can emit complete arguments
+        var toolCallBuilders = new Dictionary<int, (string Id, string Name, StringBuilder Args)>();
+
         await foreach (var chunks in GenerationApi.ChatAsStreamAsync(request, cancellationToken: cancellationToken).ConfigureAwait(false))
         {
             foreach (var chunk in chunks)
             {
                 if (chunk.Choices is not { Count: > 0 })
                 {
+                    // Last chunk with usage only
+                    if (chunk.Usage is { } usageOnly)
+                    {
+                        yield return new Meai.ChatResponseUpdate
+                        {
+                            ModelId = chunk.Model,
+                            Contents = [new Meai.UsageContent(new()
+                            {
+                                InputTokenCount = usageOnly.PromptTokens,
+                                OutputTokenCount = usageOnly.CompletionTokens,
+                                TotalTokenCount = usageOnly.TotalTokens,
+                            })],
+                        };
+                    }
                     continue;
                 }
 
@@ -129,20 +147,36 @@ public partial class WriterClient : Meai.IChatClient
                         update.Contents.Add(new Meai.TextContent(delta.Content) { RawRepresentation = delta });
                     }
 
+                    // Tool call chunks — accumulate arguments by index
                     if (delta.ToolCalls is { Count: > 0 })
                     {
-                        foreach (var toolCall in delta.ToolCalls)
+                        foreach (var tc in delta.ToolCalls)
                         {
-                            update.Contents.Add(new Meai.FunctionCallContent(
-                                toolCall.Id ?? string.Empty,
-                                toolCall.Function?.Name ?? string.Empty,
-                                arguments: null)
+                            var index = tc.Index;
+                            if (!toolCallBuilders.TryGetValue(index, out var builder))
                             {
-                                RawRepresentation = toolCall,
-                            });
+                                builder = (
+                                    Id: tc.Id ?? string.Empty,
+                                    Name: tc.Function?.Name ?? string.Empty,
+                                    Args: new StringBuilder());
+                                toolCallBuilders[index] = builder;
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(tc.Id))
+                                    toolCallBuilders[index] = builder with { Id = tc.Id! };
+                                if (!string.IsNullOrEmpty(tc.Function?.Name))
+                                    toolCallBuilders[index] = builder with { Name = tc.Function!.Name };
+                            }
+
+                            if (!string.IsNullOrEmpty(tc.Function?.Arguments))
+                            {
+                                toolCallBuilders[index].Args.Append(tc.Function!.Arguments);
+                            }
                         }
                     }
 
+                    // Finish reason — emit accumulated tool calls when finished
                     if (choice.FinishReason is { } finishReason)
                     {
                         update.FinishReason = finishReason switch
@@ -152,6 +186,30 @@ public partial class WriterClient : Meai.IChatClient
                             ChatCompletionFinishReason.ToolCalls => Meai.ChatFinishReason.ToolCalls,
                             _ => null,
                         };
+
+                        // Emit complete tool calls with fully accumulated arguments
+                        foreach (var (_, builder) in toolCallBuilders)
+                        {
+                            IDictionary<string, object?>? arguments = null;
+                            var argsJson = builder.Args.ToString();
+                            if (argsJson.Length > 0)
+                            {
+                                try
+                                {
+                                    arguments = JsonSerializer.Deserialize<Dictionary<string, object?>>(
+                                        argsJson, JsonSerializerContext.Options);
+                                }
+                                catch (JsonException)
+                                {
+                                    // Ignore malformed JSON
+                                }
+                            }
+
+                            update.Contents.Add(new Meai.FunctionCallContent(
+                                builder.Id, builder.Name, arguments));
+                        }
+
+                        toolCallBuilders.Clear();
                     }
 
                     if (chunk.Usage is { } u)

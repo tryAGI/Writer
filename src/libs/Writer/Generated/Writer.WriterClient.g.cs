@@ -39,6 +39,15 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public FileApiClient FileApi => new FileApiClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public GenerationApiClient GenerationApi => new GenerationApiClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -49,15 +58,6 @@ namespace Writer
         /// 
         /// </summary>
         public KgApiClient KgApi => new KgApiClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FileApiClient FileApi => new FileApiClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -84,7 +84,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        public VisionClient Vision => new VisionClient(HttpClient, authorizations: Authorizations)
+        public TranslationClient Translation => new TranslationClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -93,7 +93,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        public TranslationClient Translation => new TranslationClient(HttpClient, authorizations: Authorizations)
+        public VisionClient Vision => new VisionClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

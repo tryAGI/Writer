@@ -42,17 +42,17 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public FileApiClient FileApi { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public GenerationApiClient GenerationApi { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public KgApiClient KgApi { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FileApiClient FileApi { get; }
 
         /// <summary>
         /// 
@@ -67,12 +67,12 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        public VisionClient Vision { get; }
+        public TranslationClient Translation { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public TranslationClient Translation { get; }
+        public VisionClient Vision { get; }
 
     }
 }

@@ -3,10 +3,10 @@
 namespace Writer.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class OrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Writer.Order>
+    public sealed class GetApplicationsOrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Writer.GetApplicationsOrder>
     {
         /// <inheritdoc />
-        public override global::Writer.Order Read(
+        public override global::Writer.GetApplicationsOrder Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Writer.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Writer.OrderExtensions.ToEnum(stringValue) ?? default;
+                        return global::Writer.GetApplicationsOrderExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Writer.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Writer.Order)numValue;
+                    return (global::Writer.GetApplicationsOrder)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Writer.Order);
+                    return default(global::Writer.GetApplicationsOrder);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace Writer.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Writer.Order value,
+            global::Writer.GetApplicationsOrder value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Writer.OrderExtensions.ToValueString(value));
+            writer.WriteStringValue(global::Writer.GetApplicationsOrderExtensions.ToValueString(value));
         }
     }
 }

@@ -193,9 +193,9 @@ namespace Writer
 
             typeof(global::Writer.JsonConverters.GatewayGetFilesStatusNullableJsonConverter),
 
-            typeof(global::Writer.JsonConverters.OrderJsonConverter),
+            typeof(global::Writer.JsonConverters.GetApplicationsOrderJsonConverter),
 
-            typeof(global::Writer.JsonConverters.OrderNullableJsonConverter),
+            typeof(global::Writer.JsonConverters.GetApplicationsOrderNullableJsonConverter),
 
             typeof(global::Writer.JsonConverters.ApplicationInputOptionsJsonConverter),
 
@@ -436,7 +436,7 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.FindGraphsWithFileStatusOrder))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GatewayGetFilesOrder))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GatewayGetFilesStatus))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.Order))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GetApplicationsOrder))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.StreamingData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.GenerateApplicationResponseChunk>))]

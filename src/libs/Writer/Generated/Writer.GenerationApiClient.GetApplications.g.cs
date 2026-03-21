@@ -7,7 +7,7 @@ namespace Writer
     {
         partial void PrepareGetApplicationsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Writer.Order? order,
+            ref global::Writer.GetApplicationsOrder? order,
             ref global::System.Guid? before,
             ref global::System.Guid? after,
             ref int? limit,
@@ -15,7 +15,7 @@ namespace Writer
         partial void PrepareGetApplicationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Writer.Order? order,
+            global::Writer.GetApplicationsOrder? order,
             global::System.Guid? before,
             global::System.Guid? after,
             int? limit,
@@ -51,7 +51,7 @@ namespace Writer
         ///  --header "Authorization: Bearer &lt;token&gt;"
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::Writer.GetApplicationsResponse> GetApplicationsAsync(
-            global::Writer.Order? order = default,
+            global::Writer.GetApplicationsOrder? order = default,
             global::System.Guid? before = default,
             global::System.Guid? after = default,
             int? limit = default,

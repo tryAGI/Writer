@@ -908,7 +908,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.Order? Type220 { get; set; }
+        public global::Writer.GetApplicationsOrder? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>

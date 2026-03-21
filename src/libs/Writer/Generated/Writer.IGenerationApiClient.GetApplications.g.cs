@@ -26,7 +26,7 @@ namespace Writer
         ///  --header "Authorization: Bearer &lt;token&gt;"
         /// </remarks>
         global::System.Threading.Tasks.Task<global::Writer.GetApplicationsResponse> GetApplicationsAsync(
-            global::Writer.Order? order = default,
+            global::Writer.GetApplicationsOrder? order = default,
             global::System.Guid? before = default,
             global::System.Guid? after = default,
             int? limit = default,

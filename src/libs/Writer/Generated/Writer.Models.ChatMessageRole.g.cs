@@ -11,15 +11,15 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         Assistant,
         /// <summary>
         /// 
         /// </summary>
         System,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Writer
         {
             return value switch
             {
-                ChatMessageRole.User => "user",
                 ChatMessageRole.Assistant => "assistant",
                 ChatMessageRole.System => "system",
+                ChatMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Writer
         {
             return value switch
             {
-                "user" => ChatMessageRole.User,
                 "assistant" => ChatMessageRole.Assistant,
                 "system" => ChatMessageRole.System,
+                "user" => ChatMessageRole.User,
                 _ => null,
             };
         }

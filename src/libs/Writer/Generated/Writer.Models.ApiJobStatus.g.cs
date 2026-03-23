@@ -11,7 +11,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        InProgress,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Writer
         {
             return value switch
             {
-                ApiJobStatus.InProgress => "in_progress",
-                ApiJobStatus.Failed => "failed",
                 ApiJobStatus.Completed => "completed",
+                ApiJobStatus.Failed => "failed",
+                ApiJobStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Writer
         {
             return value switch
             {
-                "in_progress" => ApiJobStatus.InProgress,
-                "failed" => ApiJobStatus.Failed,
                 "completed" => ApiJobStatus.Completed,
+                "failed" => ApiJobStatus.Failed,
+                "in_progress" => ApiJobStatus.InProgress,
                 _ => null,
             };
         }

@@ -11,27 +11,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Day,
-        /// <summary>
-        /// 
-        /// </summary>
-        Week,
-        /// <summary>
-        /// 
-        /// </summary>
-        Month,
-        /// <summary>
-        /// 
-        /// </summary>
-        Year,
-        /// <summary>
-        /// 
-        /// </summary>
         D,
         /// <summary>
         /// 
         /// </summary>
-        W,
+        Day,
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +23,23 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        Month,
+        /// <summary>
+        /// 
+        /// </summary>
+        W,
+        /// <summary>
+        /// 
+        /// </summary>
+        Week,
+        /// <summary>
+        /// 
+        /// </summary>
         Y,
+        /// <summary>
+        /// 
+        /// </summary>
+        Year,
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ namespace Writer
         {
             return value switch
             {
-                WebSearchRequestTimeRange.Day => "day",
-                WebSearchRequestTimeRange.Week => "week",
-                WebSearchRequestTimeRange.Month => "month",
-                WebSearchRequestTimeRange.Year => "year",
                 WebSearchRequestTimeRange.D => "d",
-                WebSearchRequestTimeRange.W => "w",
+                WebSearchRequestTimeRange.Day => "day",
                 WebSearchRequestTimeRange.M => "m",
+                WebSearchRequestTimeRange.Month => "month",
+                WebSearchRequestTimeRange.W => "w",
+                WebSearchRequestTimeRange.Week => "week",
                 WebSearchRequestTimeRange.Y => "y",
+                WebSearchRequestTimeRange.Year => "year",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,14 +72,14 @@ namespace Writer
         {
             return value switch
             {
-                "day" => WebSearchRequestTimeRange.Day,
-                "week" => WebSearchRequestTimeRange.Week,
-                "month" => WebSearchRequestTimeRange.Month,
-                "year" => WebSearchRequestTimeRange.Year,
                 "d" => WebSearchRequestTimeRange.D,
-                "w" => WebSearchRequestTimeRange.W,
+                "day" => WebSearchRequestTimeRange.Day,
                 "m" => WebSearchRequestTimeRange.M,
+                "month" => WebSearchRequestTimeRange.Month,
+                "w" => WebSearchRequestTimeRange.W,
+                "week" => WebSearchRequestTimeRange.Week,
                 "y" => WebSearchRequestTimeRange.Y,
+                "year" => WebSearchRequestTimeRange.Year,
                 _ => null,
             };
         }

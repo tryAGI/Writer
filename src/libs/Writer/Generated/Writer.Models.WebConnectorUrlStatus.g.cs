@@ -11,7 +11,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Validating,
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Validating,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Writer
         {
             return value switch
             {
-                WebConnectorUrlStatus.Validating => "validating",
-                WebConnectorUrlStatus.Success => "success",
                 WebConnectorUrlStatus.Error => "error",
+                WebConnectorUrlStatus.Success => "success",
+                WebConnectorUrlStatus.Validating => "validating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Writer
         {
             return value switch
             {
-                "validating" => WebConnectorUrlStatus.Validating,
-                "success" => WebConnectorUrlStatus.Success,
                 "error" => WebConnectorUrlStatus.Error,
+                "success" => WebConnectorUrlStatus.Success,
+                "validating" => WebConnectorUrlStatus.Validating,
                 _ => null,
             };
         }

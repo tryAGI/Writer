@@ -11,11 +11,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace Writer
         {
             return value switch
             {
-                StringToolChoiceOptions.None => "none",
                 StringToolChoiceOptions.Auto => "auto",
+                StringToolChoiceOptions.None => "none",
                 StringToolChoiceOptions.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace Writer
         {
             return value switch
             {
-                "none" => StringToolChoiceOptions.None,
                 "auto" => StringToolChoiceOptions.Auto,
+                "none" => StringToolChoiceOptions.None,
                 "required" => StringToolChoiceOptions.Required,
                 _ => null,
             };

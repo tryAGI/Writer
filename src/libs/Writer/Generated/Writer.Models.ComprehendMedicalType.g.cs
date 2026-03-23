@@ -15,11 +15,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        RxNorm,
+        Icd10Cm,
         /// <summary>
         /// 
         /// </summary>
-        Icd10Cm,
+        RxNorm,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace Writer
             return value switch
             {
                 ComprehendMedicalType.Entities => "Entities",
-                ComprehendMedicalType.RxNorm => "RxNorm",
                 ComprehendMedicalType.Icd10Cm => "ICD-10-CM",
+                ComprehendMedicalType.RxNorm => "RxNorm",
                 ComprehendMedicalType.SnomedCt => "SNOMED CT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,8 +53,8 @@ namespace Writer
             return value switch
             {
                 "Entities" => ComprehendMedicalType.Entities,
-                "RxNorm" => ComprehendMedicalType.RxNorm,
                 "ICD-10-CM" => ComprehendMedicalType.Icd10Cm,
+                "RxNorm" => ComprehendMedicalType.RxNorm,
                 "SNOMED CT" => ComprehendMedicalType.SnomedCt,
                 _ => null,
             };

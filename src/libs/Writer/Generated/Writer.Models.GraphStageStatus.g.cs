@@ -11,11 +11,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Processing,
+        Finished,
         /// <summary>
         /// 
         /// </summary>
-        Finished,
+        Processing,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Writer
         {
             return value switch
             {
-                GraphStageStatus.Processing => "processing",
                 GraphStageStatus.Finished => "finished",
+                GraphStageStatus.Processing => "processing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Writer
         {
             return value switch
             {
-                "processing" => GraphStageStatus.Processing,
                 "finished" => GraphStageStatus.Finished,
+                "processing" => GraphStageStatus.Processing,
                 _ => null,
             };
         }

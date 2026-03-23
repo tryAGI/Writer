@@ -11,10 +11,6 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Text,
-        /// <summary>
-        /// 
-        /// </summary>
         Dropdown,
         /// <summary>
         /// 
@@ -24,6 +20,10 @@ namespace Writer
         /// 
         /// </summary>
         Media,
+        /// <summary>
+        /// 
+        /// </summary>
+        Text,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Writer
         {
             return value switch
             {
-                ApplicationInputType.Text => "text",
                 ApplicationInputType.Dropdown => "dropdown",
                 ApplicationInputType.File => "file",
                 ApplicationInputType.Media => "media",
+                ApplicationInputType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Writer
         {
             return value switch
             {
-                "text" => ApplicationInputType.Text,
                 "dropdown" => ApplicationInputType.Dropdown,
                 "file" => ApplicationInputType.File,
                 "media" => ApplicationInputType.Media,
+                "text" => ApplicationInputType.Text,
                 _ => null,
             };
         }

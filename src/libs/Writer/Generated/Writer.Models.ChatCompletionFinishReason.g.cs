@@ -11,7 +11,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Stop,
+        ContentFilter,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        ContentFilter,
+        Stop,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +38,9 @@ namespace Writer
         {
             return value switch
             {
-                ChatCompletionFinishReason.Stop => "stop",
-                ChatCompletionFinishReason.Length => "length",
                 ChatCompletionFinishReason.ContentFilter => "content_filter",
+                ChatCompletionFinishReason.Length => "length",
+                ChatCompletionFinishReason.Stop => "stop",
                 ChatCompletionFinishReason.ToolCalls => "tool_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +52,9 @@ namespace Writer
         {
             return value switch
             {
-                "stop" => ChatCompletionFinishReason.Stop,
-                "length" => ChatCompletionFinishReason.Length,
                 "content_filter" => ChatCompletionFinishReason.ContentFilter,
+                "length" => ChatCompletionFinishReason.Length,
+                "stop" => ChatCompletionFinishReason.Stop,
                 "tool_calls" => ChatCompletionFinishReason.ToolCalls,
                 _ => null,
             };

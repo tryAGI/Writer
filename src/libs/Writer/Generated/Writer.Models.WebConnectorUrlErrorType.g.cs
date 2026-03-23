@@ -15,11 +15,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        NotSearchable,
+        NotFound,
         /// <summary>
         /// 
         /// </summary>
-        NotFound,
+        NotSearchable,
         /// <summary>
         /// 
         /// </summary>
@@ -43,8 +43,8 @@ namespace Writer
             return value switch
             {
                 WebConnectorUrlErrorType.InvalidUrl => "invalid_url",
-                WebConnectorUrlErrorType.NotSearchable => "not_searchable",
                 WebConnectorUrlErrorType.NotFound => "not_found",
+                WebConnectorUrlErrorType.NotSearchable => "not_searchable",
                 WebConnectorUrlErrorType.PaywallOrLoginPage => "paywall_or_login_page",
                 WebConnectorUrlErrorType.UnexpectedError => "unexpected_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -58,8 +58,8 @@ namespace Writer
             return value switch
             {
                 "invalid_url" => WebConnectorUrlErrorType.InvalidUrl,
-                "not_searchable" => WebConnectorUrlErrorType.NotSearchable,
                 "not_found" => WebConnectorUrlErrorType.NotFound,
+                "not_searchable" => WebConnectorUrlErrorType.NotSearchable,
                 "paywall_or_login_page" => WebConnectorUrlErrorType.PaywallOrLoginPage,
                 "unexpected_error" => WebConnectorUrlErrorType.UnexpectedError,
                 _ => null,

@@ -11,11 +11,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Markdown,
         /// <summary>
         /// 
         /// </summary>
-        Markdown,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Writer
         {
             return value switch
             {
-                WebSearchRequestIncludeRawContent.Text => "text",
                 WebSearchRequestIncludeRawContent.Markdown => "markdown",
+                WebSearchRequestIncludeRawContent.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Writer
         {
             return value switch
             {
-                "text" => WebSearchRequestIncludeRawContent.Text,
                 "markdown" => WebSearchRequestIncludeRawContent.Markdown,
+                "text" => WebSearchRequestIncludeRawContent.Text,
                 _ => null,
             };
         }

@@ -29,10 +29,10 @@ namespace Writer.JsonConverters
             var __score0 = 0;
             if (__jsonProps.Contains("list")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("max_files")) __score1++;
             if (__jsonProps.Contains("file_types")) __score1++;
-            if (__jsonProps.Contains("max_word_count")) __score1++;
             if (__jsonProps.Contains("max_file_size_mb")) __score1++;
+            if (__jsonProps.Contains("max_files")) __score1++;
+            if (__jsonProps.Contains("max_word_count")) __score1++;
             if (__jsonProps.Contains("upload_types")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("file_types")) __score2++;

@@ -11,15 +11,15 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        LlmSplit,
-        /// <summary>
-        /// 
-        /// </summary>
         FastSplit,
         /// <summary>
         /// 
         /// </summary>
         HybridSplit,
+        /// <summary>
+        /// 
+        /// </summary>
+        LlmSplit,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Writer
         {
             return value switch
             {
-                SplittingStrategy.LlmSplit => "llm_split",
                 SplittingStrategy.FastSplit => "fast_split",
                 SplittingStrategy.HybridSplit => "hybrid_split",
+                SplittingStrategy.LlmSplit => "llm_split",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Writer
         {
             return value switch
             {
-                "llm_split" => SplittingStrategy.LlmSplit,
                 "fast_split" => SplittingStrategy.FastSplit,
                 "hybrid_split" => SplittingStrategy.HybridSplit,
+                "llm_split" => SplittingStrategy.LlmSplit,
                 _ => null,
             };
         }

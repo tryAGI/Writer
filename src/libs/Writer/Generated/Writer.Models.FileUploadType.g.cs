@@ -11,11 +11,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Url,
+        FileId,
         /// <summary>
         /// 
         /// </summary>
-        FileId,
+        Url,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Writer
         {
             return value switch
             {
-                FileUploadType.Url => "url",
                 FileUploadType.FileId => "file_id",
+                FileUploadType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Writer
         {
             return value switch
             {
-                "url" => FileUploadType.Url,
                 "file_id" => FileUploadType.FileId,
+                "url" => FileUploadType.Url,
                 _ => null,
             };
         }

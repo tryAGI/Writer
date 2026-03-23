@@ -11,11 +11,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Markdown,
         /// <summary>
         /// 
         /// </summary>
-        Markdown,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Writer
         {
             return value switch
             {
-                PdfConversionFormat.Text => "text",
                 PdfConversionFormat.Markdown => "markdown",
+                PdfConversionFormat.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Writer
         {
             return value switch
             {
-                "text" => PdfConversionFormat.Text,
                 "markdown" => PdfConversionFormat.Markdown,
+                "text" => PdfConversionFormat.Text,
                 _ => null,
             };
         }

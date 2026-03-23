@@ -11,11 +11,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        JsonSchema,
         /// <summary>
         /// 
         /// </summary>
-        JsonSchema,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Writer
         {
             return value switch
             {
-                ResponseFormatType.Text => "text",
                 ResponseFormatType.JsonSchema => "json_schema",
+                ResponseFormatType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Writer
         {
             return value switch
             {
-                "text" => ResponseFormatType.Text,
                 "json_schema" => ResponseFormatType.JsonSchema,
+                "text" => ResponseFormatType.Text,
                 _ => null,
             };
         }

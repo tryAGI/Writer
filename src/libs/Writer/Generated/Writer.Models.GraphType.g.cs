@@ -12,13 +12,13 @@ namespace Writer
     public enum GraphType
     {
         /// <summary>
-        /// files are uploaded via UI or API
-        /// </summary>
-        Manual,
-        /// <summary>
         /// files are uploaded via a data connector such as Google Drive or Confluence
         /// </summary>
         Connector,
+        /// <summary>
+        /// files are uploaded via UI or API
+        /// </summary>
+        Manual,
         /// <summary>
         /// URLs are connected to the Knowledge Graph
         /// </summary>
@@ -37,8 +37,8 @@ namespace Writer
         {
             return value switch
             {
-                GraphType.Manual => "manual",
                 GraphType.Connector => "connector",
+                GraphType.Manual => "manual",
                 GraphType.Web => "web",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,8 +50,8 @@ namespace Writer
         {
             return value switch
             {
-                "manual" => GraphType.Manual,
                 "connector" => GraphType.Connector,
+                "manual" => GraphType.Manual,
                 "web" => GraphType.Web,
                 _ => null,
             };

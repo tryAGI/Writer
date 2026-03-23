@@ -11,15 +11,15 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
         Completed,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Writer
         {
             return value switch
             {
-                GatewayGetFilesStatus.InProgress => "in_progress",
                 GatewayGetFilesStatus.Completed => "completed",
                 GatewayGetFilesStatus.Failed => "failed",
+                GatewayGetFilesStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Writer
         {
             return value switch
             {
-                "in_progress" => GatewayGetFilesStatus.InProgress,
                 "completed" => GatewayGetFilesStatus.Completed,
                 "failed" => GatewayGetFilesStatus.Failed,
+                "in_progress" => GatewayGetFilesStatus.InProgress,
                 _ => null,
             };
         }

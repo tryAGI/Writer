@@ -12,13 +12,13 @@ namespace Writer
     public enum WebSearchRequestSearchDepth
     {
         /// <summary>
-        /// Returns fewer but highly relevant results
-        /// </summary>
-        Basic,
-        /// <summary>
         /// Performs a deeper search with more results
         /// </summary>
         Advanced,
+        /// <summary>
+        /// Returns fewer but highly relevant results
+        /// </summary>
+        Basic,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace Writer
         {
             return value switch
             {
-                WebSearchRequestSearchDepth.Basic => "basic",
                 WebSearchRequestSearchDepth.Advanced => "advanced",
+                WebSearchRequestSearchDepth.Basic => "basic",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace Writer
         {
             return value switch
             {
-                "basic" => WebSearchRequestSearchDepth.Basic,
                 "advanced" => WebSearchRequestSearchDepth.Advanced,
+                "basic" => WebSearchRequestSearchDepth.Basic,
                 _ => null,
             };
         }

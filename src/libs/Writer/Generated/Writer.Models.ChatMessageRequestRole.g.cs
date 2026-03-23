@@ -11,10 +11,6 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         Assistant,
         /// <summary>
         /// //dev.writer.com/home/tool-calling) by setting the role to `tool`.
@@ -24,6 +20,10 @@ namespace Writer
         /// //dev.writer.com/home/tool-calling) by setting the role to `tool`.
         /// </summary>
         Tool,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Writer
         {
             return value switch
             {
-                ChatMessageRequestRole.User => "user",
                 ChatMessageRequestRole.Assistant => "assistant",
                 ChatMessageRequestRole.System => "system",
                 ChatMessageRequestRole.Tool => "tool",
+                ChatMessageRequestRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Writer
         {
             return value switch
             {
-                "user" => ChatMessageRequestRole.User,
                 "assistant" => ChatMessageRequestRole.Assistant,
                 "system" => ChatMessageRequestRole.System,
                 "tool" => ChatMessageRequestRole.Tool,
+                "user" => ChatMessageRequestRole.User,
                 _ => null,
             };
         }

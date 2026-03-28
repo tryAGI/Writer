@@ -160,7 +160,7 @@ namespace Writer
                     yield break;
                 }
 
-                var __streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk> ??
+                var __streamedResponse = (global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>), JsonSerializerContext) ??
                                        throw new global::Writer.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)

@@ -79,9 +79,6 @@ namespace Writer
         /// <param name="name">
         /// Display name of the application.
         /// </param>
-        /// <param name="type">
-        /// The type of no-code application.
-        /// </param>
         /// <param name="status">
         /// Current deployment status of the application. Note: currently only `deployed` applications are returned.
         /// </param>
@@ -93,6 +90,9 @@ namespace Writer
         /// </param>
         /// <param name="updatedAt">
         /// Timestamp when the application was last updated.
+        /// </param>
+        /// <param name="type">
+        /// The type of no-code application.
         /// </param>
         /// <param name="lastDeployedAt">
         /// Timestamp when the application was last deployed.
@@ -112,11 +112,11 @@ namespace Writer
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type;
             this.Status = status;
             this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Type = type;
             this.LastDeployedAt = lastDeployedAt;
         }
 

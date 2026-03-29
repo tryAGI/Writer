@@ -58,11 +58,11 @@ namespace Writer
         /// <param name="inputType">
         /// Type of input field determining its behavior and validation rules.
         /// </param>
-        /// <param name="description">
-        /// Human-readable description of the input field's purpose.
-        /// </param>
         /// <param name="required">
         /// Indicates if this input field is mandatory.
+        /// </param>
+        /// <param name="description">
+        /// Human-readable description of the input field's purpose.
         /// </param>
         /// <param name="options">
         /// Type-specific configuration options for input fields.
@@ -79,8 +79,8 @@ namespace Writer
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputType = inputType;
-            this.Required = required;
             this.Description = description;
+            this.Required = required;
             this.Options = options;
         }
 

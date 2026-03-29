@@ -31,11 +31,11 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="TextFragment" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of content fragment. Must be `text` for text fragments.
-        /// </param>
         /// <param name="text">
         /// The actual text content of the message fragment.
+        /// </param>
+        /// <param name="type">
+        /// The type of content fragment. Must be `text` for text fragments.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace Writer
             string text,
             global::Writer.TextFragmentType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

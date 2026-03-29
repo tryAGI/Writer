@@ -44,14 +44,14 @@ namespace Writer
         /// Initializes a new instance of the <see cref="GraphsResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="hasMore">
+        /// Indicates if there are more Knowledge Graphs available beyond the current page.
+        /// </param>
         /// <param name="firstId">
         /// The ID of the first Knowledge Graph in the current response.
         /// </param>
         /// <param name="lastId">
         /// The ID of the last Knowledge Graph in the current response.
-        /// </param>
-        /// <param name="hasMore">
-        /// Indicates if there are more Knowledge Graphs available beyond the current page.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -63,9 +63,9 @@ namespace Writer
             global::System.Guid? lastId)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.HasMore = hasMore;
             this.FirstId = firstId;
             this.LastId = lastId;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

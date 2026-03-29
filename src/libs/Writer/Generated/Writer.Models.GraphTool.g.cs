@@ -31,11 +31,11 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="GraphTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of tool.
-        /// </param>
         /// <param name="function">
         /// A tool that uses Knowledge Graphs as context for responses.
+        /// </param>
+        /// <param name="type">
+        /// The type of tool.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace Writer
             global::Writer.GraphFunction function,
             global::Writer.GraphToolType type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

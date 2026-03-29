@@ -30,11 +30,11 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateApplicationResponse" /> class.
         /// </summary>
-        /// <param name="title">
-        /// The name of the output field.
-        /// </param>
         /// <param name="suggestion">
         /// The response from the model specified in the application.
+        /// </param>
+        /// <param name="title">
+        /// The name of the output field.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -43,8 +43,8 @@ namespace Writer
             string suggestion,
             string? title)
         {
-            this.Suggestion = suggestion ?? throw new global::System.ArgumentNullException(nameof(suggestion));
             this.Title = title;
+            this.Suggestion = suggestion ?? throw new global::System.ArgumentNullException(nameof(suggestion));
         }
 
         /// <summary>

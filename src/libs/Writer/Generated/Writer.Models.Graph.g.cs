@@ -77,15 +77,15 @@ namespace Writer
         /// <param name="name">
         /// The name of the Knowledge Graph.
         /// </param>
-        /// <param name="description">
-        /// A description of the Knowledge Graph.
-        /// </param>
         /// <param name="fileStatus"></param>
         /// <param name="type">
         /// The type of Knowledge Graph:<br/>
         /// - `manual`: files are uploaded via UI or API<br/>
         /// - `connector`: files are uploaded via a data connector such as Google Drive or Confluence<br/>
         /// - `web`: URLs are connected to the Knowledge Graph
+        /// </param>
+        /// <param name="description">
+        /// A description of the Knowledge Graph.
         /// </param>
         /// <param name="urls">
         /// An array of web connector URLs associated with this Knowledge Graph.
@@ -105,9 +105,9 @@ namespace Writer
             this.Id = id;
             this.CreatedAt = createdAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.FileStatus = fileStatus ?? throw new global::System.ArgumentNullException(nameof(fileStatus));
             this.Type = type;
-            this.Description = description;
             this.Urls = urls;
         }
 

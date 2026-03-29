@@ -85,7 +85,6 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="MedicalComprehendAttribute" /> class.
         /// </summary>
-        /// <param name="category"></param>
         /// <param name="relationshipScore"></param>
         /// <param name="beginOffset"></param>
         /// <param name="endOffset"></param>
@@ -93,8 +92,9 @@ namespace Writer
         /// <param name="traits"></param>
         /// <param name="concepts"></param>
         /// <param name="score"></param>
-        /// <param name="relationshipType"></param>
         /// <param name="type"></param>
+        /// <param name="category"></param>
+        /// <param name="relationshipType"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -110,6 +110,7 @@ namespace Writer
             string? category,
             string? relationshipType)
         {
+            this.Category = category;
             this.RelationshipScore = relationshipScore;
             this.BeginOffset = beginOffset;
             this.EndOffset = endOffset;
@@ -117,9 +118,8 @@ namespace Writer
             this.Traits = traits ?? throw new global::System.ArgumentNullException(nameof(traits));
             this.Concepts = concepts ?? throw new global::System.ArgumentNullException(nameof(concepts));
             this.Score = score;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Category = category;
             this.RelationshipType = relationshipType;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

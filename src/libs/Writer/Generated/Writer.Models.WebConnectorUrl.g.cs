@@ -51,11 +51,11 @@ namespace Writer
         /// <param name="status">
         /// The state of a web connector URL processing.
         /// </param>
-        /// <param name="excludeUrls">
-        /// An array of URLs to exclude from processing within this web connector.
-        /// </param>
         /// <param name="type">
         /// The type of web connector processing for a URL.
+        /// </param>
+        /// <param name="excludeUrls">
+        /// An array of URLs to exclude from processing within this web connector.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -68,8 +68,8 @@ namespace Writer
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.Type = type;
             this.ExcludeUrls = excludeUrls;
+            this.Type = type;
         }
 
         /// <summary>

@@ -41,11 +41,11 @@ namespace Writer
         /// <param name="url">
         /// The URL to be processed by the web connector.
         /// </param>
-        /// <param name="excludeUrls">
-        /// An array of URLs to exclude from processing within this web connector.
-        /// </param>
         /// <param name="type">
         /// The type of web connector processing for a URL.
+        /// </param>
+        /// <param name="excludeUrls">
+        /// An array of URLs to exclude from processing within this web connector.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,8 +56,8 @@ namespace Writer
             global::System.Collections.Generic.IList<string>? excludeUrls)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
             this.ExcludeUrls = excludeUrls;
+            this.Type = type;
         }
 
         /// <summary>

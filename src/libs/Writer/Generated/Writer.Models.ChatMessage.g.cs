@@ -62,11 +62,11 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessage" /> class.
         /// </summary>
-        /// <param name="content">
-        /// The content of the message. Can be either a string (for text-only messages) or an array of content fragments (for mixed text and image messages).
-        /// </param>
         /// <param name="role">
         /// The role of the chat message. You can provide a system prompt by setting the role to `system`, or specify that a message is the result of a [tool call](https://dev.writer.com/home/tool-calling) by setting the role to `tool`.
+        /// </param>
+        /// <param name="content">
+        /// The content of the message. Can be either a string (for text-only messages) or an array of content fragments (for mixed text and image messages).
         /// </param>
         /// <param name="name">
         /// An optional name for the message sender. Useful for identifying different users, personas, or tools in multi-participant conversations.
@@ -87,8 +87,8 @@ namespace Writer
             global::Writer.GraphData? graphData,
             string? refusal)
         {
-            this.Role = role;
             this.Content = content;
+            this.Role = role;
             this.Name = name;
             this.ToolCallId = toolCallId;
             this.ToolCalls = toolCalls;

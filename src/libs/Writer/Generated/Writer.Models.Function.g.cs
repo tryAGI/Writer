@@ -30,8 +30,8 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="Function" /> class.
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="arguments"></param>
+        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -39,8 +39,8 @@ namespace Writer
             string arguments,
             string? name)
         {
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Name = name;
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
         }
 
         /// <summary>

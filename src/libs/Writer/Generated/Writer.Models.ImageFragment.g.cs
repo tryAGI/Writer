@@ -31,11 +31,11 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageFragment" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of content fragment. Must be `image_url` for image fragments.
-        /// </param>
         /// <param name="imageUrl">
         /// The image URL object containing the location of the image.
+        /// </param>
+        /// <param name="type">
+        /// The type of content fragment. Must be `image_url` for image fragments.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace Writer
             global::Writer.ImageFragmentImageUrl imageUrl,
             global::Writer.ImageFragmentType type)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
         }
 
         /// <summary>

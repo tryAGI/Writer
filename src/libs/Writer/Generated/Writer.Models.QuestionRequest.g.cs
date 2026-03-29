@@ -54,12 +54,12 @@ namespace Writer
         /// <param name="graphIds">
         /// The unique identifiers of the Knowledge Graphs to query.
         /// </param>
+        /// <param name="question">
+        /// The question to answer using the Knowledge Graph.
+        /// </param>
         /// <param name="subqueries">
         /// Specify whether to include subqueries.<br/>
         /// Default Value: false
-        /// </param>
-        /// <param name="question">
-        /// The question to answer using the Knowledge Graph.
         /// </param>
         /// <param name="stream">
         /// Determines whether the model's output should be streamed. If true, the output is generated and sent incrementally, which can be useful for real-time applications.<br/>
@@ -79,8 +79,8 @@ namespace Writer
             global::Writer.GraphQueryConfig? queryConfig)
         {
             this.GraphIds = graphIds ?? throw new global::System.ArgumentNullException(nameof(graphIds));
-            this.Question = question ?? throw new global::System.ArgumentNullException(nameof(question));
             this.Subqueries = subqueries;
+            this.Question = question ?? throw new global::System.ArgumentNullException(nameof(question));
             this.Stream = stream;
             this.QueryConfig = queryConfig;
         }

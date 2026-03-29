@@ -46,14 +46,14 @@ namespace Writer
         /// <param name="data">
         /// List of application objects with their configurations.
         /// </param>
+        /// <param name="hasMore">
+        /// Indicates if there are more results available in subsequent pages.
+        /// </param>
         /// <param name="firstId">
         /// UUID of the first application in the current page.
         /// </param>
         /// <param name="lastId">
         /// UUID of the last application in the current page.
-        /// </param>
-        /// <param name="hasMore">
-        /// Indicates if there are more results available in subsequent pages.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,9 +65,9 @@ namespace Writer
             global::System.Guid? lastId)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.HasMore = hasMore;
             this.FirstId = firstId;
             this.LastId = lastId;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

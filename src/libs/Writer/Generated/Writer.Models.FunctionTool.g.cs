@@ -31,11 +31,11 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of tool.
-        /// </param>
         /// <param name="function">
         /// A tool that uses a custom function.
+        /// </param>
+        /// <param name="type">
+        /// The type of tool.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace Writer
             global::Writer.ToolFunction function,
             global::Writer.FunctionToolType type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

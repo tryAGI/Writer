@@ -38,13 +38,13 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="VisionRequest" /> class.
         /// </summary>
-        /// <param name="model">
-        /// The model to use for image analysis.
-        /// </param>
         /// <param name="prompt">
         /// The prompt to use for the image analysis. The prompt must include the name of each image variable, surrounded by double curly braces (`{{}}`). For example, `Describe the difference between the image {{image_1}} and the image {{image_2}}`.
         /// </param>
         /// <param name="variables"></param>
+        /// <param name="model">
+        /// The model to use for image analysis.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,9 +53,9 @@ namespace Writer
             global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable> variables,
             global::Writer.VisionRequestModel model)
         {
+            this.Model = model;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Variables = variables ?? throw new global::System.ArgumentNullException(nameof(variables));
-            this.Model = model;
         }
 
         /// <summary>

@@ -40,11 +40,11 @@ namespace Writer
         /// <param name="query">
         /// The search query that was submitted.
         /// </param>
-        /// <param name="answer">
-        /// Generated answer based on the search results. Not included if `include_answer` is `false`.
-        /// </param>
         /// <param name="sources">
         /// The search results found.
+        /// </param>
+        /// <param name="answer">
+        /// Generated answer based on the search results. Not included if `include_answer` is `false`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,8 +55,8 @@ namespace Writer
             string? answer)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
-            this.Sources = sources ?? throw new global::System.ArgumentNullException(nameof(sources));
             this.Answer = answer;
+            this.Sources = sources ?? throw new global::System.ArgumentNullException(nameof(sources));
         }
 
         /// <summary>

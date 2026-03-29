@@ -36,11 +36,11 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolFunction" /> class.
         /// </summary>
-        /// <param name="description">
-        /// Description of the function.
-        /// </param>
         /// <param name="name">
         /// Name of the function.
+        /// </param>
+        /// <param name="description">
+        /// Description of the function.
         /// </param>
         /// <param name="parameters">
         /// The parameters of the function.
@@ -53,8 +53,8 @@ namespace Writer
             string? description,
             object? parameters)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;
         }
 

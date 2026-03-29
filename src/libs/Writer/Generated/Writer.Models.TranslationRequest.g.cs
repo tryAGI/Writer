@@ -66,9 +66,6 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="TranslationRequest" /> class.
         /// </summary>
-        /// <param name="model">
-        /// The model to use for translation.
-        /// </param>
         /// <param name="sourceLanguageCode">
         /// The [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language code of the original text to translate. For example, `en` for English, `zh` for Chinese, `fr` for French, `es` for Spanish. If the language has a variant, the code appends the two-digit [ISO-3166 country code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). For example, Mexican Spanish is `es-MX`. See the [list of supported languages and language codes](https://dev.writer.com/api-reference/translation-api/language-support).
         /// </param>
@@ -87,6 +84,9 @@ namespace Writer
         /// <param name="maskProfanity">
         /// Whether to mask profane words in the translated text. See the [list of languages that do not support profanity masking](https://dev.writer.com/api-reference/translation-api/language-support#profanity-masking). If the language does not support profanity masking, this parameter is ignored.
         /// </param>
+        /// <param name="model">
+        /// The model to use for translation.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,13 +99,13 @@ namespace Writer
             bool maskProfanity,
             global::Writer.TranslationRequestModel model)
         {
+            this.Model = model;
             this.SourceLanguageCode = sourceLanguageCode ?? throw new global::System.ArgumentNullException(nameof(sourceLanguageCode));
             this.TargetLanguageCode = targetLanguageCode ?? throw new global::System.ArgumentNullException(nameof(targetLanguageCode));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Formality = formality;
             this.LengthControl = lengthControl;
             this.MaskProfanity = maskProfanity;
-            this.Model = model;
         }
 
         /// <summary>

@@ -43,14 +43,14 @@ namespace Writer
         /// <summary>
         /// Initializes a new instance of the <see cref="GraphFunction" /> class.
         /// </summary>
-        /// <param name="description">
-        /// A description of the graph content.
-        /// </param>
         /// <param name="graphIds">
         /// An array of graph IDs to use in the tool.
         /// </param>
         /// <param name="subqueries">
         /// Boolean to indicate whether to include subqueries in the response.
+        /// </param>
+        /// <param name="description">
+        /// A description of the graph content.
         /// </param>
         /// <param name="queryConfig">
         /// Configuration options for Knowledge Graph queries.
@@ -64,9 +64,9 @@ namespace Writer
             string? description,
             global::Writer.GraphQueryConfig? queryConfig)
         {
+            this.Description = description;
             this.GraphIds = graphIds ?? throw new global::System.ArgumentNullException(nameof(graphIds));
             this.Subqueries = subqueries;
-            this.Description = description;
             this.QueryConfig = queryConfig;
         }
 

@@ -223,7 +223,6 @@ namespace Writer
             global::Writer.TranslationRequestModel model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Writer.TranslationRequest
             {
                 Model = model,

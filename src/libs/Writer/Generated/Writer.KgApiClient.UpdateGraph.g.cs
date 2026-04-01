@@ -215,7 +215,6 @@ namespace Writer
             global::System.Collections.Generic.IList<global::Writer.UpdateGraphWebUrl>? urls = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Writer.UpdateGraphRequest
             {
                 Name = name,

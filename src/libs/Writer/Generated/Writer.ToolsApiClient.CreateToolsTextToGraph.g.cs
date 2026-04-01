@@ -199,7 +199,6 @@ namespace Writer
             string text,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Writer.TextToGraphRequest
             {
                 Text = text,

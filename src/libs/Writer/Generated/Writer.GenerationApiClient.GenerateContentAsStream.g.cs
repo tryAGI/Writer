@@ -183,6 +183,7 @@ namespace Writer
             global::System.Collections.Generic.IList<global::Writer.GenerateApplicationInput> inputs,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Writer.GenerateApplicationRequest
             {
                 Inputs = inputs,

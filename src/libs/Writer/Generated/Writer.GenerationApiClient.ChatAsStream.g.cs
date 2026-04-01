@@ -238,6 +238,7 @@ namespace Writer
             global::Writer.ResponseFormat? responseFormat = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Writer.ChatRequest
             {
                 Model = model,

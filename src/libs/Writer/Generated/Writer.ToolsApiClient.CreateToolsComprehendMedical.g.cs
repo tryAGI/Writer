@@ -201,6 +201,7 @@ namespace Writer
             global::Writer.ComprehendMedicalType responseType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Writer.ComprehendMedicalRequest
             {
                 Content = content,

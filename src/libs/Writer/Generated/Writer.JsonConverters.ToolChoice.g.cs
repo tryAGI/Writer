@@ -122,13 +122,13 @@ namespace Writer.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.StringToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.StringToolChoice?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.StringToolChoice).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String!, typeInfo);
             }
             else if (value.IsJsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.JsonObjectToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.JsonObjectToolChoice?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.JsonObjectToolChoice).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsonObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsonObject!, typeInfo);
             }
         }
     }

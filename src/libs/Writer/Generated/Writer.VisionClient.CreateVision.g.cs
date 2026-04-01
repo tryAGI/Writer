@@ -205,6 +205,7 @@ namespace Writer
             global::Writer.VisionRequestModel model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Writer.VisionRequest
             {
                 Model = model,

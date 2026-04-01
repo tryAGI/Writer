@@ -240,6 +240,7 @@ namespace Writer
             int? randomSeed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Writer.CompletionsRequest
             {
                 Model = model,

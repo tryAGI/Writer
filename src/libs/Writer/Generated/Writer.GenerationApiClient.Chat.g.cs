@@ -266,6 +266,7 @@ namespace Writer
             global::Writer.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Writer.ChatRequest
             {
                 Model = model,

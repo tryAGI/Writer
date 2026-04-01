@@ -201,7 +201,6 @@ namespace Writer
             global::Writer.SplittingStrategy strategy,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Writer.ContextAwareTextSplittingRequest
             {
                 Text = text,

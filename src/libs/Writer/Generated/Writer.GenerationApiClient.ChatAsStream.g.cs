@@ -5,6 +5,25 @@ namespace Writer
 {
     public partial class GenerationApiClient
     {
+
+
+        private static readonly global::Writer.EndPointSecurityRequirement s_ChatAsStreamSecurityRequirement0 =
+            new global::Writer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Writer.EndPointAuthorizationRequirement[]
+                {                    new global::Writer.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Writer.EndPointSecurityRequirement[] s_ChatAsStreamSecurityRequirements =
+            new global::Writer.EndPointSecurityRequirement[]
+            {                s_ChatAsStreamSecurityRequirement0,
+            };
         partial void PrepareChatAsStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Writer.ChatRequest request);
@@ -29,7 +48,7 @@ namespace Writer
         ///  --header "Content-Type: application/json" \<br/>
         /// --data-raw '{"model":"palmyra-x5","messages":[{"content":"Write a memo summarizing this earnings report.","role":"user"}]}'
         /// </remarks>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>> ChatAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Writer.ChatCompletionChunk> ChatAsStreamAsync(
 
             global::Writer.ChatRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
@@ -58,9 +77,15 @@ namespace Writer
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Writer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ChatAsStreamSecurityRequirements,
+                operationName: "ChatAsStreamAsync");
+
             var __pathBuilder = new global::Writer.PathBuilder(
                 path: "/v1/chat",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -70,7 +95,7 @@ namespace Writer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -159,7 +184,7 @@ namespace Writer
                     yield break;
                 }
 
-                var __streamedResponse = (global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>), JsonSerializerContext) ??
+                var __streamedResponse = global::Writer.ChatCompletionChunk.FromJson(__content, JsonSerializerContext) ??
                                        throw new global::Writer.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)
@@ -222,7 +247,7 @@ namespace Writer
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>> ChatAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::Writer.ChatCompletionChunk> ChatAsStreamAsync(
             string model,
             global::System.Collections.Generic.IList<global::Writer.ChatMessage> messages,
             int? maxTokens = default,

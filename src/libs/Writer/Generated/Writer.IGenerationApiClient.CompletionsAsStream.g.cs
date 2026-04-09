@@ -17,7 +17,7 @@ namespace Writer
         ///  --header "Content-Type: application/json" \<br/>
         /// --data-raw '{"model":"palmyra-x-003-instruct","prompt":"Write me a short SEO article about camping gear","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}'
         /// </remarks>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::Writer.StreamingData>> CompletionsAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::Writer.StreamingData> CompletionsAsStreamAsync(
 
             global::Writer.CompletionsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -51,7 +51,7 @@ namespace Writer
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::Writer.StreamingData>> CompletionsAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::Writer.StreamingData> CompletionsAsStreamAsync(
             string model,
             string prompt,
             long? maxTokens = default,

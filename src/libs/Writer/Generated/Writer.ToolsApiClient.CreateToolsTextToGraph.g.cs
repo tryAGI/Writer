@@ -5,6 +5,25 @@ namespace Writer
 {
     public partial class ToolsApiClient
     {
+
+
+        private static readonly global::Writer.EndPointSecurityRequirement s_CreateToolsTextToGraphSecurityRequirement0 =
+            new global::Writer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Writer.EndPointAuthorizationRequirement[]
+                {                    new global::Writer.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Writer.EndPointSecurityRequirement[] s_CreateToolsTextToGraphSecurityRequirements =
+            new global::Writer.EndPointSecurityRequirement[]
+            {                s_CreateToolsTextToGraphSecurityRequirement0,
+            };
         partial void PrepareCreateToolsTextToGraphArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Writer.TextToGraphRequest request);
@@ -47,9 +66,15 @@ namespace Writer
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Writer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateToolsTextToGraphSecurityRequirements,
+                operationName: "CreateToolsTextToGraphAsync");
+
             var __pathBuilder = new global::Writer.PathBuilder(
                 path: "/v1/tools/text-to-graph",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -59,7 +84,7 @@ namespace Writer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

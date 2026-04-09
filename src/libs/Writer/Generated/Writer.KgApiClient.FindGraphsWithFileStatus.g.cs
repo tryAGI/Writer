@@ -5,6 +5,25 @@ namespace Writer
 {
     public partial class KgApiClient
     {
+
+
+        private static readonly global::Writer.EndPointSecurityRequirement s_FindGraphsWithFileStatusSecurityRequirement0 =
+            new global::Writer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Writer.EndPointAuthorizationRequirement[]
+                {                    new global::Writer.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Writer.EndPointSecurityRequirement[] s_FindGraphsWithFileStatusSecurityRequirements =
+            new global::Writer.EndPointSecurityRequirement[]
+            {                s_FindGraphsWithFileStatusSecurityRequirement0,
+            };
         partial void PrepareFindGraphsWithFileStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Writer.FindGraphsWithFileStatusOrder? order,
@@ -61,6 +80,12 @@ namespace Writer
                 after: ref after,
                 limit: ref limit);
 
+
+            var __authorizations = global::Writer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_FindGraphsWithFileStatusSecurityRequirements,
+                operationName: "FindGraphsWithFileStatusAsync");
+
             var __pathBuilder = new global::Writer.PathBuilder(
                 path: "/v1/graphs",
                 baseUri: HttpClient.BaseAddress); 
@@ -69,7 +94,7 @@ namespace Writer
                 .AddOptionalParameter("before", before?.ToString())
                 .AddOptionalParameter("after", after?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -79,7 +104,7 @@ namespace Writer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

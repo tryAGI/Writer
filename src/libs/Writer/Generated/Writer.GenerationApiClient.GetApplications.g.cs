@@ -5,6 +5,25 @@ namespace Writer
 {
     public partial class GenerationApiClient
     {
+
+
+        private static readonly global::Writer.EndPointSecurityRequirement s_GetApplicationsSecurityRequirement0 =
+            new global::Writer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Writer.EndPointAuthorizationRequirement[]
+                {                    new global::Writer.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Writer.EndPointSecurityRequirement[] s_GetApplicationsSecurityRequirements =
+            new global::Writer.EndPointSecurityRequirement[]
+            {                s_GetApplicationsSecurityRequirement0,
+            };
         partial void PrepareGetApplicationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Writer.GetApplicationsOrder? order,
@@ -68,6 +87,12 @@ namespace Writer
                 limit: ref limit,
                 type: ref type);
 
+
+            var __authorizations = global::Writer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetApplicationsSecurityRequirements,
+                operationName: "GetApplicationsAsync");
+
             var __pathBuilder = new global::Writer.PathBuilder(
                 path: "/v1/applications",
                 baseUri: HttpClient.BaseAddress); 
@@ -77,7 +102,7 @@ namespace Writer
                 .AddOptionalParameter("after", after?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("type", type?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -87,7 +112,7 @@ namespace Writer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

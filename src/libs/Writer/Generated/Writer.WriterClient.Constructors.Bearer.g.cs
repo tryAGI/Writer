@@ -6,6 +6,7 @@ namespace Writer
     public sealed partial class WriterClient
     {
         /// <inheritdoc cref="WriterClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Writer.EndPointAuthorization}?, bool)"/>
+
         public WriterClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

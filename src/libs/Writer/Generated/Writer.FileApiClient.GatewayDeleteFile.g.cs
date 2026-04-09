@@ -5,6 +5,25 @@ namespace Writer
 {
     public partial class FileApiClient
     {
+
+
+        private static readonly global::Writer.EndPointSecurityRequirement s_GatewayDeleteFileSecurityRequirement0 =
+            new global::Writer.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Writer.EndPointAuthorizationRequirement[]
+                {                    new global::Writer.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Writer.EndPointSecurityRequirement[] s_GatewayDeleteFileSecurityRequirements =
+            new global::Writer.EndPointSecurityRequirement[]
+            {                s_GatewayDeleteFileSecurityRequirement0,
+            };
         partial void PrepareGatewayDeleteFileArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string fileId);
@@ -42,9 +61,15 @@ namespace Writer
                 httpClient: HttpClient,
                 fileId: ref fileId);
 
+
+            var __authorizations = global::Writer.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GatewayDeleteFileSecurityRequirements,
+                operationName: "GatewayDeleteFileAsync");
+
             var __pathBuilder = new global::Writer.PathBuilder(
                 path: $"/v1/files/{fileId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -54,7 +79,7 @@ namespace Writer
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

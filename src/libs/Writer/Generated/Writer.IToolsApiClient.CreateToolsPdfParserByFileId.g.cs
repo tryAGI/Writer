@@ -10,6 +10,7 @@ namespace Writer
         /// </summary>
         /// <param name="fileId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -22,6 +23,7 @@ namespace Writer
             string fileId,
 
             global::Writer.ParsePdfRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Parse PDF<br/>
@@ -31,11 +33,13 @@ namespace Writer
         /// <param name="format">
         /// The format into which the PDF content should be converted.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.ParsePdfResponse> CreateToolsPdfParserByFileIdAsync(
             string fileId,
             global::Writer.PdfConversionFormat format,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

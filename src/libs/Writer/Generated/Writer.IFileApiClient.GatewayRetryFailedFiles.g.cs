@@ -9,6 +9,7 @@ namespace Writer
         /// Retry processing of files that previously failed to process. This will re-attempt the processing of the specified files.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -20,6 +21,7 @@ namespace Writer
         global::System.Threading.Tasks.Task<global::Writer.RetryFilesResponse> GatewayRetryFailedFilesAsync(
 
             global::Writer.RetryFilesRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Retry failed files<br/>
@@ -28,10 +30,12 @@ namespace Writer
         /// <param name="fileIds">
         /// The unique identifier of the files to retry.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.RetryFilesResponse> GatewayRetryFailedFilesAsync(
             global::System.Collections.Generic.IList<global::System.Guid> fileIds,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

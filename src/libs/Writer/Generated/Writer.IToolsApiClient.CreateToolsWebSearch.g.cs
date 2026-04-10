@@ -9,6 +9,7 @@ namespace Writer
         /// Search the web for information about a given query and return relevant results with source URLs.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -20,6 +21,7 @@ namespace Writer
         global::System.Threading.Tasks.Task<global::Writer.WebSearchResponse> CreateToolsWebSearchAsync(
 
             global::Writer.WebSearchRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Web search<br/>
@@ -75,6 +77,7 @@ namespace Writer
         /// Enables streaming of search results as they become available.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.WebSearchResponse> CreateToolsWebSearchAsync(
@@ -91,6 +94,7 @@ namespace Writer
             global::System.Collections.Generic.IList<string>? excludeDomains = default,
             global::Writer.WebSearchRequestCountry? country = default,
             bool? stream = default,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

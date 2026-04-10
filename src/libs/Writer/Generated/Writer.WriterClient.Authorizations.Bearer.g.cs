@@ -25,6 +25,7 @@ namespace Writer
             Authorizations.Add(new global::Writer.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "BearerAuth",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

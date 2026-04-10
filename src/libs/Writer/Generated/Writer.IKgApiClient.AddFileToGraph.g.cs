@@ -10,6 +10,7 @@ namespace Writer
         /// </summary>
         /// <param name="graphId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -22,6 +23,7 @@ namespace Writer
             global::System.Guid graphId,
 
             global::Writer.GraphFileRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add file to graph<br/>
@@ -31,11 +33,13 @@ namespace Writer
         /// <param name="fileId">
         /// The unique identifier of the file.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.FileResponse> AddFileToGraphAsync(
             global::System.Guid graphId,
             string fileId,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

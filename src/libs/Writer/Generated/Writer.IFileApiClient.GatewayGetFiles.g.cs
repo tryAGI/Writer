@@ -19,6 +19,7 @@ namespace Writer
         /// <param name="graphId"></param>
         /// <param name="status"></param>
         /// <param name="fileTypes"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -33,6 +34,7 @@ namespace Writer
             global::System.Guid? graphId = default,
             global::Writer.GatewayGetFilesStatus? status = default,
             string? fileTypes = default,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

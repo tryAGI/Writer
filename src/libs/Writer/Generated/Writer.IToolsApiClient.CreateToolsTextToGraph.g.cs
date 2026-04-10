@@ -9,6 +9,7 @@ namespace Writer
         /// Performs name entity recognition on the supplied text accepting a maximum of 35000 words.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -20,6 +21,7 @@ namespace Writer
         global::System.Threading.Tasks.Task<global::Writer.TextToGraphResponse> CreateToolsTextToGraphAsync(
 
             global::Writer.TextToGraphRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text-to-graph<br/>
@@ -28,10 +30,12 @@ namespace Writer
         /// <param name="text">
         /// The text to convert into a graph structure. Maximum of 35,000 words.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.TextToGraphResponse> CreateToolsTextToGraphAsync(
             string text,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

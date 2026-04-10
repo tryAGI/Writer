@@ -9,6 +9,7 @@ namespace Writer
         /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -20,6 +21,7 @@ namespace Writer
         global::System.Collections.Generic.IAsyncEnumerable<global::Writer.StreamingData> CompletionsAsStreamAsync(
 
             global::Writer.CompletionsRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text generation<br/>
@@ -49,6 +51,7 @@ namespace Writer
         /// <param name="randomSeed">
         /// A seed used to initialize the random number generator for the model, ensuring reproducibility of the output when the same inputs are provided.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::Writer.StreamingData> CompletionsAsStreamAsync(
@@ -60,6 +63,7 @@ namespace Writer
             global::Writer.OneOf<global::System.Collections.Generic.IList<string>, string>? stop = default,
             int? bestOf = default,
             int? randomSeed = default,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,6 +9,7 @@ namespace Writer
         /// Analyze unstructured medical text to extract entities labeled with standardized medical codes and confidence scores.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -20,6 +21,7 @@ namespace Writer
         global::System.Threading.Tasks.Task<global::Writer.MedicalComprehendResponse> CreateToolsComprehendMedicalAsync(
 
             global::Writer.ComprehendMedicalRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Medical comprehend<br/>
@@ -29,11 +31,13 @@ namespace Writer
         /// The text to analyze.
         /// </param>
         /// <param name="responseType"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.MedicalComprehendResponse> CreateToolsComprehendMedicalAsync(
             string content,
             global::Writer.ComprehendMedicalType responseType,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

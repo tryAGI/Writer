@@ -8,6 +8,7 @@ namespace Writer
         /// List models<br/>
         /// Retrieve a list of available models that can be used for text generation, chat completions, and other AI tasks.
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -15,6 +16,7 @@ namespace Writer
         ///  --header "Authorization: Bearer &lt;token&gt;"
         /// </remarks>
         global::System.Threading.Tasks.Task<global::Writer.ModelsResponse> ModelsAsync(
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

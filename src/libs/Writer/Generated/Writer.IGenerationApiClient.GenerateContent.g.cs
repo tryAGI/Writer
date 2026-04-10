@@ -10,6 +10,7 @@ namespace Writer
         /// </summary>
         /// <param name="applicationId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -22,6 +23,7 @@ namespace Writer
             global::System.Guid applicationId,
 
             global::Writer.GenerateApplicationRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate from application<br/>
@@ -29,11 +31,13 @@ namespace Writer
         /// </summary>
         /// <param name="applicationId"></param>
         /// <param name="inputs"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.GenerateApplicationResponse> GenerateContentAsync(
             global::System.Guid applicationId,
             global::System.Collections.Generic.IList<global::Writer.GenerateApplicationInput> inputs,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

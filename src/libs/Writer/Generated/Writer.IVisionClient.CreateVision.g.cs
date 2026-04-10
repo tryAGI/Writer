@@ -9,6 +9,7 @@ namespace Writer
         /// Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -20,6 +21,7 @@ namespace Writer
         global::System.Threading.Tasks.Task<global::Writer.VisionResponse> CreateVisionAsync(
 
             global::Writer.VisionRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Analyze images<br/>
@@ -32,12 +34,14 @@ namespace Writer
         /// The prompt to use for the image analysis. The prompt must include the name of each image variable, surrounded by double curly braces (`{{}}`). For example, `Describe the difference between the image {{image_1}} and the image {{image_2}}`.
         /// </param>
         /// <param name="variables"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.VisionResponse> CreateVisionAsync(
             string prompt,
             global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable> variables,
             global::Writer.VisionRequestModel model = default,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

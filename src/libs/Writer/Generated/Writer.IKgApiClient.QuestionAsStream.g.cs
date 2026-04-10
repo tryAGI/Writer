@@ -9,6 +9,7 @@ namespace Writer
         /// Ask a question to specified Knowledge Graphs.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -20,6 +21,7 @@ namespace Writer
         global::System.Collections.Generic.IAsyncEnumerable<global::Writer.QuestionResponseChunk> QuestionAsStreamAsync(
 
             global::Writer.QuestionRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Question<br/>
@@ -38,6 +40,7 @@ namespace Writer
         /// <param name="queryConfig">
         /// Configuration options for Knowledge Graph queries.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::Writer.QuestionResponseChunk> QuestionAsStreamAsync(
@@ -45,6 +48,7 @@ namespace Writer
             string question,
             bool? subqueries = default,
             global::Writer.GraphQueryConfig? queryConfig = default,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

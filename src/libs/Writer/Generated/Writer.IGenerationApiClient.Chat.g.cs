@@ -9,6 +9,7 @@ namespace Writer
         /// Generate a chat completion based on the provided messages. The response shown below is for non-streaming. To learn about streaming responses, see the [chat completion guide](https://dev.writer.com/home/chat-completion).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
@@ -20,6 +21,7 @@ namespace Writer
         global::System.Threading.Tasks.Task<global::Writer.ChatResponse> ChatAsync(
 
             global::Writer.ChatRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Chat completion<br/>
@@ -67,6 +69,7 @@ namespace Writer
         /// The response format to use for the chat completion, available with `palmyra-x4` and `palmyra-x5`.<br/>
         /// `text` is the default response format. [JSON Schema](https://json-schema.org/) is supported for structured responses. If you specify `json_schema`, you must also provide a `json_schema` object.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Writer.ChatResponse> ChatAsync(
@@ -82,6 +85,7 @@ namespace Writer
             global::Writer.ToolChoice? toolChoice = default,
             global::Writer.StreamOptions? streamOptions = default,
             global::Writer.ResponseFormat? responseFormat = default,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

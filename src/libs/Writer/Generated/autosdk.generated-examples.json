@@ -1,0 +1,169 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Delete file",
+      "Slug": "gatewaydeletefile",
+      "Description": "Permanently delete a file from the system. This action cannot be undone.",
+      "Language": "http",
+      "Code": "### Delete file\n# @name gatewayDeleteFile\nDELETE {{host}}/v1/files/{{file_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "gatewayDeleteFile",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "Download file",
+      "Slug": "gatewaydownloadfile",
+      "Description": "Download the binary content of a file. The response will contain the file data in the appropriate MIME type.",
+      "Language": "http",
+      "Code": "### Download file\n# @name gatewayDownloadFile\nGET {{host}}/v1/files/{{file_id}}/download\nAuthorization: Bearer {{token}}\nAccept: application/octet-stream\n\n## Responses\n# 200\n# Description: File download successful\n# Content-Type: application/octet-stream",
+      "Format": "http",
+      "OperationId": "gatewayDownloadFile",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "Retrieve file",
+      "Slug": "gatewaygetfile",
+      "Description": "Retrieve detailed information about a specific file, including its metadata, status, and associated graphs.",
+      "Language": "http",
+      "Code": "### Retrieve file\n# @name gatewayGetFile\nGET {{host}}/v1/files/{{file_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "gatewayGetFile",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "List files",
+      "Slug": "gatewaygetfiles",
+      "Description": "Retrieve a paginated list of files with optional filtering by status, graph association, and file type.",
+      "Language": "csharp",
+      "Code": "using var client = new WriterClient(apiKey);\nvar response = await client.FileApi.GatewayGetFilesAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u00227c36a365-392f-43ba-840d-8f3103b42572\u0022,\n//       \u0022name\u0022: \u0022example.pdf\u0022,\n//       \u0022created_at\u0022: \u00222024-07-10T12:00:00Z\u0022,\n//       \u0022graph_ids\u0022: [\n//         \u002231a8b75a-9a90-432f-8861-942229125333\u0022\n//       ],\n//       \u0022status\u0022: \u0022in_progress\u0022\n//     },\n//     {\n//       \u0022id\u0022: \u00224bbe6207-737e-486f-a287-c5e95536984a\u0022,\n//       \u0022name\u0022: \u0022image.jpg\u0022,\n//       \u0022created_at\u0022: \u00222024-07-09T15:30:00Z\u0022,\n//       \u0022graph_ids\u0022: [\n//         \u002231a8b75a-9a90-432f-8861-942229125333\u0022\n//       ],\n//       \u0022status\u0022: \u0022completed\u0022\n//     },\n//     {\n//       \u0022id\u0022: \u0022efc86bb4-30a4-40c9-a52a-ecee0d7e071f\u0022,\n//       \u0022name\u0022: \u0022document.txt\u0022,\n//       \u0022created_at\u0022: \u00222024-07-08T16:00:00Z\u0022,\n//       \u0022graph_ids\u0022: [\n//         \u002231a8b75a-9a90-432f-8861-942229125333\u0022\n//       ],\n//       \u0022status\u0022: \u0022failed\u0022\n//     }\n//   ],\n//   \u0022has_more\u0022: false,\n//   \u0022first_id\u0022: \u00227c36a365-392f-43ba-840d-8f3103b42572\u0022,\n//   \u0022last_id\u0022: \u0022efc86bb4-30a4-40c9-a52a-ecee0d7e071f\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "gatewayGetFiles",
+      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 5,
+      "Title": "Retry failed files",
+      "Slug": "gatewayretryfailedfiles",
+      "Description": "Retry processing of files that previously failed to process. This will re-attempt the processing of the specified files.",
+      "Language": "http",
+      "Code": "### Retry failed files\n# @name gatewayRetryFailedFiles\nPOST {{host}}/v1/files/retry\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022file_ids\u0022: [\n    \u002200000000-0000-0000-0000-000000000000\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: The retry request is being processed\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "gatewayRetryFailedFiles",
+      "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "Text generation",
+      "Slug": "completions",
+      "Description": "Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don\u0027t require conversational context.",
+      "Language": "csharp",
+      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.CompletionsRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022palmyra-x-003-instruct\u0022\u0022,\n  \u0022\u0022prompt\u0022\u0022: \u0022\u0022Write me an SEO article about...\u0022\u0022,\n  \u0022\u0022max_tokens\u0022\u0022: 150,\n  \u0022\u0022temperature\u0022\u0022: 0.7,\n  \u0022\u0022top_p\u0022\u0022: 0.9,\n  \u0022\u0022stop\u0022\u0022: [\n    \u0022\u0022.\u0022\u0022\n  ],\n  \u0022\u0022best_of\u0022\u0022: 1,\n  \u0022\u0022random_seed\u0022\u0022: 42,\n  \u0022\u0022stream\u0022\u0022: false\n}\u0022)!;\n\nvar response = await client.GenerationApi.CompletionsAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022choices\u0022: [\n//     {\n//       \u0022text\u0022: \u0022Sure! Here\\u0027s a search engine optimized article about...\u0022,\n//       \u0022log_probs\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022\n//     }\n//   ],\n//   \u0022model\u0022: \u0022palmyra-x-003-instruct\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "completions",
+      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 7,
+      "Title": "Generate from application",
+      "Slug": "generatecontent",
+      "Description": "Generate content from an existing no-code agent (formerly called no-code applications) with inputs.",
+      "Language": "http",
+      "Code": "### Generate from application\n# @name generateContent\nPOST {{host}}/v1/applications/{{application_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json, text/event-stream\n\n{\n  \u0022inputs\u0022: [\n    {\n      \u0022id\u0022: \u0022string\u0022,\n      \u0022value\u0022: []\n    }\n  ],\n  \u0022stream\u0022: true\n}\n\n## Responses\n# 200\n# Content-Type: application/json, text/event-stream",
+      "Format": "http",
+      "OperationId": "generateContent",
+      "Setup": null
+    },
+    {
+      "Order": 8,
+      "Title": "List models",
+      "Slug": "models",
+      "Description": "Retrieve a list of available models that can be used for text generation, chat completions, and other AI tasks.",
+      "Language": "csharp",
+      "Code": "using var client = new WriterClient(apiKey);\nvar response = await client.GenerationApi.ModelsAsync();\n\n// Example response:\n// {\n//   \u0022models\u0022: [\n//     {\n//       \u0022name\u0022: \u0022Palmyra X 003 Instruct\u0022,\n//       \u0022id\u0022: \u0022palmyra-x-003-instruct\u0022\n//     },\n//     {\n//       \u0022name\u0022: \u0022Palmyra Med\u0022,\n//       \u0022id\u0022: \u0022palmyra-med\u0022\n//     },\n//     {\n//       \u0022name\u0022: \u0022Palmyra Financial\u0022,\n//       \u0022id\u0022: \u0022palmyra-fin\u0022\n//     },\n//     {\n//       \u0022name\u0022: \u0022Palmyra X4\u0022,\n//       \u0022id\u0022: \u0022palmyra-x4\u0022\n//     },\n//     {\n//       \u0022name\u0022: \u0022Palmyra X5\u0022,\n//       \u0022id\u0022: \u0022palmyra-x5\u0022\n//     },\n//     {\n//       \u0022name\u0022: \u0022Palmyra Creative\u0022,\n//       \u0022id\u0022: \u0022palmyra-creative\u0022\n//     }\n//   ]\n// }",
+      "Format": "sdk",
+      "OperationId": "models",
+      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 9,
+      "Title": "Delete graph",
+      "Slug": "deletegraph",
+      "Description": "Delete a Knowledge Graph.",
+      "Language": "http",
+      "Code": "### Delete graph\n# @name deleteGraph\nDELETE {{host}}/v1/graphs/{{graph_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "deleteGraph",
+      "Setup": null
+    },
+    {
+      "Order": 10,
+      "Title": "Question",
+      "Slug": "question",
+      "Description": "Ask a question to specified Knowledge Graphs.",
+      "Language": "http",
+      "Code": "### Question\n# @name question\nPOST {{host}}/v1/graphs/question\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json, text/event-stream\n\n{\n  \u0022graph_ids\u0022: [\n    \u002200000000-0000-0000-0000-000000000000\u0022\n  ],\n  \u0022subqueries\u0022: false,\n  \u0022question\u0022: \u0022string\u0022,\n  \u0022stream\u0022: false,\n  \u0022query_config\u0022: {\n    \u0022max_subquestions\u0022: 6,\n    \u0022search_weight\u0022: 50,\n    \u0022grounding_level\u0022: 0,\n    \u0022max_snippets\u0022: 30,\n    \u0022max_tokens\u0022: 4000,\n    \u0022keyword_threshold\u0022: 0.7,\n    \u0022semantic_threshold\u0022: 0.7,\n    \u0022inline_citations\u0022: false\n  }\n}\n\n## Responses\n# 200\n# Content-Type: application/json, text/event-stream",
+      "Format": "http",
+      "OperationId": "question",
+      "Setup": null
+    },
+    {
+      "Order": 11,
+      "Title": "Remove file from graph",
+      "Slug": "removefilefromgraph",
+      "Description": "Remove a file from a Knowledge Graph.",
+      "Language": "http",
+      "Code": "### Remove file from graph\n# @name removeFileFromGraph\nDELETE {{host}}/v1/graphs/{{graph_id}}/file/{{file_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "removeFileFromGraph",
+      "Setup": null
+    },
+    {
+      "Order": 12,
+      "Title": "Text-to-graph",
+      "Slug": "text-to-graph",
+      "Description": "Performs name entity recognition on the supplied text accepting a maximum of 35000 words.",
+      "Language": "http",
+      "Code": "### Text-to-graph\nPOST {{host}}/v1/tools/text-to-graph\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022text\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createToolsTextToGraph",
+      "Setup": null
+    },
+    {
+      "Order": 13,
+      "Title": "Web search",
+      "Slug": "web-search",
+      "Description": "Search the web for information about a given query and return relevant results with source URLs.",
+      "Language": "csharp",
+      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.WebSearchRequest\u003E(\n    @\u0022{\n  \u0022\u0022query\u0022\u0022: \u0022\u0022How do I get an API key for the Writer API?\u0022\u0022,\n  \u0022\u0022include_domains\u0022\u0022: [\n    \u0022\u0022dev.writer.com\u0022\u0022\n  ]\n}\u0022)!;\n\nvar response = await client.ToolsApi.CreateToolsWebSearchAsync(\n    request: request\n);",
+      "Format": "sdk",
+      "OperationId": "createToolsWebSearch",
+      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 14,
+      "Title": "Translate text",
+      "Slug": "translate-text",
+      "Description": "Translate text from one language to another.",
+      "Language": "csharp",
+      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.TranslationRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022palmyra-translate\u0022\u0022,\n  \u0022\u0022source_language_code\u0022\u0022: \u0022\u0022en\u0022\u0022,\n  \u0022\u0022target_language_code\u0022\u0022: \u0022\u0022es\u0022\u0022,\n  \u0022\u0022text\u0022\u0022: \u0022\u0022Hello, world!\u0022\u0022,\n  \u0022\u0022formality\u0022\u0022: true,\n  \u0022\u0022length_control\u0022\u0022: true,\n  \u0022\u0022mask_profanity\u0022\u0022: true\n}\u0022)!;\n\nvar response = await client.Translation.CreateTranslationAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022data\u0022: \u0022\\u00A1Hola, mundo!\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "createTranslation",
+      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 15,
+      "Title": "Analyze images",
+      "Slug": "analyze-images",
+      "Description": "Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.",
+      "Language": "csharp",
+      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.VisionRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022palmyra-vision\u0022\u0022,\n  \u0022\u0022variables\u0022\u0022: [\n    {\n      \u0022\u0022name\u0022\u0022: \u0022\u0022image_1\u0022\u0022,\n      \u0022\u0022file_id\u0022\u0022: \u0022\u0022f1234\u0022\u0022\n    },\n    {\n      \u0022\u0022name\u0022\u0022: \u0022\u0022image_2\u0022\u0022,\n      \u0022\u0022file_id\u0022\u0022: \u0022\u0022f9876\u0022\u0022\n    }\n  ],\n  \u0022\u0022prompt\u0022\u0022: \u0022\u0022Describe the difference between the image {{image_1}} and the image {{image_2}}.\u0022\u0022\n}\u0022)!;\n\nvar response = await client.Vision.CreateVisionAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022data\u0022: \u0022Image f1234 shows a densely crowded urban beach with many umbrellas, while image f9876 depicts a sparsely populated tropical beach with clear turquoise water and lush greenery\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "createVision",
+      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    }
+  ]
+}

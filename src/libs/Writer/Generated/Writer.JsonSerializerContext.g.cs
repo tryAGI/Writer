@@ -117,18 +117,6 @@ namespace Writer
 
             typeof(global::Writer.JsonConverters.StringToolChoiceOptionsNullableJsonConverter),
 
-            typeof(global::Writer.JsonConverters.AiDetectionResponseLabelJsonConverter),
-
-            typeof(global::Writer.JsonConverters.AiDetectionResponseLabelNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.ComprehendMedicalTypeJsonConverter),
-
-            typeof(global::Writer.JsonConverters.ComprehendMedicalTypeNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.SplittingStrategyJsonConverter),
-
-            typeof(global::Writer.JsonConverters.SplittingStrategyNullableJsonConverter),
-
             typeof(global::Writer.JsonConverters.PdfConversionFormatJsonConverter),
 
             typeof(global::Writer.JsonConverters.PdfConversionFormatNullableJsonConverter),
@@ -377,29 +365,9 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.StringToolChoice))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.JsonObjectToolChoice))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.StringToolChoiceOptions), TypeInfoPropertyName = "StringToolChoiceOptions2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.AiDetectionRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.AiDetectionResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.AiDetectionResponseLabel), TypeInfoPropertyName = "AiDetectionResponseLabel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ComprehendMedicalRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ComprehendMedicalType), TypeInfoPropertyName = "ComprehendMedicalType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.MedicalComprehendResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.MedicalComprehendEntity>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.MedicalComprehendEntity))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.MedicalComprehendTrait>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.MedicalComprehendTrait))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.MedicalComprehendConcept>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.MedicalComprehendConcept))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.MedicalComprehendAttribute>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.MedicalComprehendAttribute))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ContextAwareTextSplittingRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.SplittingStrategy), TypeInfoPropertyName = "SplittingStrategy2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ContextAwareSplittingResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ParsePdfRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.PdfConversionFormat), TypeInfoPropertyName = "PdfConversionFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ParsePdfResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TextToGraphRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TextToGraphResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionRequestModel), TypeInfoPropertyName = "VisionRequestModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable>))]
@@ -471,11 +439,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.FileUploadType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.GenerateApplicationChunkStage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.VisionToolRequestFileVariable>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.MedicalComprehendEntity>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.MedicalComprehendTrait>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.MedicalComprehendConcept>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.MedicalComprehendAttribute>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.VisionRequestFileVariable>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.WebSearchResponseSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.File>))]

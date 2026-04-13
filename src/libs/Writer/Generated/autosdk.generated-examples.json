@@ -123,17 +123,6 @@
     },
     {
       "Order": 12,
-      "Title": "Text-to-graph",
-      "Slug": "text-to-graph",
-      "Description": "Performs name entity recognition on the supplied text accepting a maximum of 35000 words.",
-      "Language": "http",
-      "Code": "### Text-to-graph\nPOST {{host}}/v1/tools/text-to-graph\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022text\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "createToolsTextToGraph",
-      "Setup": null
-    },
-    {
-      "Order": 13,
       "Title": "Web search",
       "Slug": "web-search",
       "Description": "Search the web for information about a given query and return relevant results with source URLs.",
@@ -144,7 +133,7 @@
       "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 14,
+      "Order": 13,
       "Title": "Translate text",
       "Slug": "translate-text",
       "Description": "Translate text from one language to another.",
@@ -155,7 +144,7 @@
       "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 15,
+      "Order": 14,
       "Title": "Analyze images",
       "Slug": "analyze-images",
       "Description": "Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.",

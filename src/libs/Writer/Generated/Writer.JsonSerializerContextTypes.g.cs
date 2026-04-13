@@ -672,255 +672,175 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.AiDetectionRequest? Type161 { get; set; }
+        public global::Writer.ParsePdfRequest? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.AiDetectionResponse? Type162 { get; set; }
+        public global::Writer.PdfConversionFormat? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.AiDetectionResponseLabel? Type163 { get; set; }
+        public global::Writer.ParsePdfResponse? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.ComprehendMedicalRequest? Type164 { get; set; }
+        public global::Writer.VisionRequest? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.ComprehendMedicalType? Type165 { get; set; }
+        public global::Writer.VisionRequestModel? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.MedicalComprehendResponse? Type166 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable>? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.MedicalComprehendEntity>? Type167 { get; set; }
+        public global::Writer.VisionRequestFileVariable? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.MedicalComprehendEntity? Type168 { get; set; }
+        public global::Writer.VisionResponse? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.MedicalComprehendTrait>? Type169 { get; set; }
+        public global::Writer.TranslationRequest? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.MedicalComprehendTrait? Type170 { get; set; }
+        public global::Writer.TranslationRequestModel? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.MedicalComprehendConcept>? Type171 { get; set; }
+        public global::Writer.TranslationResponse? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.MedicalComprehendConcept? Type172 { get; set; }
+        public global::Writer.TranslationToolType? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.MedicalComprehendAttribute>? Type173 { get; set; }
+        public global::Writer.TranslationFunction? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.MedicalComprehendAttribute? Type174 { get; set; }
+        public global::Writer.TranslationFunctionModel? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.ContextAwareTextSplittingRequest? Type175 { get; set; }
+        public global::Writer.WebSearchRequest? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.SplittingStrategy? Type176 { get; set; }
+        public global::Writer.WebSearchRequestTopic? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.ContextAwareSplittingResponse? Type177 { get; set; }
+        public global::Writer.WebSearchRequestSearchDepth? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.ParsePdfRequest? Type178 { get; set; }
+        public global::Writer.WebSearchRequestTimeRange? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.PdfConversionFormat? Type179 { get; set; }
+        public global::Writer.OneOf<global::Writer.WebSearchRequestIncludeRawContent?, bool?>? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.ParsePdfResponse? Type180 { get; set; }
+        public global::Writer.WebSearchRequestIncludeRawContent? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.TextToGraphRequest? Type181 { get; set; }
+        public global::Writer.WebSearchRequestCountry? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.TextToGraphResponse? Type182 { get; set; }
+        public global::Writer.WebSearchResponse? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Type183 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.WebSearchResponseSource>? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.VisionRequest? Type184 { get; set; }
+        public global::Writer.WebSearchResponseSource? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.VisionRequestModel? Type185 { get; set; }
+        public global::Writer.WebSearchToolType? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable>? Type186 { get; set; }
+        public global::Writer.WebSearchFunction? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.VisionRequestFileVariable? Type187 { get; set; }
+        public global::Writer.TextFragment? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.VisionResponse? Type188 { get; set; }
+        public global::Writer.ImageFragment? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.TranslationRequest? Type189 { get; set; }
+        public global::Writer.TextFragmentType? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.TranslationRequestModel? Type190 { get; set; }
+        public global::Writer.ImageFragmentType? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.TranslationResponse? Type191 { get; set; }
+        public global::Writer.ImageFragmentImageUrl? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.TranslationToolType? Type192 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.File>? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.TranslationFunction? Type193 { get; set; }
+        public global::Writer.File? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.TranslationFunctionModel? Type194 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.Web>? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.WebSearchRequest? Type195 { get; set; }
+        public global::Writer.Web? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.WebSearchRequestTopic? Type196 { get; set; }
+        public byte[]? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.WebSearchRequestSearchDepth? Type197 { get; set; }
+        public global::Writer.FindGraphsWithFileStatusOrder? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.WebSearchRequestTimeRange? Type198 { get; set; }
+        public global::Writer.GatewayGetFilesOrder? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.OneOf<global::Writer.WebSearchRequestIncludeRawContent?, bool?>? Type199 { get; set; }
+        public global::Writer.GatewayGetFilesStatus? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.WebSearchRequestIncludeRawContent? Type200 { get; set; }
+        public global::Writer.GetApplicationsOrder? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.WebSearchRequestCountry? Type201 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Writer.WebSearchResponse? Type202 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.StreamingData>? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.WebSearchResponseSource>? Type203 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.WebSearchResponseSource? Type204 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.WebSearchToolType? Type205 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.WebSearchFunction? Type206 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.TextFragment? Type207 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.ImageFragment? Type208 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.TextFragmentType? Type209 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.ImageFragmentType? Type210 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.ImageFragmentImageUrl? Type211 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.File>? Type212 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.File? Type213 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.Web>? Type214 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.Web? Type215 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public byte[]? Type216 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.FindGraphsWithFileStatusOrder? Type217 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.GatewayGetFilesOrder? Type218 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.GatewayGetFilesStatus? Type219 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Writer.GetApplicationsOrder? Type220 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>? Type221 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.StreamingData>? Type222 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.GenerateApplicationResponseChunk>? Type223 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.GenerateApplicationResponseChunk>? Type203 { get; set; }
 
         /// <summary>
         /// 
@@ -1049,50 +969,30 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.MedicalComprehendEntity>? ListType31 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.VisionRequestFileVariable>? ListType31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.MedicalComprehendTrait>? ListType32 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.WebSearchResponseSource>? ListType32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.MedicalComprehendConcept>? ListType33 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.File>? ListType33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.MedicalComprehendAttribute>? ListType34 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.Web>? ListType34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>? ListType35 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.ChatCompletionChunk>? ListType35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.VisionRequestFileVariable>? ListType36 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.StreamingData>? ListType36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.WebSearchResponseSource>? ListType37 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.File>? ListType38 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.Web>? ListType39 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.ChatCompletionChunk>? ListType40 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.StreamingData>? ListType41 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.GenerateApplicationResponseChunk>? ListType42 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.GenerateApplicationResponseChunk>? ListType37 { get; set; }
     }
 }

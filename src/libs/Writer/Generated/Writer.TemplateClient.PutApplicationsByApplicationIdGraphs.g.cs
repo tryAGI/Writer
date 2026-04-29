@@ -145,7 +145,7 @@ namespace Writer
                 PreparePutApplicationsByApplicationIdGraphsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    applicationId: applicationId,
+                    applicationId: applicationId!,
                     request: request);
 
                 return __httpRequest;

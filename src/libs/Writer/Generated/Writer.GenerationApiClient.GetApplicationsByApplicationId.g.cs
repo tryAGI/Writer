@@ -129,7 +129,7 @@ namespace Writer
                 PrepareGetApplicationsByApplicationIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    applicationId: applicationId);
+                    applicationId: applicationId!);
 
                 return __httpRequest;
             }

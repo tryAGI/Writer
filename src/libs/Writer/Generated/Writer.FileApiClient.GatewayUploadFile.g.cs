@@ -169,9 +169,9 @@ namespace Writer
                 PrepareGatewayUploadFileRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentDisposition: contentDisposition,
-                    contentType: contentType,
-                    contentLength: contentLength,
+                    contentDisposition: contentDisposition!,
+                    contentType: contentType!,
+                    contentLength: contentLength!,
                     graphId: graphId,
                     request: request);
 

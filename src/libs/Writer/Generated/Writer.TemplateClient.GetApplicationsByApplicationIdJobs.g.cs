@@ -151,7 +151,7 @@ namespace Writer
                 PrepareGetApplicationsByApplicationIdJobsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    applicationId: applicationId,
+                    applicationId: applicationId!,
                     status: status,
                     offset: offset,
                     limit: limit);

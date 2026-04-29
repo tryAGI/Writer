@@ -145,7 +145,7 @@ namespace Writer
                 PrepareCreateToolsPdfParserByFileIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fileId: fileId,
+                    fileId: fileId!,
                     request: request);
 
                 return __httpRequest;

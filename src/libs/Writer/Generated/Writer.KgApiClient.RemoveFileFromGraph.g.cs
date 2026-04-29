@@ -134,8 +134,8 @@ namespace Writer
                 PrepareRemoveFileFromGraphRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    graphId: graphId,
-                    fileId: fileId);
+                    graphId: graphId!,
+                    fileId: fileId!);
 
                 return __httpRequest;
             }

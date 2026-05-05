@@ -27,6 +27,25 @@ namespace Writer
         /// Web search<br/>
         /// Search the web for information about a given query and return relevant results with source URLs.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Writer.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request POST https://api.writer.com/v1/tools/web-search \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
+        ///  --header "Content-Type: application/json" \<br/>
+        /// --data-raw '{"query":"How do I get an API key for the Writer API?","include_domains":["dev.writer.com"]}'
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::Writer.AutoSDKHttpResponse<global::Writer.WebSearchResponse>> CreateToolsWebSearchAsResponseAsync(
+
+            global::Writer.WebSearchRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Web search<br/>
+        /// Search the web for information about a given query and return relevant results with source URLs.
+        /// </summary>
         /// <param name="query">
         /// The search query.
         /// </param>

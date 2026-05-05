@@ -27,6 +27,25 @@ namespace Writer
         /// Question<br/>
         /// Ask a question to specified Knowledge Graphs.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Writer.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request POST https://api.writer.com/v1/graphs/question \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
+        ///  --header "Content-Type: application/json" \<br/>
+        /// --data-raw '{"graph_ids":["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],"question":"What is the generic name for the drug Bavencio?"}'
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::Writer.AutoSDKHttpResponse<global::Writer.QuestionResponse>> QuestionAsResponseAsync(
+
+            global::Writer.QuestionRequest request,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Question<br/>
+        /// Ask a question to specified Knowledge Graphs.
+        /// </summary>
         /// <param name="graphIds">
         /// The unique identifiers of the Knowledge Graphs to query.
         /// </param>

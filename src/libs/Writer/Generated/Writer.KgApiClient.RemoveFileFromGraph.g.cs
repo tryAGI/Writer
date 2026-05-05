@@ -62,6 +62,34 @@ namespace Writer
             global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await RemoveFileFromGraphAsResponseAsync(
+                graphId: graphId,
+                fileId: fileId,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Remove file from graph<br/>
+        /// Remove a file from a Knowledge Graph.
+        /// </summary>
+        /// <param name="graphId"></param>
+        /// <param name="fileId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Writer.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request DELETE https://api.writer.com/v1/graphs/{graph_id}/file/{file_id} \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;"
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::Writer.AutoSDKHttpResponse<global::Writer.DeleteFileResponse>> RemoveFileFromGraphAsResponseAsync(
+            global::System.Guid graphId,
+            string fileId,
+            global::Writer.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareRemoveFileFromGraphArguments(
@@ -91,6 +119,7 @@ namespace Writer
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Writer.PathBuilder(
                                 path: $"/v1/graphs/{graphId}/file/{fileId}",
                                 baseUri: HttpClient.BaseAddress);
@@ -165,6 +194,8 @@ namespace Writer
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -175,6 +206,11 @@ namespace Writer
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Writer.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Writer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -192,6 +228,8 @@ namespace Writer
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -201,8 +239,7 @@ namespace Writer
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Writer.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -211,6 +248,11 @@ namespace Writer
                         __attempt < __maxAttempts &&
                         global::Writer.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Writer.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Writer.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Writer.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -227,14 +269,15 @@ namespace Writer
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Writer.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -274,6 +317,8 @@ namespace Writer
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -294,6 +339,8 @@ namespace Writer
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -318,9 +365,13 @@ namespace Writer
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Writer.DeleteFileResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Writer.DeleteFileResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Writer.AutoSDKHttpResponse<global::Writer.DeleteFileResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Writer.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -348,9 +399,13 @@ namespace Writer
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Writer.DeleteFileResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Writer.DeleteFileResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Writer.AutoSDKHttpResponse<global::Writer.DeleteFileResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Writer.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

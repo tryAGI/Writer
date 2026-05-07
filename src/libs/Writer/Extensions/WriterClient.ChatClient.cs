@@ -109,10 +109,8 @@ public partial class WriterClient : Meai.IChatClient
         // Accumulate tool call chunks by index so we can emit complete arguments
         var toolCallBuilders = new Dictionary<int, (string Id, string Name, StringBuilder Args)>();
 
-        await foreach (var chunks in GenerationApi.ChatAsStreamAsync(request, cancellationToken: cancellationToken).ConfigureAwait(false))
+        await foreach (var chunk in GenerationApi.ChatAsStreamAsync(request, cancellationToken: cancellationToken).ConfigureAwait(false))
         {
-            foreach (var chunk in chunks)
-            {
                 if (chunk.Choices is not { Count: > 0 })
                 {
                     // Last chunk with usage only
@@ -227,7 +225,6 @@ public partial class WriterClient : Meai.IChatClient
 
                     yield return update;
                 }
-            }
         }
     }
 

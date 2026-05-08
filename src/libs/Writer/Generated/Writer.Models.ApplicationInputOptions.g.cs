@@ -27,6 +27,19 @@ namespace Writer
         public bool IsDropdown => Dropdown != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDropdown(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.ApplicationInputDropdownOptions? value)
+        {
+            value = Dropdown;
+            return IsDropdown;
+        }
+
+        /// <summary>
         /// Configuration options specific to file upload input fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.ApplicationInputFileOptions? value)
+        {
+            value = File;
+            return IsFile;
+        }
 
         /// <summary>
         /// Configuration options specific to media upload input fields.
@@ -61,6 +87,19 @@ namespace Writer
         public bool IsMedia => Media != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMedia(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.ApplicationInputMediaOptions? value)
+        {
+            value = Media;
+            return IsMedia;
+        }
+
+        /// <summary>
         /// Configuration options specific to text input fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.ApplicationInputTextOptions? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,10 +248,10 @@ namespace Writer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Writer.ApplicationInputDropdownOptions?, TResult>? dropdown = null,
-            global::System.Func<global::Writer.ApplicationInputFileOptions?, TResult>? file = null,
-            global::System.Func<global::Writer.ApplicationInputMediaOptions?, TResult>? media = null,
-            global::System.Func<global::Writer.ApplicationInputTextOptions?, TResult>? text = null,
+            global::System.Func<global::Writer.ApplicationInputDropdownOptions, TResult>? dropdown = null,
+            global::System.Func<global::Writer.ApplicationInputFileOptions, TResult>? file = null,
+            global::System.Func<global::Writer.ApplicationInputMediaOptions, TResult>? media = null,
+            global::System.Func<global::Writer.ApplicationInputTextOptions, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +283,46 @@ namespace Writer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Writer.ApplicationInputDropdownOptions?>? dropdown = null,
-            global::System.Action<global::Writer.ApplicationInputFileOptions?>? file = null,
-            global::System.Action<global::Writer.ApplicationInputMediaOptions?>? media = null,
-            global::System.Action<global::Writer.ApplicationInputTextOptions?>? text = null,
+            global::System.Action<global::Writer.ApplicationInputDropdownOptions>? dropdown = null,
+
+            global::System.Action<global::Writer.ApplicationInputFileOptions>? file = null,
+
+            global::System.Action<global::Writer.ApplicationInputMediaOptions>? media = null,
+
+            global::System.Action<global::Writer.ApplicationInputTextOptions>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDropdown)
+            {
+                dropdown?.Invoke(Dropdown!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsMedia)
+            {
+                media?.Invoke(Media!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Writer.ApplicationInputDropdownOptions>? dropdown = null,
+            global::System.Action<global::Writer.ApplicationInputFileOptions>? file = null,
+            global::System.Action<global::Writer.ApplicationInputMediaOptions>? media = null,
+            global::System.Action<global::Writer.ApplicationInputTextOptions>? text = null,
             bool validate = true)
         {
             if (validate)

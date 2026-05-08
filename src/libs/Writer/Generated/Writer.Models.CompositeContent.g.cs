@@ -27,6 +27,19 @@ namespace Writer
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.TextFragment? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// Represents an image content fragment within a chat message. Note: This content type is only supported with the Palmyra X5 model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.ImageFragment? value)
+        {
+            value = Image;
+            return IsImage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Writer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Writer.TextFragment?, TResult>? text = null,
-            global::System.Func<global::Writer.ImageFragment?, TResult>? image = null,
+            global::System.Func<global::Writer.TextFragment, TResult>? text = null,
+            global::System.Func<global::Writer.ImageFragment, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Writer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Writer.TextFragment?>? text = null,
-            global::System.Action<global::Writer.ImageFragment?>? image = null,
+            global::System.Action<global::Writer.TextFragment>? text = null,
+
+            global::System.Action<global::Writer.ImageFragment>? image = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Writer.TextFragment>? text = null,
+            global::System.Action<global::Writer.ImageFragment>? image = null,
             bool validate = true)
         {
             if (validate)

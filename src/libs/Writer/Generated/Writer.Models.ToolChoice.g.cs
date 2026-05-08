@@ -33,6 +33,19 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.StringToolChoice? value)
+        {
+            value = String;
+            return IsString;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.JsonObjectToolChoice? JsonObject { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.JsonObjectToolChoice? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,8 +148,8 @@ namespace Writer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Writer.StringToolChoice?, TResult>? @string = null,
-            global::System.Func<global::Writer.JsonObjectToolChoice?, TResult>? jsonObject = null,
+            global::System.Func<global::Writer.StringToolChoice, TResult>? @string = null,
+            global::System.Func<global::Writer.JsonObjectToolChoice, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -147,8 +173,32 @@ namespace Writer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Writer.StringToolChoice?>? @string = null,
-            global::System.Action<global::Writer.JsonObjectToolChoice?>? jsonObject = null,
+            global::System.Action<global::Writer.StringToolChoice>? @string = null,
+
+            global::System.Action<global::Writer.JsonObjectToolChoice>? jsonObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Writer.StringToolChoice>? @string = null,
+            global::System.Action<global::Writer.JsonObjectToolChoice>? jsonObject = null,
             bool validate = true)
         {
             if (validate)

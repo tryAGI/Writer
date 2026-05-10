@@ -114,5 +114,6 @@ namespace Writer
         public TranslationRequest()
         {
         }
+
     }
 }

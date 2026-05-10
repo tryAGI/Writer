@@ -132,5 +132,6 @@ namespace Writer
         public CompletionsRequest()
         {
         }
+
     }
 }

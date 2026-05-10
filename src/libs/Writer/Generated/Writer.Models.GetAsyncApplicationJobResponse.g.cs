@@ -121,5 +121,6 @@ namespace Writer
         public GetAsyncApplicationJobResponse()
         {
         }
+
     }
 }

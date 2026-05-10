@@ -67,5 +67,6 @@ namespace Writer
         public GenerateApplicationAsyncResponse()
         {
         }
+
     }
 }

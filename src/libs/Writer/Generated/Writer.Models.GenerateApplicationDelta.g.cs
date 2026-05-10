@@ -63,5 +63,6 @@ namespace Writer
         public GenerateApplicationDelta()
         {
         }
+
     }
 }

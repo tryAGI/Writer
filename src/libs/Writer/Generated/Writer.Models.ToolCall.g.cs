@@ -69,5 +69,6 @@ namespace Writer
         public ToolCall()
         {
         }
+
     }
 }

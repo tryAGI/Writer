@@ -124,5 +124,6 @@ namespace Writer
         public ChatResponse()
         {
         }
+
     }
 }

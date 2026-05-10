@@ -46,6 +46,13 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public global::Writer.StringToolChoice PickString() => IsString
+            ? String!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.JsonObjectToolChoice? JsonObject { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Writer
             value = JsonObject;
             return IsJsonObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.JsonObjectToolChoice PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -93,6 +107,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoice FromString(global::Writer.StringToolChoice? value) => new ToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoice(global::Writer.JsonObjectToolChoice value) => new ToolChoice((global::Writer.JsonObjectToolChoice?)value);
 
         /// <summary>
@@ -107,6 +126,11 @@ namespace Writer
         {
             JsonObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoice FromJsonObject(global::Writer.JsonObjectToolChoice? value) => new ToolChoice(value);
 
         /// <summary>
         /// 

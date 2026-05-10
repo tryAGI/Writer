@@ -53,5 +53,6 @@ namespace Writer
         public CompletionsResponse()
         {
         }
+
     }
 }

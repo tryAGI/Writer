@@ -68,5 +68,6 @@ namespace Writer
         public ToolCallStreaming()
         {
         }
+
     }
 }

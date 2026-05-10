@@ -64,5 +64,6 @@ namespace Writer
         public ToolFunction()
         {
         }
+
     }
 }

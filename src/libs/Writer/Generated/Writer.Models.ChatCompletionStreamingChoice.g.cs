@@ -85,5 +85,6 @@ namespace Writer
         public ChatCompletionStreamingChoice()
         {
         }
+
     }
 }

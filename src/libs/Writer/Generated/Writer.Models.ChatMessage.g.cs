@@ -102,5 +102,6 @@ namespace Writer
         public ChatMessage()
         {
         }
+
     }
 }

@@ -76,5 +76,6 @@ namespace Writer
         public GetApplicationsResponse()
         {
         }
+
     }
 }

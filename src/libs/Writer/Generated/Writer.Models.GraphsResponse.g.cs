@@ -74,5 +74,6 @@ namespace Writer
         public GraphsResponse()
         {
         }
+
     }
 }

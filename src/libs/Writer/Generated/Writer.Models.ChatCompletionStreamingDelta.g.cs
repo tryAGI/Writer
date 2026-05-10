@@ -96,5 +96,6 @@ namespace Writer
         public ChatCompletionStreamingDelta()
         {
         }
+
     }
 }

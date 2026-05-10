@@ -100,5 +100,6 @@ namespace Writer
         public TranslationFunction()
         {
         }
+
     }
 }

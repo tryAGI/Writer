@@ -51,5 +51,6 @@ namespace Writer
         public CompletionsChoice()
         {
         }
+
     }
 }

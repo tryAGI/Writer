@@ -191,5 +191,6 @@ namespace Writer
         public ChatRequest()
         {
         }
+
     }
 }

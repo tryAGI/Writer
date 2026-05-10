@@ -47,6 +47,13 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public global::Writer.FunctionTool PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.GraphTool? Graph { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public global::Writer.GraphTool PickGraph() => IsGraph
+            ? Graph!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Graph' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.LlmTool? Llm { get; init; }
 #else
@@ -103,6 +117,13 @@ namespace Writer
             value = Llm;
             return IsLlm;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.LlmTool PickLlm() => IsLlm
+            ? Llm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool that uses Palmyra Translate to translate text. Note that this tool does not stream results. The response is returned after the translation is complete.
@@ -137,6 +158,13 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public global::Writer.TranslationTool PickTranslation() => IsTranslation
+            ? Translation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Translation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.VisionTool? Vision { get; init; }
 #else
@@ -167,6 +195,13 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public global::Writer.VisionTool PickVision() => IsVision
+            ? Vision!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vision' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.WebSearchTool? WebSearch { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Writer
             value = WebSearch;
             return IsWebSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.WebSearchTool PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -210,6 +252,11 @@ namespace Writer
         {
             Function = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromFunction(global::Writer.FunctionTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -232,6 +279,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromGraph(global::Writer.GraphTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::Writer.LlmTool value) => new Tool((global::Writer.LlmTool?)value);
 
         /// <summary>
@@ -246,6 +298,11 @@ namespace Writer
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromLlm(global::Writer.LlmTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -268,6 +325,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromTranslation(global::Writer.TranslationTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::Writer.VisionTool value) => new Tool((global::Writer.VisionTool?)value);
 
         /// <summary>
@@ -286,6 +348,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromVision(global::Writer.VisionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::Writer.WebSearchTool value) => new Tool((global::Writer.WebSearchTool?)value);
 
         /// <summary>
@@ -300,6 +367,11 @@ namespace Writer
         {
             WebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromWebSearch(global::Writer.WebSearchTool? value) => new Tool(value);
 
         /// <summary>
         /// 

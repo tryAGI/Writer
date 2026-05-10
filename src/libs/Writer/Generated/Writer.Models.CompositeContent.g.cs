@@ -40,6 +40,13 @@ namespace Writer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.TextFragment PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents an image content fragment within a chat message. Note: This content type is only supported with the Palmyra X5 model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Writer
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.ImageFragment PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static CompositeContent FromText(global::Writer.TextFragment? value) => new CompositeContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CompositeContent(global::Writer.ImageFragment value) => new CompositeContent((global::Writer.ImageFragment?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Writer
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CompositeContent FromImage(global::Writer.ImageFragment? value) => new CompositeContent(value);
 
         /// <summary>
         /// 

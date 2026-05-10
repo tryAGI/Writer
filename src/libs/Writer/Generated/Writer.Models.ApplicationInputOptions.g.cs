@@ -40,6 +40,13 @@ namespace Writer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.ApplicationInputDropdownOptions PickDropdown() => IsDropdown
+            ? Dropdown!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dropdown' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration options specific to file upload input fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Writer
             value = File;
             return IsFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.ApplicationInputFileOptions PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
         /// Configuration options specific to media upload input fields.
@@ -100,6 +114,13 @@ namespace Writer
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.ApplicationInputMediaOptions PickMedia() => IsMedia
+            ? Media!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Media' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration options specific to text input fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace Writer
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.ApplicationInputTextOptions PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +173,11 @@ namespace Writer
         {
             Dropdown = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ApplicationInputOptions FromDropdown(global::Writer.ApplicationInputDropdownOptions? value) => new ApplicationInputOptions(value);
 
         /// <summary>
         /// 
@@ -167,6 +200,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static ApplicationInputOptions FromFile(global::Writer.ApplicationInputFileOptions? value) => new ApplicationInputOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ApplicationInputOptions(global::Writer.ApplicationInputMediaOptions value) => new ApplicationInputOptions((global::Writer.ApplicationInputMediaOptions?)value);
 
         /// <summary>
@@ -185,6 +223,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static ApplicationInputOptions FromMedia(global::Writer.ApplicationInputMediaOptions? value) => new ApplicationInputOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ApplicationInputOptions(global::Writer.ApplicationInputTextOptions value) => new ApplicationInputOptions((global::Writer.ApplicationInputTextOptions?)value);
 
         /// <summary>
@@ -199,6 +242,11 @@ namespace Writer
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ApplicationInputOptions FromText(global::Writer.ApplicationInputTextOptions? value) => new ApplicationInputOptions(value);
 
         /// <summary>
         /// 

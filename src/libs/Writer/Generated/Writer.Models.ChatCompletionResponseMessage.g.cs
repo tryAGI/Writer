@@ -108,5 +108,6 @@ namespace Writer
         public ChatCompletionResponseMessage()
         {
         }
+
     }
 }

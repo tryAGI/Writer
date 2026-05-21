@@ -33,6 +33,26 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.StringToolChoice? value)
+        {
+            value = String;
+            return IsString;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.StringToolChoice PickString() => IsString
+            ? String!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.JsonObjectToolChoice? JsonObject { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.JsonObjectToolChoice? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.JsonObjectToolChoice PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -67,6 +107,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoice FromString(global::Writer.StringToolChoice? value) => new ToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoice(global::Writer.JsonObjectToolChoice value) => new ToolChoice((global::Writer.JsonObjectToolChoice?)value);
 
         /// <summary>
@@ -81,6 +126,11 @@ namespace Writer
         {
             JsonObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoice FromJsonObject(global::Writer.JsonObjectToolChoice? value) => new ToolChoice(value);
 
         /// <summary>
         /// 
@@ -122,8 +172,8 @@ namespace Writer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Writer.StringToolChoice?, TResult>? @string = null,
-            global::System.Func<global::Writer.JsonObjectToolChoice?, TResult>? jsonObject = null,
+            global::System.Func<global::Writer.StringToolChoice, TResult>? @string = null,
+            global::System.Func<global::Writer.JsonObjectToolChoice, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -147,8 +197,32 @@ namespace Writer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Writer.StringToolChoice?>? @string = null,
-            global::System.Action<global::Writer.JsonObjectToolChoice?>? jsonObject = null,
+            global::System.Action<global::Writer.StringToolChoice>? @string = null,
+
+            global::System.Action<global::Writer.JsonObjectToolChoice>? jsonObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Writer.StringToolChoice>? @string = null,
+            global::System.Action<global::Writer.JsonObjectToolChoice>? jsonObject = null,
             bool validate = true)
         {
             if (validate)

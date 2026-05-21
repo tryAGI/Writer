@@ -66,5 +66,6 @@ namespace Writer
         public TranslationData()
         {
         }
+
     }
 }

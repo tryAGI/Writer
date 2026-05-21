@@ -55,5 +55,6 @@ namespace Writer
         public VisionRequestFileVariable()
         {
         }
+
     }
 }

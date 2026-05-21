@@ -40,5 +40,6 @@ namespace Writer
         public PromptTokenDetails()
         {
         }
+
     }
 }

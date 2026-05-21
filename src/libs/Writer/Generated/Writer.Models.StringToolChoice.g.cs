@@ -41,5 +41,6 @@ namespace Writer
         public StringToolChoice()
         {
         }
+
     }
 }

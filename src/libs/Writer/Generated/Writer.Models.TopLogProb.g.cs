@@ -59,5 +59,6 @@ namespace Writer
         public TopLogProb()
         {
         }
+
     }
 }

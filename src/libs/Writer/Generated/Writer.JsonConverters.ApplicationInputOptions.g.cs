@@ -120,6 +120,7 @@ namespace Writer.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ApplicationInputDropdownOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ApplicationInputDropdownOptions> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ApplicationInputDropdownOptions).Name}");
                     dropdown = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -130,9 +131,13 @@ namespace Writer.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (dropdown == null && file == null && media == null && text == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ApplicationInputFileOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ApplicationInputFileOptions> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ApplicationInputFileOptions).Name}");
                     file = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -143,9 +148,13 @@ namespace Writer.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (dropdown == null && file == null && media == null && text == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ApplicationInputMediaOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ApplicationInputMediaOptions> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ApplicationInputMediaOptions).Name}");
                     media = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -156,9 +165,13 @@ namespace Writer.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (dropdown == null && file == null && media == null && text == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ApplicationInputTextOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ApplicationInputTextOptions> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ApplicationInputTextOptions).Name}");
                     text = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

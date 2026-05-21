@@ -56,5 +56,6 @@ namespace Writer
         public GenerateApplicationInput()
         {
         }
+
     }
 }

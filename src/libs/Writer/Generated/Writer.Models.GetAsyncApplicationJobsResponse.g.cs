@@ -60,5 +60,6 @@ namespace Writer
         public GetAsyncApplicationJobsResponse()
         {
         }
+
     }
 }

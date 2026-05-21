@@ -34,6 +34,26 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.FunctionTool? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.FunctionTool PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.GraphTool? Graph { get; init; }
 #else
@@ -51,6 +71,26 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGraph(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.GraphTool? value)
+        {
+            value = Graph;
+            return IsGraph;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.GraphTool PickGraph() => IsGraph
+            ? Graph!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Graph' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.LlmTool? Llm { get; init; }
 #else
@@ -64,6 +104,26 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Llm))]
 #endif
         public bool IsLlm => Llm != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLlm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.LlmTool? value)
+        {
+            value = Llm;
+            return IsLlm;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.LlmTool PickLlm() => IsLlm
+            ? Llm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool that uses Palmyra Translate to translate text. Note that this tool does not stream results. The response is returned after the translation is complete.
@@ -85,6 +145,26 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTranslation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.TranslationTool? value)
+        {
+            value = Translation;
+            return IsTranslation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.TranslationTool PickTranslation() => IsTranslation
+            ? Translation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Translation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.VisionTool? Vision { get; init; }
 #else
@@ -102,6 +182,26 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVision(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.VisionTool? value)
+        {
+            value = Vision;
+            return IsVision;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.VisionTool PickVision() => IsVision
+            ? Vision!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vision' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.WebSearchTool? WebSearch { get; init; }
 #else
@@ -115,6 +215,26 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
 #endif
         public bool IsWebSearch => WebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.WebSearchTool? value)
+        {
+            value = WebSearch;
+            return IsWebSearch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.WebSearchTool PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -132,6 +252,11 @@ namespace Writer
         {
             Function = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromFunction(global::Writer.FunctionTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -154,6 +279,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromGraph(global::Writer.GraphTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::Writer.LlmTool value) => new Tool((global::Writer.LlmTool?)value);
 
         /// <summary>
@@ -168,6 +298,11 @@ namespace Writer
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromLlm(global::Writer.LlmTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -190,6 +325,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromTranslation(global::Writer.TranslationTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::Writer.VisionTool value) => new Tool((global::Writer.VisionTool?)value);
 
         /// <summary>
@@ -208,6 +348,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromVision(global::Writer.VisionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::Writer.WebSearchTool value) => new Tool((global::Writer.WebSearchTool?)value);
 
         /// <summary>
@@ -222,6 +367,11 @@ namespace Writer
         {
             WebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromWebSearch(global::Writer.WebSearchTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -282,12 +432,12 @@ namespace Writer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Writer.FunctionTool?, TResult>? function = null,
-            global::System.Func<global::Writer.GraphTool?, TResult>? graph = null,
-            global::System.Func<global::Writer.LlmTool?, TResult>? llm = null,
-            global::System.Func<global::Writer.TranslationTool?, TResult>? translation = null,
-            global::System.Func<global::Writer.VisionTool?, TResult>? vision = null,
-            global::System.Func<global::Writer.WebSearchTool?, TResult>? webSearch = null,
+            global::System.Func<global::Writer.FunctionTool, TResult>? function = null,
+            global::System.Func<global::Writer.GraphTool, TResult>? graph = null,
+            global::System.Func<global::Writer.LlmTool, TResult>? llm = null,
+            global::System.Func<global::Writer.TranslationTool, TResult>? translation = null,
+            global::System.Func<global::Writer.VisionTool, TResult>? vision = null,
+            global::System.Func<global::Writer.WebSearchTool, TResult>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -327,12 +477,60 @@ namespace Writer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Writer.FunctionTool?>? function = null,
-            global::System.Action<global::Writer.GraphTool?>? graph = null,
-            global::System.Action<global::Writer.LlmTool?>? llm = null,
-            global::System.Action<global::Writer.TranslationTool?>? translation = null,
-            global::System.Action<global::Writer.VisionTool?>? vision = null,
-            global::System.Action<global::Writer.WebSearchTool?>? webSearch = null,
+            global::System.Action<global::Writer.FunctionTool>? function = null,
+
+            global::System.Action<global::Writer.GraphTool>? graph = null,
+
+            global::System.Action<global::Writer.LlmTool>? llm = null,
+
+            global::System.Action<global::Writer.TranslationTool>? translation = null,
+
+            global::System.Action<global::Writer.VisionTool>? vision = null,
+
+            global::System.Action<global::Writer.WebSearchTool>? webSearch = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsGraph)
+            {
+                graph?.Invoke(Graph!);
+            }
+            else if (IsLlm)
+            {
+                llm?.Invoke(Llm!);
+            }
+            else if (IsTranslation)
+            {
+                translation?.Invoke(Translation!);
+            }
+            else if (IsVision)
+            {
+                vision?.Invoke(Vision!);
+            }
+            else if (IsWebSearch)
+            {
+                webSearch?.Invoke(WebSearch!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Writer.FunctionTool>? function = null,
+            global::System.Action<global::Writer.GraphTool>? graph = null,
+            global::System.Action<global::Writer.LlmTool>? llm = null,
+            global::System.Action<global::Writer.TranslationTool>? translation = null,
+            global::System.Action<global::Writer.VisionTool>? vision = null,
+            global::System.Action<global::Writer.WebSearchTool>? webSearch = null,
             bool validate = true)
         {
             if (validate)

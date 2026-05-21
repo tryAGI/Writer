@@ -27,6 +27,26 @@ namespace Writer
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.TextFragment? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.TextFragment PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents an image content fragment within a chat message. Note: This content type is only supported with the Palmyra X5 model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Writer.ImageFragment? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Writer.ImageFragment PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
+        public static CompositeContent FromText(global::Writer.TextFragment? value) => new CompositeContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CompositeContent(global::Writer.ImageFragment value) => new CompositeContent((global::Writer.ImageFragment?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Writer
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CompositeContent FromImage(global::Writer.ImageFragment? value) => new CompositeContent(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Writer
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Writer.TextFragment?, TResult>? text = null,
-            global::System.Func<global::Writer.ImageFragment?, TResult>? image = null,
+            global::System.Func<global::Writer.TextFragment, TResult>? text = null,
+            global::System.Func<global::Writer.ImageFragment, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Writer
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Writer.TextFragment?>? text = null,
-            global::System.Action<global::Writer.ImageFragment?>? image = null,
+            global::System.Action<global::Writer.TextFragment>? text = null,
+
+            global::System.Action<global::Writer.ImageFragment>? image = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Writer.TextFragment>? text = null,
+            global::System.Action<global::Writer.ImageFragment>? image = null,
             bool validate = true)
         {
             if (validate)

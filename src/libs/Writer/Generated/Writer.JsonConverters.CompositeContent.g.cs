@@ -86,6 +86,7 @@ namespace Writer.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.TextFragment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.TextFragment> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.TextFragment).Name}");
                     text = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -96,9 +97,13 @@ namespace Writer.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (text == null && image == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ImageFragment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ImageFragment> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ImageFragment).Name}");
                     image = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

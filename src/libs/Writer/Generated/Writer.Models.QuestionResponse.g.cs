@@ -84,5 +84,6 @@ namespace Writer
         public QuestionResponse()
         {
         }
+
     }
 }

@@ -42,5 +42,6 @@ namespace Writer
         public ApplicationGraphIdsRequest()
         {
         }
+
     }
 }

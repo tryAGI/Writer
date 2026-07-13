@@ -72,11 +72,6 @@ namespace Writer
         /// <summary>
         /// 
         /// </summary>
-        public TranslationClient Translation { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public VisionClient Vision { get; }
 
     }

@@ -125,10 +125,6 @@ namespace Writer
 
             typeof(global::Writer.JsonConverters.VisionRequestModelNullableJsonConverter),
 
-            typeof(global::Writer.JsonConverters.TranslationRequestModelJsonConverter),
-
-            typeof(global::Writer.JsonConverters.TranslationRequestModelNullableJsonConverter),
-
             typeof(global::Writer.JsonConverters.TranslationToolTypeJsonConverter),
 
             typeof(global::Writer.JsonConverters.TranslationToolTypeNullableJsonConverter),
@@ -373,9 +369,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionRequestFileVariable))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationRequestModel), TypeInfoPropertyName = "TranslationRequestModel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationToolType), TypeInfoPropertyName = "TranslationToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationFunction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationFunctionModel), TypeInfoPropertyName = "TranslationFunctionModel2")]

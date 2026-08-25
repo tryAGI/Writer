@@ -201,7 +201,7 @@ namespace Writer
 
 
                             var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
-                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
                             __httpRequest.Content = __httpRequestContent;
                 global::Writer.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

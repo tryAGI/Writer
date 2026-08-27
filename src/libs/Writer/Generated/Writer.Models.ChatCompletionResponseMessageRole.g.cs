@@ -9,7 +9,7 @@ namespace Writer
     public enum ChatCompletionResponseMessageRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
     }

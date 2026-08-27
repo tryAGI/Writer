@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CompletionsChoice
     {
@@ -16,7 +16,7 @@ namespace Writer
         public required string Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("log_probs")]
         public global::Writer.Logprobs? LogProbs { get; set; }

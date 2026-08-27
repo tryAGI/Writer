@@ -20,7 +20,7 @@ namespace Writer.JsonConverters
                     {
                         return global::Writer.VisionRequestModelExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

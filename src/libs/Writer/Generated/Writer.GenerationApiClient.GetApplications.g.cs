@@ -193,7 +193,7 @@ namespace Writer
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::Writer.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

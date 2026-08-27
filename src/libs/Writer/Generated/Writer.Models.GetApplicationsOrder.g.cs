@@ -9,11 +9,11 @@ namespace Writer
     public enum GetApplicationsOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

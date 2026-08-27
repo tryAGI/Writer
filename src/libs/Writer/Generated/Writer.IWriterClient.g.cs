@@ -39,38 +39,38 @@ namespace Writer
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FileApiClient FileApi { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerationApiClient GenerationApi { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public KgApiClient KgApi { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TemplateClient Template { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsApiClient ToolsApi { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VisionClient Vision { get; }
 

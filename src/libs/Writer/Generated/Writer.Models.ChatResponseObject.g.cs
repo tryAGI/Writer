@@ -9,7 +9,7 @@ namespace Writer
     public enum ChatResponseObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatCompletion,
     }

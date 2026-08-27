@@ -9,11 +9,11 @@ namespace Writer
     public enum FindGraphsWithFileStatusOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

@@ -10,11 +10,11 @@ namespace Writer
     public enum WebSearchRequestTopic
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         General,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         News,
     }

@@ -9,11 +9,11 @@ namespace Writer
     public enum FileUploadType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Url,
     }

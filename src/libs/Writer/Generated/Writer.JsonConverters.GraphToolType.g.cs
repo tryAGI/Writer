@@ -20,7 +20,7 @@ namespace Writer.JsonConverters
                     {
                         return global::Writer.GraphToolTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

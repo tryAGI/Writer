@@ -9,19 +9,19 @@ namespace Writer
     public enum ApplicationInputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dropdown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         File,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Media,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

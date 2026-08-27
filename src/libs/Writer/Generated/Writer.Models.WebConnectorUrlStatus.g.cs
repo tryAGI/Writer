@@ -9,15 +9,15 @@ namespace Writer
     public enum WebConnectorUrlStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Validating,
     }

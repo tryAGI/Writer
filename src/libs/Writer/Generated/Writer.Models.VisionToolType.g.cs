@@ -9,7 +9,7 @@ namespace Writer
     public enum VisionToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vision,
     }

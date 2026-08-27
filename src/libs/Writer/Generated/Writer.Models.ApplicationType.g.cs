@@ -9,7 +9,7 @@ namespace Writer
     public enum ApplicationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Generation,
     }

@@ -4,12 +4,12 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolCallType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

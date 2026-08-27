@@ -9,7 +9,7 @@ namespace Writer
     public enum ChatMessageRequestRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
         /// <summary>
@@ -21,7 +21,7 @@ namespace Writer
         /// </summary>
         Tool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

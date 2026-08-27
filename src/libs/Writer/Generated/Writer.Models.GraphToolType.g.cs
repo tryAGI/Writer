@@ -9,7 +9,7 @@ namespace Writer
     public enum GraphToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Graph,
     }

@@ -4,32 +4,32 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Graph,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Llm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Translation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vision,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
     }

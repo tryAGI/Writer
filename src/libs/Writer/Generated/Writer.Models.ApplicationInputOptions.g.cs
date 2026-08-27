@@ -19,7 +19,7 @@ namespace Writer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dropdown))]
@@ -27,7 +27,7 @@ namespace Writer
         public bool IsDropdown => Dropdown != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDropdown(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Writer.ApplicationInputDropdownOptions PickDropdown() => IsDropdown
             ? Dropdown!
@@ -56,7 +56,7 @@ namespace Writer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
@@ -64,7 +64,7 @@ namespace Writer
         public bool IsFile => File != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFile(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Writer.ApplicationInputFileOptions PickFile() => IsFile
             ? File!
@@ -93,7 +93,7 @@ namespace Writer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Media))]
@@ -101,7 +101,7 @@ namespace Writer
         public bool IsMedia => Media != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMedia(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Writer.ApplicationInputMediaOptions PickMedia() => IsMedia
             ? Media!
@@ -130,7 +130,7 @@ namespace Writer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -138,7 +138,7 @@ namespace Writer
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -151,23 +151,23 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Writer.ApplicationInputTextOptions PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ApplicationInputOptions(global::Writer.ApplicationInputDropdownOptions value) => new ApplicationInputOptions((global::Writer.ApplicationInputDropdownOptions?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Writer.ApplicationInputDropdownOptions?(ApplicationInputOptions @this) => @this.Dropdown;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplicationInputOptions(global::Writer.ApplicationInputDropdownOptions? value)
         {
@@ -175,22 +175,22 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ApplicationInputOptions FromDropdown(global::Writer.ApplicationInputDropdownOptions? value) => new ApplicationInputOptions(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ApplicationInputOptions(global::Writer.ApplicationInputFileOptions value) => new ApplicationInputOptions((global::Writer.ApplicationInputFileOptions?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Writer.ApplicationInputFileOptions?(ApplicationInputOptions @this) => @this.File;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplicationInputOptions(global::Writer.ApplicationInputFileOptions? value)
         {
@@ -198,22 +198,22 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ApplicationInputOptions FromFile(global::Writer.ApplicationInputFileOptions? value) => new ApplicationInputOptions(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ApplicationInputOptions(global::Writer.ApplicationInputMediaOptions value) => new ApplicationInputOptions((global::Writer.ApplicationInputMediaOptions?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Writer.ApplicationInputMediaOptions?(ApplicationInputOptions @this) => @this.Media;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplicationInputOptions(global::Writer.ApplicationInputMediaOptions? value)
         {
@@ -221,22 +221,22 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ApplicationInputOptions FromMedia(global::Writer.ApplicationInputMediaOptions? value) => new ApplicationInputOptions(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ApplicationInputOptions(global::Writer.ApplicationInputTextOptions value) => new ApplicationInputOptions((global::Writer.ApplicationInputTextOptions?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Writer.ApplicationInputTextOptions?(ApplicationInputOptions @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplicationInputOptions(global::Writer.ApplicationInputTextOptions? value)
         {
@@ -244,12 +244,12 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ApplicationInputOptions FromText(global::Writer.ApplicationInputTextOptions? value) => new ApplicationInputOptions(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplicationInputOptions(
             global::Writer.ApplicationInputDropdownOptions? dropdown,
@@ -265,27 +265,27 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Text as object ??
             Media as object ??
             File as object ??
-            Dropdown as object 
+            Dropdown as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Dropdown?.ToString() ??
             File?.ToString() ??
             Media?.ToString() ??
-            Text?.ToString() 
+            Text?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -293,7 +293,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Writer.ApplicationInputDropdownOptions, TResult>? dropdown = null,
@@ -328,7 +328,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Writer.ApplicationInputDropdownOptions>? dropdown = null,
@@ -364,7 +364,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Writer.ApplicationInputDropdownOptions>? dropdown = null,
@@ -397,7 +397,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -422,7 +422,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ApplicationInputOptions other)
         {
@@ -430,12 +430,12 @@ namespace Writer
                 global::System.Collections.Generic.EqualityComparer<global::Writer.ApplicationInputDropdownOptions?>.Default.Equals(Dropdown, other.Dropdown) &&
                 global::System.Collections.Generic.EqualityComparer<global::Writer.ApplicationInputFileOptions?>.Default.Equals(File, other.File) &&
                 global::System.Collections.Generic.EqualityComparer<global::Writer.ApplicationInputMediaOptions?>.Default.Equals(Media, other.Media) &&
-                global::System.Collections.Generic.EqualityComparer<global::Writer.ApplicationInputTextOptions?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::Writer.ApplicationInputTextOptions?>.Default.Equals(Text, other.Text)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ApplicationInputOptions obj1, ApplicationInputOptions obj2)
         {
@@ -443,7 +443,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ApplicationInputOptions obj1, ApplicationInputOptions obj2)
         {
@@ -451,7 +451,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

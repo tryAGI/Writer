@@ -14,7 +14,7 @@ namespace Writer
     public readonly partial struct ToolChoice : global::System.IEquatable<ToolChoice>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.StringToolChoice? String { get; init; }
@@ -23,7 +23,7 @@ namespace Writer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(String))]
@@ -31,7 +31,7 @@ namespace Writer
         public bool IsString => String != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickString(
 #if NET6_0_OR_GREATER
@@ -44,14 +44,14 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Writer.StringToolChoice PickString() => IsString
             ? String!
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Writer.JsonObjectToolChoice? JsonObject { get; init; }
@@ -60,7 +60,7 @@ namespace Writer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
@@ -68,7 +68,7 @@ namespace Writer
         public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJsonObject(
 #if NET6_0_OR_GREATER
@@ -81,23 +81,23 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Writer.JsonObjectToolChoice PickJsonObject() => IsJsonObject
             ? JsonObject!
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoice(global::Writer.StringToolChoice value) => new ToolChoice((global::Writer.StringToolChoice?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Writer.StringToolChoice?(ToolChoice @this) => @this.String;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoice(global::Writer.StringToolChoice? value)
         {
@@ -105,22 +105,22 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoice FromString(global::Writer.StringToolChoice? value) => new ToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoice(global::Writer.JsonObjectToolChoice value) => new ToolChoice((global::Writer.JsonObjectToolChoice?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Writer.JsonObjectToolChoice?(ToolChoice @this) => @this.JsonObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoice(global::Writer.JsonObjectToolChoice? value)
         {
@@ -128,12 +128,12 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoice FromJsonObject(global::Writer.JsonObjectToolChoice? value) => new ToolChoice(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoice(
             global::Writer.StringToolChoice? @string,
@@ -145,23 +145,23 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             JsonObject as object ??
-            String as object 
+            String as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             String?.ToString() ??
-            JsonObject?.ToString() 
+            JsonObject?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -169,7 +169,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Writer.StringToolChoice, TResult>? @string = null,
@@ -194,7 +194,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Writer.StringToolChoice>? @string = null,
@@ -218,7 +218,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Writer.StringToolChoice>? @string = null,
@@ -241,7 +241,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -262,18 +262,18 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ToolChoice other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Writer.StringToolChoice?>.Default.Equals(String, other.String) &&
-                global::System.Collections.Generic.EqualityComparer<global::Writer.JsonObjectToolChoice?>.Default.Equals(JsonObject, other.JsonObject) 
+                global::System.Collections.Generic.EqualityComparer<global::Writer.JsonObjectToolChoice?>.Default.Equals(JsonObject, other.JsonObject)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ToolChoice obj1, ToolChoice obj2)
         {
@@ -281,7 +281,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ToolChoice obj1, ToolChoice obj2)
         {
@@ -289,7 +289,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,7 +9,7 @@ namespace Writer
     public enum TextFragmentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

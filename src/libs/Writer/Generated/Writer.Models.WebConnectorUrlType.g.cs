@@ -9,11 +9,11 @@ namespace Writer
     public enum WebConnectorUrlType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SinglePage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SubPages,
     }

@@ -9,7 +9,7 @@ namespace Writer
     public enum FunctionToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

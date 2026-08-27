@@ -9,7 +9,7 @@ namespace Writer
     public enum TranslationToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Translation,
     }

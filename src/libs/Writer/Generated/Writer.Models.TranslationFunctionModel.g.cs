@@ -9,7 +9,7 @@ namespace Writer
     public enum TranslationFunctionModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PalmyraTranslate,
     }

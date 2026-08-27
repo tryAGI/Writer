@@ -4,12 +4,12 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GenerateApplicationRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]

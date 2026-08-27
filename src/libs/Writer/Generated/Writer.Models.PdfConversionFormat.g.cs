@@ -9,11 +9,11 @@ namespace Writer
     public enum PdfConversionFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Markdown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

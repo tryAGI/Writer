@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Graph
     {
@@ -36,7 +36,7 @@ namespace Writer
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_status")]
         [global::System.Text.Json.Serialization.JsonRequired]

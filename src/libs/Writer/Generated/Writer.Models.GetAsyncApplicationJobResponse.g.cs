@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetAsyncApplicationJobResponse
     {
@@ -50,7 +50,7 @@ namespace Writer
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::Writer.GenerateApplicationResponse? Data { get; set; }

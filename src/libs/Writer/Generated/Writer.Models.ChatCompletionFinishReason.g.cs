@@ -4,24 +4,24 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChatCompletionFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFilter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Length,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCalls,
     }

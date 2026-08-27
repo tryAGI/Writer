@@ -13,7 +13,7 @@ namespace Writer
         /// </summary>
         Deployed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Draft,
     }

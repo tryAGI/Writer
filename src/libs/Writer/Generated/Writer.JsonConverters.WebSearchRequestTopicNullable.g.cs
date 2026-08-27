@@ -20,7 +20,7 @@ namespace Writer.JsonConverters
                     {
                         return global::Writer.WebSearchRequestTopicExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

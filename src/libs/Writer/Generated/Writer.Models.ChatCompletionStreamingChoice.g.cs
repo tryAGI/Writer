@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatCompletionStreamingChoice
     {
@@ -16,7 +16,7 @@ namespace Writer
         public required int Index { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Writer.JsonConverters.ChatCompletionFinishReasonJsonConverter))]
@@ -37,7 +37,7 @@ namespace Writer
         public required global::Writer.ChatCompletionStreamingDelta Delta { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public global::Writer.Logprobs? Logprobs { get; set; }

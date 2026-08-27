@@ -4,20 +4,20 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StringToolChoiceOptions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Required,
     }

@@ -9,7 +9,7 @@ namespace Writer
     public enum ImageFragmentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
     }

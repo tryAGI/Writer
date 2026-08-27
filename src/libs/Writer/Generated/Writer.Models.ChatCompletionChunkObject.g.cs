@@ -9,7 +9,7 @@ namespace Writer
     public enum ChatCompletionChunkObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatCompletionChunk,
     }

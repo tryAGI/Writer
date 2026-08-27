@@ -9,11 +9,11 @@ namespace Writer
     public enum GatewayGetFilesOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

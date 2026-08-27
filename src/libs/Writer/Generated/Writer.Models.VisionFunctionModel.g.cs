@@ -9,7 +9,7 @@ namespace Writer
     public enum VisionFunctionModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PalmyraVision,
     }

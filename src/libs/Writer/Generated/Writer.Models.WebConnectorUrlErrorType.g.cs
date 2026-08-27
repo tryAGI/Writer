@@ -9,23 +9,23 @@ namespace Writer
     public enum WebConnectorUrlErrorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotSearchable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PaywallOrLoginPage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnexpectedError,
     }

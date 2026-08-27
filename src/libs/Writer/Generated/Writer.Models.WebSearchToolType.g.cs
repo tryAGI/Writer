@@ -9,7 +9,7 @@ namespace Writer
     public enum WebSearchToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
     }

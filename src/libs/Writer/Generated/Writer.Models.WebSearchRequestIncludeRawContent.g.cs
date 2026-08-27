@@ -4,16 +4,16 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WebSearchRequestIncludeRawContent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Markdown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

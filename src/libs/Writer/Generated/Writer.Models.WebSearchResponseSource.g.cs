@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WebSearchResponseSource
     {

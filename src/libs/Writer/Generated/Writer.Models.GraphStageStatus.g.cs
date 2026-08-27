@@ -4,16 +4,16 @@
 namespace Writer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GraphStageStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Finished,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
     }

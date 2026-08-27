@@ -19,7 +19,7 @@ namespace Writer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -27,7 +27,7 @@ namespace Writer
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Writer.TextFragment PickText() => IsText
             ? Text!
@@ -56,7 +56,7 @@ namespace Writer
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -64,7 +64,7 @@ namespace Writer
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Writer.ImageFragment PickImage() => IsImage
             ? Image!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CompositeContent(global::Writer.TextFragment value) => new CompositeContent((global::Writer.TextFragment?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Writer.TextFragment?(CompositeContent @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CompositeContent(global::Writer.TextFragment? value)
         {
@@ -101,22 +101,22 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CompositeContent FromText(global::Writer.TextFragment? value) => new CompositeContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CompositeContent(global::Writer.ImageFragment value) => new CompositeContent((global::Writer.ImageFragment?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Writer.ImageFragment?(CompositeContent @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CompositeContent(global::Writer.ImageFragment? value)
         {
@@ -124,12 +124,12 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CompositeContent FromImage(global::Writer.ImageFragment? value) => new CompositeContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CompositeContent(
             global::Writer.TextFragment? text,
@@ -141,23 +141,23 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Image as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Image?.ToString() 
+            Image?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Writer.TextFragment, TResult>? text = null,
@@ -190,7 +190,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Writer.TextFragment>? text = null,
@@ -214,7 +214,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Writer.TextFragment>? text = null,
@@ -237,7 +237,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CompositeContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Writer.TextFragment?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Writer.ImageFragment?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::Writer.ImageFragment?>.Default.Equals(Image, other.Image)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CompositeContent obj1, CompositeContent obj2)
         {
@@ -277,7 +277,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CompositeContent obj1, CompositeContent obj2)
         {
@@ -285,7 +285,7 @@ namespace Writer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -10,7 +10,7 @@ namespace Writer
     public sealed partial class WriterClient : global::Writer.IWriterClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.writer.com/";
 
@@ -37,7 +37,7 @@ namespace Writer
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Writer.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -47,7 +47,7 @@ namespace Writer
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FileApiClient FileApi => new FileApiClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -56,7 +56,7 @@ namespace Writer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GenerationApiClient GenerationApi => new GenerationApiClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -65,7 +65,7 @@ namespace Writer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public KgApiClient KgApi => new KgApiClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -74,7 +74,7 @@ namespace Writer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TemplateClient Template => new TemplateClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -83,7 +83,7 @@ namespace Writer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolsApiClient ToolsApi => new ToolsApiClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -92,7 +92,7 @@ namespace Writer
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VisionClient Vision => new VisionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

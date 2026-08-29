@@ -27,13 +27,13 @@ namespace Writer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Writer.Source> Sources { get; set; }
+        public required global::System.Collections.Generic.IList<global::Writer.Source?> Sources { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subqueries")]
-        public global::System.Collections.Generic.IList<global::Writer.SubQuery>? Subqueries { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.SubQuery?>? Subqueries { get; set; }
 
         /// <summary>
         /// Detailed source information organized by reference type, providing comprehensive metadata about the sources used to generate the response.
@@ -67,8 +67,8 @@ namespace Writer
         public QuestionResponse(
             string question,
             string answer,
-            global::System.Collections.Generic.IList<global::Writer.Source> sources,
-            global::System.Collections.Generic.IList<global::Writer.SubQuery>? subqueries,
+            global::System.Collections.Generic.IList<global::Writer.Source?> sources,
+            global::System.Collections.Generic.IList<global::Writer.SubQuery?>? subqueries,
             global::Writer.References? references)
         {
             this.Question = question ?? throw new global::System.ArgumentNullException(nameof(question));

@@ -27,7 +27,7 @@ namespace Writer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Writer.Source> Sources { get; set; }
+        public required global::System.Collections.Generic.IList<global::Writer.Source?> Sources { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,7 +53,7 @@ namespace Writer
         public SubQuery(
             string query,
             string answer,
-            global::System.Collections.Generic.IList<global::Writer.Source> sources)
+            global::System.Collections.Generic.IList<global::Writer.Source?> sources)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Answer = answer ?? throw new global::System.ArgumentNullException(nameof(answer));

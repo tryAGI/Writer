@@ -21,6 +21,11 @@ namespace Writer
         public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary { get; set; }
 
         /// <summary>
+        /// Runtime object lists used by dynamic JSON payloads such as tool arguments.
+        /// </summary>
+        public global::System.Collections.Generic.List<object>? ObjectList { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         public global::System.Text.Json.JsonElement? JsonElement { get; set; }
@@ -328,7 +333,7 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.Source>? Type75 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.Source?>? Type75 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -340,7 +345,7 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.SubQuery>? Type78 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.SubQuery?>? Type78 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -905,11 +910,11 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.Source>? ListType18 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.Source?>? ListType18 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.SubQuery>? ListType19 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.SubQuery?>? ListType19 { get; set; }
         /// <summary>
         ///
         /// </summary>

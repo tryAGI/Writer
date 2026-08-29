@@ -12,7 +12,7 @@ namespace Writer
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
-        public global::System.Collections.Generic.IList<global::Writer.Source>? Sources { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.Source?>? Sources { get; set; }
 
         /// <summary>
         ///
@@ -25,7 +25,7 @@ namespace Writer
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subqueries")]
-        public global::System.Collections.Generic.IList<global::Writer.SubQuery>? Subqueries { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.SubQuery?>? Subqueries { get; set; }
 
         /// <summary>
         /// Detailed source information organized by reference type, providing comprehensive metadata about the sources used to generate the response.
@@ -52,9 +52,9 @@ namespace Writer
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GraphData(
-            global::System.Collections.Generic.IList<global::Writer.Source>? sources,
+            global::System.Collections.Generic.IList<global::Writer.Source?>? sources,
             global::Writer.GraphStageStatus? status,
-            global::System.Collections.Generic.IList<global::Writer.SubQuery>? subqueries,
+            global::System.Collections.Generic.IList<global::Writer.SubQuery?>? subqueries,
             global::Writer.References? references)
         {
             this.Sources = sources;

@@ -4,12 +4,12 @@
 namespace Writer
 {
     /// <summary>
-    /// Example: {"model":"palmyra-x-003-instruct","prompt":"Write me an SEO article about...","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}
+    /// Example: {"model":"palmyra-x5","prompt":"Write me an SEO article about...","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}
     /// </summary>
     public sealed partial class CompletionsRequest
     {
         /// <summary>
-        /// The [ID of the model](https://dev.writer.com/home/models) to use for generating text. Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and `palmyra-x-003-instruct`.
+        /// The [ID of the model](https://dev.writer.com/home/models) to use for generating text. This can be a Palmyra model such as `palmyra-x5` or `palmyra-x4`, or the ID of an [external model](https://dev.writer.com/home/external-models) configured for your organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -75,7 +75,7 @@ namespace Writer
         /// Initializes a new instance of the <see cref="CompletionsRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// The [ID of the model](https://dev.writer.com/home/models) to use for generating text. Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and `palmyra-x-003-instruct`.
+        /// The [ID of the model](https://dev.writer.com/home/models) to use for generating text. This can be a Palmyra model such as `palmyra-x5` or `palmyra-x4`, or the ID of an [external model](https://dev.writer.com/home/external-models) configured for your organization.
         /// </param>
         /// <param name="prompt">
         /// The input text that the model will process to generate a response.

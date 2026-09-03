@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    /// A tool that uses another Writer model to generate a response.
+    /// A tool that uses another model to generate a response.
     /// </summary>
     public sealed partial class LlmFunction
     {

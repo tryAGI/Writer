@@ -16,7 +16,7 @@ namespace Writer
         /// curl --location --request POST https://api.writer.com/v1/completions \<br/>
         ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
         ///  --header "Content-Type: application/json" \<br/>
-        /// --data-raw '{"model":"palmyra-x-003-instruct","prompt":"Write me a short SEO article about camping gear","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}'
+        /// --data-raw '{"model":"palmyra-x5","prompt":"Write me a short SEO article about camping gear","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}'
         /// </remarks>
         global::System.Collections.Generic.IAsyncEnumerable<global::Writer.StreamingData> CompletionsAsStreamAsync(
 
@@ -28,7 +28,7 @@ namespace Writer
         /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.
         /// </summary>
         /// <param name="model">
-        /// The [ID of the model](https://dev.writer.com/home/models) to use for generating text. Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and `palmyra-x-003-instruct`.
+        /// The [ID of the model](https://dev.writer.com/home/models) to use for generating text. This can be a Palmyra model such as `palmyra-x5` or `palmyra-x4`, or the ID of an [external model](https://dev.writer.com/home/external-models) configured for your organization.
         /// </param>
         /// <param name="prompt">
         /// The input text that the model will process to generate a response.

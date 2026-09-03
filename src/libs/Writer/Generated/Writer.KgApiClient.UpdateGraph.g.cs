@@ -45,7 +45,8 @@ namespace Writer
 
         /// <summary>
         /// Update graph<br/>
-        /// Update the name and description of a Knowledge Graph.
+        /// Update the name, description, web connector URLs, or team assignment of a Knowledge Graph.<br/>
+        /// Including a `team_ids` array replaces the whole team assignment: an empty array makes the Knowledge Graph org-wide, one or more team IDs scope it to exactly those teams. Omitting `team_ids` leaves the current team assignment unchanged. Team-scoped API keys cannot change the team assignment of a Knowledge Graph.
         /// </summary>
         /// <param name="graphId"></param>
         /// <param name="request"></param>
@@ -77,7 +78,8 @@ namespace Writer
         }
         /// <summary>
         /// Update graph<br/>
-        /// Update the name and description of a Knowledge Graph.
+        /// Update the name, description, web connector URLs, or team assignment of a Knowledge Graph.<br/>
+        /// Including a `team_ids` array replaces the whole team assignment: an empty array makes the Knowledge Graph org-wide, one or more team IDs scope it to exactly those teams. Omitting `team_ids` leaves the current team assignment unchanged. Team-scoped API keys cannot change the team assignment of a Knowledge Graph.
         /// </summary>
         /// <param name="graphId"></param>
         /// <param name="request"></param>
@@ -456,7 +458,8 @@ namespace Writer
         }
         /// <summary>
         /// Update graph<br/>
-        /// Update the name and description of a Knowledge Graph.
+        /// Update the name, description, web connector URLs, or team assignment of a Knowledge Graph.<br/>
+        /// Including a `team_ids` array replaces the whole team assignment: an empty array makes the Knowledge Graph org-wide, one or more team IDs scope it to exactly those teams. Omitting `team_ids` leaves the current team assignment unchanged. Team-scoped API keys cannot change the team assignment of a Knowledge Graph.
         /// </summary>
         /// <param name="graphId"></param>
         /// <param name="name">
@@ -468,6 +471,9 @@ namespace Writer
         /// <param name="urls">
         /// An array of web connector URLs to update for this Knowledge Graph. You can only connect URLs to Knowledge Graphs with the type `web`. To clear the list of URLs, set this field to an empty array.
         /// </param>
+        /// <param name="teamIds">
+        /// Optional list of team IDs the Knowledge Graph is deployed to. Omitting this field leaves the current team assignment unchanged. Passing an array replaces the whole team assignment: an empty array makes the graph org-wide, one or more team IDs scope it to exactly those teams. Not accepted from team-scoped API keys.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -476,6 +482,7 @@ namespace Writer
             string? name = default,
             string? description = default,
             global::System.Collections.Generic.IList<global::Writer.UpdateGraphWebUrl>? urls = default,
+            global::System.Collections.Generic.IList<long>? teamIds = default,
             global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -484,6 +491,7 @@ namespace Writer
                 Name = name,
                 Description = description,
                 Urls = urls,
+                TeamIds = teamIds,
             };
 
             return await UpdateGraphAsync(

@@ -377,463 +377,467 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.DeleteGraphResponse? Type86 { get; set; }
+        public global::System.Collections.Generic.IList<long>? Type86 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.RetryFilesRequest? Type87 { get; set; }
+        public global::Writer.DeleteGraphResponse? Type87 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphFileRequest? Type88 { get; set; }
+        public global::Writer.RetryFilesRequest? Type88 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphFileStatus? Type89 { get; set; }
+        public global::Writer.GraphFileRequest? Type89 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphRequest? Type90 { get; set; }
+        public global::Writer.GraphFileStatus? Type90 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.UpdateGraphRequest? Type91 { get; set; }
+        public global::Writer.GraphRequest? Type91 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.UpdateGraphWebUrl>? Type92 { get; set; }
+        public global::Writer.UpdateGraphRequest? Type92 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.UpdateGraphWebUrl? Type93 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.UpdateGraphWebUrl>? Type93 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebConnectorUrlType? Type94 { get; set; }
+        public global::Writer.UpdateGraphWebUrl? Type94 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphsResponse? Type95 { get; set; }
+        public global::Writer.WebConnectorUrlType? Type95 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.Graph>? Type96 { get; set; }
+        public global::Writer.GraphsResponse? Type96 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.Graph? Type97 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.Graph>? Type97 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebConnectorUrlState? Type98 { get; set; }
+        public global::Writer.Graph? Type98 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebConnectorUrlStatus? Type99 { get; set; }
+        public global::Writer.WebConnectorUrlState? Type99 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebConnectorUrlErrorType? Type100 { get; set; }
+        public global::Writer.WebConnectorUrlStatus? Type100 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GenerateApplicationInput? Type101 { get; set; }
+        public global::Writer.WebConnectorUrlErrorType? Type101 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GenerateApplicationRequest? Type102 { get; set; }
+        public global::Writer.GenerateApplicationInput? Type102 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.GenerateApplicationInput>? Type103 { get; set; }
+        public global::Writer.GenerateApplicationRequest? Type103 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GetAsyncApplicationJobsResponse? Type104 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.GenerateApplicationInput>? Type104 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.GetAsyncApplicationJobResponse>? Type105 { get; set; }
+        public global::Writer.GetAsyncApplicationJobsResponse? Type105 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GetAsyncApplicationJobResponse? Type106 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.GetAsyncApplicationJobResponse>? Type106 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GetAsyncApplicationJobsResponsePagination? Type107 { get; set; }
+        public global::Writer.GetAsyncApplicationJobResponse? Type107 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApiJobStatus? Type108 { get; set; }
+        public global::Writer.GetAsyncApplicationJobsResponsePagination? Type108 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GenerateApplicationResponse? Type109 { get; set; }
+        public global::Writer.ApiJobStatus? Type109 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GenerateApplicationAsyncRequest? Type110 { get; set; }
+        public global::Writer.GenerateApplicationResponse? Type110 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GenerateApplicationAsyncResponse? Type111 { get; set; }
+        public global::Writer.GenerateApplicationAsyncRequest? Type111 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.RetryAsyncApplicationJobResponse? Type112 { get; set; }
+        public global::Writer.GenerateApplicationAsyncResponse? Type112 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationType? Type113 { get; set; }
+        public global::Writer.RetryAsyncApplicationJobResponse? Type113 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GetApplicationsResponse? Type114 { get; set; }
+        public global::Writer.ApplicationType? Type114 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.ApplicationWithInputs>? Type115 { get; set; }
+        public global::Writer.GetApplicationsResponse? Type115 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationWithInputs? Type116 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.ApplicationWithInputs>? Type116 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationStatus? Type117 { get; set; }
+        public global::Writer.ApplicationWithInputs? Type117 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.ApplicationInput>? Type118 { get; set; }
+        public global::Writer.ApplicationStatus? Type118 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationInput? Type119 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.ApplicationInput>? Type119 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationInputType? Type120 { get; set; }
+        public global::Writer.ApplicationInput? Type120 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationInputOptions? Type121 { get; set; }
+        public global::Writer.ApplicationInputType? Type121 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationInputDropdownOptions? Type122 { get; set; }
+        public global::Writer.ApplicationInputOptions? Type122 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationInputFileOptions? Type123 { get; set; }
+        public global::Writer.ApplicationInputDropdownOptions? Type123 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationInputMediaOptions? Type124 { get; set; }
+        public global::Writer.ApplicationInputFileOptions? Type124 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ApplicationInputTextOptions? Type125 { get; set; }
+        public global::Writer.ApplicationInputMediaOptions? Type125 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.FileUploadType>? Type126 { get; set; }
+        public global::Writer.ApplicationInputTextOptions? Type126 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.FileUploadType? Type127 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.FileUploadType>? Type127 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GenerateApplicationResponseChunk? Type128 { get; set; }
+        public global::Writer.FileUploadType? Type128 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GenerateApplicationDelta? Type129 { get; set; }
+        public global::Writer.GenerateApplicationResponseChunk? Type129 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.GenerateApplicationChunkStage>? Type130 { get; set; }
+        public global::Writer.GenerateApplicationDelta? Type130 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GenerateApplicationChunkStage? Type131 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.GenerateApplicationChunkStage>? Type131 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.QuestionRequest? Type132 { get; set; }
+        public global::Writer.GenerateApplicationChunkStage? Type132 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphQueryConfig? Type133 { get; set; }
+        public global::Writer.QuestionRequest? Type133 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.QuestionResponseChunk? Type134 { get; set; }
+        public global::Writer.GraphQueryConfig? Type134 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.QuestionResponse? Type135 { get; set; }
+        public global::Writer.QuestionResponseChunk? Type135 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.FunctionTool? Type136 { get; set; }
+        public global::Writer.QuestionResponse? Type136 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphTool? Type137 { get; set; }
+        public global::Writer.FunctionTool? Type137 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.LlmTool? Type138 { get; set; }
+        public global::Writer.GraphTool? Type138 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.TranslationTool? Type139 { get; set; }
+        public global::Writer.LlmTool? Type139 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionTool? Type140 { get; set; }
+        public global::Writer.TranslationTool? Type140 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchTool? Type141 { get; set; }
+        public global::Writer.VisionTool? Type141 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ToolDiscriminator? Type142 { get; set; }
+        public global::Writer.WebSearchTool? Type142 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ToolDiscriminatorType? Type143 { get; set; }
+        public global::Writer.ToolDiscriminator? Type143 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.FunctionToolType? Type144 { get; set; }
+        public global::Writer.ToolDiscriminatorType? Type144 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ToolFunction? Type145 { get; set; }
+        public global::Writer.FunctionToolType? Type145 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphToolType? Type146 { get; set; }
+        public global::Writer.ToolFunction? Type146 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphFunction? Type147 { get; set; }
+        public global::Writer.GraphToolType? Type147 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.LlmToolType? Type148 { get; set; }
+        public global::Writer.GraphFunction? Type148 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.LlmFunction? Type149 { get; set; }
+        public global::Writer.LlmToolType? Type149 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionToolType? Type150 { get; set; }
+        public global::Writer.LlmFunction? Type150 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionFunction? Type151 { get; set; }
+        public global::Writer.VisionToolType? Type151 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.VisionToolRequestFileVariable>? Type152 { get; set; }
+        public global::Writer.VisionFunction? Type152 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionToolRequestFileVariable? Type153 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.VisionToolRequestFileVariable>? Type153 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionFunctionModel? Type154 { get; set; }
+        public global::Writer.VisionToolRequestFileVariable? Type154 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ToolCallType? Type155 { get; set; }
+        public global::Writer.VisionFunctionModel? Type155 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.Function? Type156 { get; set; }
+        public global::Writer.ToolCallType? Type156 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ToolCallStreamingType? Type157 { get; set; }
+        public global::Writer.Function? Type157 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.StringToolChoice? Type158 { get; set; }
+        public global::Writer.ToolCallStreamingType? Type158 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.JsonObjectToolChoice? Type159 { get; set; }
+        public global::Writer.StringToolChoice? Type159 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.StringToolChoiceOptions? Type160 { get; set; }
+        public global::Writer.JsonObjectToolChoice? Type160 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ParsePdfRequest? Type161 { get; set; }
+        public global::Writer.StringToolChoiceOptions? Type161 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.PdfConversionFormat? Type162 { get; set; }
+        public global::Writer.ParsePdfRequest? Type162 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ParsePdfResponse? Type163 { get; set; }
+        public global::Writer.PdfConversionFormat? Type163 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionRequest? Type164 { get; set; }
+        public global::Writer.ParsePdfResponse? Type164 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionRequestModel? Type165 { get; set; }
+        public global::Writer.VisionRequest? Type165 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable>? Type166 { get; set; }
+        public global::Writer.VisionRequestModel? Type166 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionRequestFileVariable? Type167 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable>? Type167 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionResponse? Type168 { get; set; }
+        public global::Writer.VisionRequestFileVariable? Type168 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.TranslationToolType? Type169 { get; set; }
+        public global::Writer.VisionResponse? Type169 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.TranslationFunction? Type170 { get; set; }
+        public global::Writer.TranslationToolType? Type170 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.TranslationFunctionModel? Type171 { get; set; }
+        public global::Writer.TranslationFunction? Type171 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchRequest? Type172 { get; set; }
+        public global::Writer.TranslationFunctionModel? Type172 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchRequestTopic? Type173 { get; set; }
+        public global::Writer.WebSearchRequest? Type173 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchRequestSearchDepth? Type174 { get; set; }
+        public global::Writer.WebSearchRequestTopic? Type174 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchRequestTimeRange? Type175 { get; set; }
+        public global::Writer.WebSearchRequestSearchDepth? Type175 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.OneOf<global::Writer.WebSearchRequestIncludeRawContent?, bool?>? Type176 { get; set; }
+        public global::Writer.WebSearchRequestTimeRange? Type176 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchRequestIncludeRawContent? Type177 { get; set; }
+        public global::Writer.OneOf<global::Writer.WebSearchRequestIncludeRawContent?, bool?>? Type177 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchRequestCountry? Type178 { get; set; }
+        public global::Writer.WebSearchRequestIncludeRawContent? Type178 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchResponse? Type179 { get; set; }
+        public global::Writer.WebSearchRequestCountry? Type179 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.WebSearchResponseSource>? Type180 { get; set; }
+        public global::Writer.WebSearchResponse? Type180 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchResponseSource? Type181 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.WebSearchResponseSource>? Type181 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchToolType? Type182 { get; set; }
+        public global::Writer.WebSearchResponseSource? Type182 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchFunction? Type183 { get; set; }
+        public global::Writer.WebSearchToolType? Type183 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.TextFragment? Type184 { get; set; }
+        public global::Writer.WebSearchFunction? Type184 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ImageFragment? Type185 { get; set; }
+        public global::Writer.TextFragment? Type185 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.TextFragmentType? Type186 { get; set; }
+        public global::Writer.ImageFragment? Type186 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ImageFragmentType? Type187 { get; set; }
+        public global::Writer.TextFragmentType? Type187 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ImageFragmentImageUrl? Type188 { get; set; }
+        public global::Writer.ImageFragmentType? Type188 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.File>? Type189 { get; set; }
+        public global::Writer.ImageFragmentImageUrl? Type189 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.File? Type190 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.File>? Type190 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.Web>? Type191 { get; set; }
+        public global::Writer.File? Type191 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.Web? Type192 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.Web>? Type192 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public byte[]? Type193 { get; set; }
+        public global::Writer.Web? Type193 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.FindGraphsWithFileStatusOrder? Type194 { get; set; }
+        public byte[]? Type194 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GatewayGetFilesOrder? Type195 { get; set; }
+        public global::Writer.FindGraphsWithFileStatusOrder? Type195 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GatewayGetFilesStatus? Type196 { get; set; }
+        public global::Writer.GatewayGetFilesOrder? Type196 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GetApplicationsOrder? Type197 { get; set; }
+        public global::Writer.GatewayGetFilesStatus? Type197 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>? Type198 { get; set; }
+        public global::Writer.GetApplicationsOrder? Type198 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.StreamingData>? Type199 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.ChatCompletionChunk>? Type199 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Writer.GenerateApplicationResponseChunk>? Type200 { get; set; }
+        public global::System.Collections.Generic.IList<global::Writer.StreamingData>? Type200 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Writer.GenerateApplicationResponseChunk>? Type201 { get; set; }
 
         /// <summary>
         ///
@@ -926,66 +930,70 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.UpdateGraphWebUrl>? ListType22 { get; set; }
+        public global::System.Collections.Generic.List<long>? ListType22 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.Graph>? ListType23 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.UpdateGraphWebUrl>? ListType23 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.GenerateApplicationInput>? ListType24 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.Graph>? ListType24 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.GetAsyncApplicationJobResponse>? ListType25 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.GenerateApplicationInput>? ListType25 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.ApplicationWithInputs>? ListType26 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.GetAsyncApplicationJobResponse>? ListType26 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.ApplicationInput>? ListType27 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.ApplicationWithInputs>? ListType27 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.FileUploadType>? ListType28 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.ApplicationInput>? ListType28 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.GenerateApplicationChunkStage>? ListType29 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.FileUploadType>? ListType29 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.VisionToolRequestFileVariable>? ListType30 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.GenerateApplicationChunkStage>? ListType30 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.VisionRequestFileVariable>? ListType31 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.VisionToolRequestFileVariable>? ListType31 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.WebSearchResponseSource>? ListType32 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.VisionRequestFileVariable>? ListType32 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.File>? ListType33 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.WebSearchResponseSource>? ListType33 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.Web>? ListType34 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.File>? ListType34 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.ChatCompletionChunk>? ListType35 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.Web>? ListType35 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.StreamingData>? ListType36 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.ChatCompletionChunk>? ListType36 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Writer.GenerateApplicationResponseChunk>? ListType37 { get; set; }
+        public global::System.Collections.Generic.List<global::Writer.StreamingData>? ListType37 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Writer.GenerateApplicationResponseChunk>? ListType38 { get; set; }
     }
 }

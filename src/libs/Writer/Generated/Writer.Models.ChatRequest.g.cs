@@ -9,7 +9,7 @@ namespace Writer
     public sealed partial class ChatRequest
     {
         /// <summary>
-        /// The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion. Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and `palmyra-x-003-instruct`.
+        /// The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion. This can be a Palmyra model such as `palmyra-x5` or `palmyra-x4`, or the ID of an [external model](https://dev.writer.com/home/external-models) configured for your organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -107,7 +107,7 @@ namespace Writer
         /// Initializes a new instance of the <see cref="ChatRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion. Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and `palmyra-x-003-instruct`.
+        /// The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion. This can be a Palmyra model such as `palmyra-x5` or `palmyra-x4`, or the ID of an [external model](https://dev.writer.com/home/external-models) configured for your organization.
         /// </param>
         /// <param name="messages">
         /// An array of message objects that form the conversation history or context for the model to respond to. The array must contain at least one message.

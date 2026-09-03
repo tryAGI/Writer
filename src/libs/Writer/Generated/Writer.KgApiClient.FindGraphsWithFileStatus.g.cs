@@ -30,14 +30,16 @@ namespace Writer
             ref global::Writer.FindGraphsWithFileStatusOrder? order,
             ref global::System.Guid? before,
             ref global::System.Guid? after,
-            ref int? limit);
+            ref int? limit,
+            global::System.Collections.Generic.IList<long>? teamIds);
         partial void PrepareFindGraphsWithFileStatusRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::Writer.FindGraphsWithFileStatusOrder? order,
             global::System.Guid? before,
             global::System.Guid? after,
-            int? limit);
+            int? limit,
+            global::System.Collections.Generic.IList<long>? teamIds);
         partial void ProcessFindGraphsWithFileStatusResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,7 +51,8 @@ namespace Writer
 
         /// <summary>
         /// List graphs<br/>
-        /// Retrieve a list of Knowledge Graphs.
+        /// Retrieve a list of Knowledge Graphs.<br/>
+        /// By default, the response contains only org-wide Knowledge Graphs. To include Knowledge Graphs that are deployed to specific teams, pass one or more team IDs in the `team_ids` query parameter. Requests authenticated with a team-scoped API key always return only that key's team; passing a different value in `team_ids` is rejected.
         /// </summary>
         /// <param name="order">
         /// Default Value: desc
@@ -59,6 +62,7 @@ namespace Writer
         /// <param name="limit">
         /// Default Value: 50
         /// </param>
+        /// <param name="teamIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
@@ -71,6 +75,7 @@ namespace Writer
             global::System.Guid? before = default,
             global::System.Guid? after = default,
             int? limit = default,
+            global::System.Collections.Generic.IList<long>? teamIds = default,
             global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -79,6 +84,7 @@ namespace Writer
                 before: before,
                 after: after,
                 limit: limit,
+                teamIds: teamIds,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -87,7 +93,8 @@ namespace Writer
         }
         /// <summary>
         /// List graphs<br/>
-        /// Retrieve a list of Knowledge Graphs.
+        /// Retrieve a list of Knowledge Graphs.<br/>
+        /// By default, the response contains only org-wide Knowledge Graphs. To include Knowledge Graphs that are deployed to specific teams, pass one or more team IDs in the `team_ids` query parameter. Requests authenticated with a team-scoped API key always return only that key's team; passing a different value in `team_ids` is rejected.
         /// </summary>
         /// <param name="order">
         /// Default Value: desc
@@ -97,6 +104,7 @@ namespace Writer
         /// <param name="limit">
         /// Default Value: 50
         /// </param>
+        /// <param name="teamIds"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Writer.ApiException"></exception>
@@ -109,6 +117,7 @@ namespace Writer
             global::System.Guid? before = default,
             global::System.Guid? after = default,
             int? limit = default,
+            global::System.Collections.Generic.IList<long>? teamIds = default,
             global::Writer.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -119,7 +128,8 @@ namespace Writer
                 order: ref order,
                 before: ref before,
                 after: ref after,
-                limit: ref limit);
+                limit: ref limit,
+                teamIds: teamIds);
 
 
             var __authorizations = global::Writer.EndPointSecurityResolver.ResolveAuthorizations(
@@ -152,6 +162,7 @@ namespace Writer
                                 .AddOptionalParameter("before", before?.ToString())
                                 .AddOptionalParameter("after", after?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("team_ids", teamIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Writer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -196,7 +207,8 @@ namespace Writer
                     order: order,
                     before: before,
                     after: after,
-                    limit: limit);
+                    limit: limit,
+                    teamIds: teamIds);
 
                 return __httpRequest;
             }

@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    /// Example: {"choices":[{"text":"Sure! Here\u0027s a search engine optimized article about...","log_probs":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"}],"model":"palmyra-x-003-instruct"}
+    /// Example: {"choices":[{"text":"Sure! Here\u0027s a search engine optimized article about...","log_probs":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"}],"model":"palmyra-x5"}
     /// </summary>
     public sealed partial class CompletionsResponse
     {

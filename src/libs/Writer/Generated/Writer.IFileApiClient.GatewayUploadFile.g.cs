@@ -6,7 +6,8 @@ namespace Writer
     {
         /// <summary>
         /// Upload file<br/>
-        /// Upload a new file to the system. Supports various file formats including PDF, DOC, DOCX, PPT, PPTX, JPG, PNG, EML, HTML, SRT, CSV, XLS, and XLSX.
+        /// Upload a new file to the system. Supports various file formats including PDF, DOC, DOCX, PPT, PPTX, JPG, PNG, EML, HTML, SRT, CSV, XLS, and XLSX.<br/>
+        /// File uploads do not accept team parameters. When you attach a file to a Knowledge Graph, the file inherits the team scope of that Knowledge Graph.
         /// </summary>
         /// <param name="contentDisposition"></param>
         /// <param name="contentType"></param>
@@ -36,7 +37,8 @@ namespace Writer
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload file<br/>
-        /// Upload a new file to the system. Supports various file formats including PDF, DOC, DOCX, PPT, PPTX, JPG, PNG, EML, HTML, SRT, CSV, XLS, and XLSX.
+        /// Upload a new file to the system. Supports various file formats including PDF, DOC, DOCX, PPT, PPTX, JPG, PNG, EML, HTML, SRT, CSV, XLS, and XLSX.<br/>
+        /// File uploads do not accept team parameters. When you attach a file to a Knowledge Graph, the file inherits the team scope of that Knowledge Graph.
         /// </summary>
         /// <param name="contentDisposition"></param>
         /// <param name="contentType"></param>

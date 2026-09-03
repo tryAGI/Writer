@@ -16,7 +16,7 @@ namespace Writer
         public global::Writer.LlmToolType Type { get; set; }
 
         /// <summary>
-        /// A tool that uses another Writer model to generate a response.
+        /// A tool that uses another model to generate a response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Writer
         /// Initializes a new instance of the <see cref="LlmTool" /> class.
         /// </summary>
         /// <param name="function">
-        /// A tool that uses another Writer model to generate a response.
+        /// A tool that uses another model to generate a response.
         /// </param>
         /// <param name="type">
         /// The type of tool.

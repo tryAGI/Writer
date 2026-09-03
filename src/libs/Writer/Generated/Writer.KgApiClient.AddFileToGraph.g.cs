@@ -45,7 +45,7 @@ namespace Writer
 
         /// <summary>
         /// Add file to graph<br/>
-        /// Add a file to a Knowledge Graph.
+        /// Add a file to a Knowledge Graph. Team access is inherited from the Knowledge Graph; the file itself does not carry team parameters.
         /// </summary>
         /// <param name="graphId"></param>
         /// <param name="request"></param>
@@ -77,7 +77,7 @@ namespace Writer
         }
         /// <summary>
         /// Add file to graph<br/>
-        /// Add a file to a Knowledge Graph.
+        /// Add a file to a Knowledge Graph. Team access is inherited from the Knowledge Graph; the file itself does not carry team parameters.
         /// </summary>
         /// <param name="graphId"></param>
         /// <param name="request"></param>
@@ -456,7 +456,7 @@ namespace Writer
         }
         /// <summary>
         /// Add file to graph<br/>
-        /// Add a file to a Knowledge Graph.
+        /// Add a file to a Knowledge Graph. Team access is inherited from the Knowledge Graph; the file itself does not carry team parameters.
         /// </summary>
         /// <param name="graphId"></param>
         /// <param name="fileId">

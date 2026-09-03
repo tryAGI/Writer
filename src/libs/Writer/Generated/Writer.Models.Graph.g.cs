@@ -60,6 +60,12 @@ namespace Writer
         public global::System.Collections.Generic.IList<global::Writer.WebConnectorUrl>? Urls { get; set; }
 
         /// <summary>
+        /// The team IDs the Knowledge Graph is deployed to. An empty array indicates an org-wide Knowledge Graph accessible to every team in the organization.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("team_ids")]
+        public global::System.Collections.Generic.IList<long>? TeamIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -90,6 +96,9 @@ namespace Writer
         /// <param name="urls">
         /// An array of web connector URLs associated with this Knowledge Graph.
         /// </param>
+        /// <param name="teamIds">
+        /// The team IDs the Knowledge Graph is deployed to. An empty array indicates an org-wide Knowledge Graph accessible to every team in the organization.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,7 +109,8 @@ namespace Writer
             global::Writer.GraphFileStatus fileStatus,
             global::Writer.GraphType type,
             string? description,
-            global::System.Collections.Generic.IList<global::Writer.WebConnectorUrl>? urls)
+            global::System.Collections.Generic.IList<global::Writer.WebConnectorUrl>? urls,
+            global::System.Collections.Generic.IList<long>? teamIds)
         {
             this.Id = id;
             this.CreatedAt = createdAt;
@@ -109,6 +119,7 @@ namespace Writer
             this.FileStatus = fileStatus ?? throw new global::System.ArgumentNullException(nameof(fileStatus));
             this.Type = type;
             this.Urls = urls;
+            this.TeamIds = teamIds;
         }
 
         /// <summary>

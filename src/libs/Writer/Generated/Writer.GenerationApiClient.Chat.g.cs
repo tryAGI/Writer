@@ -470,7 +470,7 @@ namespace Writer
         /// Generate a chat completion based on the provided messages. The response shown below is for non-streaming. To learn about streaming responses, see the [chat completion guide](https://dev.writer.com/home/chat-completion).
         /// </summary>
         /// <param name="model">
-        /// The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion. Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and `palmyra-x-003-instruct`.
+        /// The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion. This can be a Palmyra model such as `palmyra-x5` or `palmyra-x4`, or the ID of an [external model](https://dev.writer.com/home/external-models) configured for your organization.
         /// </param>
         /// <param name="messages">
         /// An array of message objects that form the conversation history or context for the model to respond to. The array must contain at least one message.

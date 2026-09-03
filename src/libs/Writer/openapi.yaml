@@ -118,7 +118,7 @@ paths:
             curl --location --request POST https://api.writer.com/v1/completions \
              --header "Authorization: Bearer <token>" \
              --header "Content-Type: application/json" \
-            --data-raw '{"model":"palmyra-x-003-instruct","prompt":"Write me a short SEO article about camping
+            --data-raw '{"model":"palmyra-x5","prompt":"Write me a short SEO article about camping
             gear","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}'
         - lang: JavaScript
           source: |-
@@ -130,7 +130,7 @@ paths:
 
             async function main() {
               const completion = await client.completions.create({
-                model: 'palmyra-x-003-instruct',
+                model: 'palmyra-x5',
                 prompt: 'Write me a short SEO article about camping gear',
               });
 
@@ -148,7 +148,7 @@ paths:
                 api_key=os.environ.get("WRITER_API_KEY"),
             )
             completion = client.completions.create(
-                model="palmyra-x-003-instruct",
+                model="palmyra-x5",
                 prompt="Write me a short SEO article about camping gear",
             )
             print(completion.choices)
@@ -211,7 +211,14 @@ paths:
       security:
         - bearerAuth: []
       summary: List graphs
-      description: Retrieve a list of Knowledge Graphs.
+      description: >-
+        Retrieve a list of Knowledge Graphs.
+
+
+        By default, the response contains only org-wide Knowledge Graphs. To include Knowledge Graphs that are
+        deployed to specific teams, pass one or more team IDs in the `team_ids` query parameter. Requests
+        authenticated with a team-scoped API key always return only that key's team; passing a different value
+        in `team_ids` is rejected.
       tags:
         - KG API
       operationId: findGraphsWithFileStatus
@@ -254,6 +261,21 @@ paths:
           description: >-
             Specifies the maximum number of objects returned in a page. The default value is 50. The minimum
             value is 1, and the maximum value is 100.
+        - name: team_ids
+          in: query
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
+              type: integer
+              format: int64
+          description: >-
+            Filter results to Knowledge Graphs deployed to any of the specified teams. Repeat the query
+            parameter to pass multiple IDs (for example, `?team_ids=42&team_ids=43`). Omitting this parameter
+            returns only org-wide Knowledge Graphs; Knowledge Graphs deployed to specific teams are excluded
+            unless the caller opts them in via `team_ids`.
       responses:
         '200':
           description: ''
@@ -298,7 +320,14 @@ paths:
       security:
         - bearerAuth: []
       summary: Create graph
-      description: Create a new Knowledge Graph.
+      description: >-
+        Create a new Knowledge Graph.
+
+
+        By default, the new Knowledge Graph is org-wide (accessible to every team in the organization). To
+        deploy the Knowledge Graph to specific teams instead, provide a `team_ids` array in the request body.
+        When the request is authenticated with a team-scoped API key, the new Knowledge Graph is automatically
+        assigned to that key's team and `team_ids` in the body is not accepted.
       tags:
         - KG API
       operationId: createGraph
@@ -482,7 +511,14 @@ paths:
       security:
         - bearerAuth: []
       summary: Update graph
-      description: Update the name and description of a Knowledge Graph.
+      description: >-
+        Update the name, description, web connector URLs, or team assignment of a Knowledge Graph.
+
+
+        Including a `team_ids` array replaces the whole team assignment: an empty array makes the Knowledge
+        Graph org-wide, one or more team IDs scope it to exactly those teams. Omitting `team_ids` leaves the
+        current team assignment unchanged. Team-scoped API keys cannot change the team assignment of a
+        Knowledge Graph.
       tags:
         - KG API
       operationId: updateGraph
@@ -611,7 +647,9 @@ paths:
       security:
         - bearerAuth: []
       summary: Add file to graph
-      description: Add a file to a Knowledge Graph.
+      description: >-
+        Add a file to a Knowledge Graph. Team access is inherited from the Knowledge Graph; the file itself
+        does not carry team parameters.
       tags:
         - KG API
       operationId: addFileToGraph
@@ -1006,6 +1044,10 @@ paths:
       description: >-
         Upload a new file to the system. Supports various file formats including PDF, DOC, DOCX, PPT, PPTX,
         JPG, PNG, EML, HTML, SRT, CSV, XLS, and XLSX.
+
+
+        File uploads do not accept team parameters. When you attach a file to a Knowledge Graph, the file
+        inherits the team scope of that Knowledge Graph.
       tags:
         - File API
       operationId: gatewayUploadFile
@@ -2233,7 +2275,7 @@ components:
         choices:
           - text: Sure! Here's a search engine optimized article about...
             log_probs: null
-        model: palmyra-x-003-instruct
+        model: palmyra-x5
     streaming_data:
       required:
         - value
@@ -2257,9 +2299,9 @@ components:
         model:
           type: string
           description: >-
-            The [ID of the model](https://dev.writer.com/home/models) to use for generating text. Supports
-            `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and
-            `palmyra-x-003-instruct`.
+            The [ID of the model](https://dev.writer.com/home/models) to use for generating text. This can be
+            a Palmyra model such as `palmyra-x5` or `palmyra-x4`, or the ID of an [external
+            model](https://dev.writer.com/home/external-models) configured for your organization.
         prompt:
           type: string
           description: The input text that the model will process to generate a response.
@@ -2307,7 +2349,7 @@ components:
             Determines whether the model's output should be streamed. If true, the output is generated and
             sent incrementally, which can be useful for real-time applications.
       example:
-        model: palmyra-x-003-instruct
+        model: palmyra-x5
         prompt: Write me an SEO article about...
         max_tokens: 150
         temperature: 0.7
@@ -2412,8 +2454,8 @@ components:
           type: string
           description: >-
             The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion.
-            Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and
-            `palmyra-x-003-instruct`.
+            This can be a Palmyra model such as `palmyra-x5` or `palmyra-x4`, or the ID of an [external
+            model](https://dev.writer.com/home/external-models) configured for your organization.
         messages:
           type: array
           items:
@@ -2982,6 +3024,14 @@ components:
           description: An array of web connector URLs associated with this Knowledge Graph.
           items:
             $ref: '#/components/schemas/web_connector_url'
+        team_ids:
+          type: array
+          description: >-
+            The team IDs the Knowledge Graph is deployed to. An empty array indicates an org-wide Knowledge
+            Graph accessible to every team in the organization.
+          items:
+            type: integer
+            format: int64
     graph_stage_status:
       title: graph_stage_status
       type: string
@@ -3063,6 +3113,17 @@ components:
           description: >-
             A description of the Knowledge Graph (max 255 characters). Omitting this field leaves the
             description unchanged.
+        team_ids:
+          type: array
+          description: >-
+            Optional list of team IDs to deploy the Knowledge Graph to. Omit the field or pass an empty array
+            to create an org-wide Knowledge Graph (accessible to every team in the organization), which is the
+            default. Provide one or more team IDs to scope the Knowledge Graph to those teams. Only applies
+            when using an org-scoped API key; requests made with a team-scoped API key ignore this field and
+            always assign the graph to that key's team.
+          items:
+            type: integer
+            format: int64
     update_graph_request:
       title: update_graph_request
       type: object
@@ -3084,6 +3145,16 @@ components:
             Knowledge Graphs with the type `web`. To clear the list of URLs, set this field to an empty array.
           items:
             $ref: '#/components/schemas/update_graph_web_url'
+        team_ids:
+          type: array
+          description: >-
+            Optional list of team IDs the Knowledge Graph is deployed to. Omitting this field leaves the
+            current team assignment unchanged. Passing an array replaces the whole team assignment: an empty
+            array makes the graph org-wide, one or more team IDs scope it to exactly those teams. Not accepted
+            from team-scoped API keys.
+          items:
+            type: integer
+            format: int64
     update_graph_web_url:
       title: update_graph_web_url
       required:
@@ -3164,6 +3235,14 @@ components:
           description: An array of web connector URLs associated with this Knowledge Graph.
           items:
             $ref: '#/components/schemas/web_connector_url'
+        team_ids:
+          type: array
+          description: >-
+            The team IDs the Knowledge Graph is deployed to. An empty array indicates an org-wide Knowledge
+            Graph accessible to every team in the organization.
+          items:
+            type: integer
+            format: int64
     web_connector_url:
       title: web_connector_url
       required:
@@ -3935,7 +4014,7 @@ components:
           $ref: '#/components/schemas/llm_function'
     llm_function:
       title: LLM function
-      description: A tool that uses another Writer model to generate a response.
+      description: A tool that uses another model to generate a response.
       required:
         - description
         - model

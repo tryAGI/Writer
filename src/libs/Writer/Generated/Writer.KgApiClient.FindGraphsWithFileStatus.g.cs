@@ -162,7 +162,7 @@ namespace Writer
                                 .AddOptionalParameter("before", before?.ToString())
                                 .AddOptionalParameter("after", after?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("team_ids", teamIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("team_ids", teamIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Writer.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -230,7 +230,7 @@ namespace Writer
                                 pathTemplate: "\"/v1/graphs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -264,7 +264,7 @@ namespace Writer
                                 pathTemplate: "\"/v1/graphs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -305,7 +305,7 @@ namespace Writer
                                 pathTemplate: "\"/v1/graphs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -353,7 +353,7 @@ namespace Writer
                                 pathTemplate: "\"/v1/graphs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -375,7 +375,7 @@ namespace Writer
                                 pathTemplate: "\"/v1/graphs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

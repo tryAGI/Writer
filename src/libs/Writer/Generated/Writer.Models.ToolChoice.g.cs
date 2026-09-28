@@ -46,8 +46,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.StringToolChoice PickString() => IsString
-            ? String!
+        public global::Writer.StringToolChoice PickString() => String is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.JsonObjectToolChoice PickJsonObject() => IsJsonObject
-            ? JsonObject!
+        public global::Writer.JsonObjectToolChoice PickJsonObject() => JsonObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -181,13 +181,13 @@ namespace Writer
                 Validate();
             }
 
-            if (IsString && @string != null)
+            if (String is { } __value0 && @string != null)
             {
-                return @string(String!);
+                return @string(__value0);
             }
-            else if (IsJsonObject && jsonObject != null)
+            else if (JsonObject is { } __value1 && jsonObject != null)
             {
-                return jsonObject(JsonObject!);
+                return jsonObject(__value1);
             }
 
             return default(TResult);
@@ -207,13 +207,13 @@ namespace Writer
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
         }
 
@@ -230,13 +230,13 @@ namespace Writer
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
         }
 

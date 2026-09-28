@@ -47,8 +47,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.FunctionTool PickFunction() => IsFunction
-            ? Function!
+        public global::Writer.FunctionTool PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.GraphTool PickGraph() => IsGraph
-            ? Graph!
+        public global::Writer.GraphTool PickGraph() => Graph is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Graph' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.LlmTool PickLlm() => IsLlm
-            ? Llm!
+        public global::Writer.LlmTool PickLlm() => Llm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.TranslationTool PickTranslation() => IsTranslation
-            ? Translation!
+        public global::Writer.TranslationTool PickTranslation() => Translation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Translation' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.VisionTool PickVision() => IsVision
-            ? Vision!
+        public global::Writer.VisionTool PickVision() => Vision is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Vision' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.WebSearchTool PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::Writer.WebSearchTool PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -445,29 +445,29 @@ namespace Writer
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsGraph && graph != null)
+            else if (Graph is { } __value1 && graph != null)
             {
-                return graph(Graph!);
+                return graph(__value1);
             }
-            else if (IsLlm && llm != null)
+            else if (Llm is { } __value2 && llm != null)
             {
-                return llm(Llm!);
+                return llm(__value2);
             }
-            else if (IsTranslation && translation != null)
+            else if (Translation is { } __value3 && translation != null)
             {
-                return translation(Translation!);
+                return translation(__value3);
             }
-            else if (IsVision && vision != null)
+            else if (Vision is { } __value4 && vision != null)
             {
-                return vision(Vision!);
+                return vision(__value4);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value5 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value5);
             }
 
             return default(TResult);
@@ -495,29 +495,29 @@ namespace Writer
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsGraph)
+            else if (Graph is { } __value1)
             {
-                graph?.Invoke(Graph!);
+                graph?.Invoke(__value1);
             }
-            else if (IsLlm)
+            else if (Llm is { } __value2)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value2);
             }
-            else if (IsTranslation)
+            else if (Translation is { } __value3)
             {
-                translation?.Invoke(Translation!);
+                translation?.Invoke(__value3);
             }
-            else if (IsVision)
+            else if (Vision is { } __value4)
             {
-                vision?.Invoke(Vision!);
+                vision?.Invoke(__value4);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value5)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value5);
             }
         }
 
@@ -538,29 +538,29 @@ namespace Writer
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsGraph)
+            else if (Graph is { } __value1)
             {
-                graph?.Invoke(Graph!);
+                graph?.Invoke(__value1);
             }
-            else if (IsLlm)
+            else if (Llm is { } __value2)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value2);
             }
-            else if (IsTranslation)
+            else if (Translation is { } __value3)
             {
-                translation?.Invoke(Translation!);
+                translation?.Invoke(__value3);
             }
-            else if (IsVision)
+            else if (Vision is { } __value4)
             {
-                vision?.Invoke(Vision!);
+                vision?.Invoke(__value4);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value5)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value5);
             }
         }
 

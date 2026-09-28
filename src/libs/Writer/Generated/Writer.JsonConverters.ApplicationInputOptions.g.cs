@@ -210,25 +210,25 @@ namespace Writer.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ApplicationInputDropdownOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ApplicationInputDropdownOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ApplicationInputDropdownOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dropdown!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDropdown(), typeInfo);
             }
             else if (value.IsFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ApplicationInputFileOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ApplicationInputFileOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ApplicationInputFileOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFile(), typeInfo);
             }
             else if (value.IsMedia)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ApplicationInputMediaOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ApplicationInputMediaOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ApplicationInputMediaOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Media!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMedia(), typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.ApplicationInputTextOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.ApplicationInputTextOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.ApplicationInputTextOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
         }
     }

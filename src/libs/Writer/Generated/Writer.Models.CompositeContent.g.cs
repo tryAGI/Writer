@@ -42,8 +42,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.TextFragment PickText() => IsText
-            ? Text!
+        public global::Writer.TextFragment PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public global::Writer.ImageFragment PickImage() => IsImage
-            ? Image!
+        public global::Writer.ImageFragment PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Writer
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Writer
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Writer
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
         }
 

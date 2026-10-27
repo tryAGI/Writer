@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    ///
+    /// Example: {"model":"palmyra-x5","messages":[{"content":"Write a memo summarizing this earnings report.","role":"user"}]}
     /// </summary>
     public sealed partial class ChatRequest
     {
@@ -55,7 +55,8 @@ namespace Writer
         public global::Writer.OneOf<global::System.Collections.Generic.IList<string>, string>? Stop { get; set; }
 
         /// <summary>
-        /// Specifies whether to return log probabilities of the output tokens.
+        /// Specifies whether to return log probabilities of the output tokens.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public bool? Logprobs { get; set; }
@@ -129,7 +130,8 @@ namespace Writer
         /// A token or sequence of tokens that, when generated, will cause the model to stop producing further content. This can be a single token or an array of tokens, acting as a signal to end the output.
         /// </param>
         /// <param name="logprobs">
-        /// Specifies whether to return log probabilities of the output tokens.
+        /// Specifies whether to return log probabilities of the output tokens.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="stream">
         /// Indicates whether the response should be streamed incrementally as it is generated or only returned once fully complete. Streaming can be useful for providing real-time feedback in interactive applications.<br/>

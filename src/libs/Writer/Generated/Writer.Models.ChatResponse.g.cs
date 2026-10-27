@@ -4,7 +4,7 @@
 namespace Writer
 {
     /// <summary>
-    ///
+    /// Example: {"id":"3c90c3cc-0d44-4b50-8888-8dd25736052a","choices":[{"finish_reason":"stop","message":{"content":"Hello! How can I assist you today?","role":"user"}}],"created":1678587532773,"model":"palmyra-x5"}
     /// </summary>
     public sealed partial class ChatResponse
     {

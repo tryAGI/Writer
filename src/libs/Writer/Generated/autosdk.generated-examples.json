@@ -57,17 +57,39 @@
     },
     {
       "Order": 6,
+      "Title": "Upload file",
+      "Slug": "gatewayuploadfile",
+      "Description": "Upload a new file to the system. Supports various file formats including PDF, DOC, DOCX, PPT, PPTX, JPG, PNG, EML, HTML, SRT, CSV, XLS, and XLSX.\n\nFile uploads do not accept team parameters. When you attach a file to a Knowledge Graph, the file inherits the team scope of that Knowledge Graph.",
+      "Language": "http",
+      "Code": "### Upload file\n# @name gatewayUploadFile\nPOST {{host}}/v1/files?graphId={{graphId}}\nAuthorization: Bearer {{token}}\nContent-Disposition: {{Content-Disposition}}\nContent-Type: {{Content-Type}}\nContent-Length: {{Content-Length}}\nContent-Type: text/plain\nAccept: application/json\n\n\u003C ./request.bin\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "gatewayUploadFile",
+      "Setup": null
+    },
+    {
+      "Order": 7,
+      "Title": "Chat completion",
+      "Slug": "chat",
+      "Description": "Generate a chat completion based on the provided messages. The response shown below is for non-streaming. To learn about streaming responses, see the [chat completion guide](https://dev.writer.com/home/chat-completion).",
+      "Language": "csharp",
+      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.ChatRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022palmyra-x5\u0022\u0022,\n  \u0022\u0022messages\u0022\u0022: [\n    {\n      \u0022\u0022content\u0022\u0022: \u0022\u0022Write a memo summarizing this earnings report.\u0022\u0022,\n      \u0022\u0022role\u0022\u0022: \u0022\u0022user\u0022\u0022\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.GenerationApi.ChatAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u00223c90c3cc-0d44-4b50-8888-8dd25736052a\u0022,\n//   \u0022choices\u0022: [\n//     {\n//       \u0022finish_reason\u0022: \u0022stop\u0022,\n//       \u0022message\u0022: {\n//         \u0022content\u0022: \u0022Hello! How can I assist you today?\u0022,\n//         \u0022role\u0022: \u0022user\u0022\n//       }\n//     }\n//   ],\n//   \u0022created\u0022: 1678587532773,\n//   \u0022model\u0022: \u0022palmyra-x5\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "chat",
+      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 8,
       "Title": "Text generation",
       "Slug": "completions",
       "Description": "Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don\u0027t require conversational context.",
       "Language": "csharp",
-      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.CompletionsRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022palmyra-x5\u0022\u0022,\n  \u0022\u0022prompt\u0022\u0022: \u0022\u0022Write me an SEO article about...\u0022\u0022,\n  \u0022\u0022max_tokens\u0022\u0022: 150,\n  \u0022\u0022temperature\u0022\u0022: 0.7,\n  \u0022\u0022top_p\u0022\u0022: 0.9,\n  \u0022\u0022stop\u0022\u0022: [\n    \u0022\u0022.\u0022\u0022\n  ],\n  \u0022\u0022best_of\u0022\u0022: 1,\n  \u0022\u0022random_seed\u0022\u0022: 42,\n  \u0022\u0022stream\u0022\u0022: false\n}\u0022)!;\n\nvar response = await client.GenerationApi.CompletionsAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022choices\u0022: [\n//     {\n//       \u0022text\u0022: \u0022Sure! Here\\u0027s a search engine optimized article about...\u0022,\n//       \u0022log_probs\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022\n//     }\n//   ],\n//   \u0022model\u0022: \u0022palmyra-x5\u0022\n// }",
+      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.CompletionsRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022palmyra-x5\u0022\u0022,\n  \u0022\u0022prompt\u0022\u0022: \u0022\u0022Write me an SEO article about...\u0022\u0022,\n  \u0022\u0022max_tokens\u0022\u0022: 150,\n  \u0022\u0022temperature\u0022\u0022: 0.7,\n  \u0022\u0022top_p\u0022\u0022: 0.9,\n  \u0022\u0022stop\u0022\u0022: [\n    \u0022\u0022.\u0022\u0022\n  ],\n  \u0022\u0022best_of\u0022\u0022: 1,\n  \u0022\u0022random_seed\u0022\u0022: 42,\n  \u0022\u0022stream\u0022\u0022: false\n}\u0022)!;\n\nvar response = await client.GenerationApi.CompletionsAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022choices\u0022: [\n//     {\n//       \u0022text\u0022: \u0022Sure! Here\\u0027s a search engine optimized article about...\u0022,\n//       \u0022log_probs\u0022: null\n//     }\n//   ],\n//   \u0022model\u0022: \u0022palmyra-x5\u0022\n// }",
       "Format": "sdk",
       "OperationId": "completions",
       "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 7,
+      "Order": 9,
       "Title": "Generate from application",
       "Slug": "generatecontent",
       "Description": "Generate content from an existing no-code agent (formerly called no-code applications) with inputs.",
@@ -78,7 +100,7 @@
       "Setup": null
     },
     {
-      "Order": 8,
+      "Order": 10,
       "Title": "List models",
       "Slug": "models",
       "Description": "Retrieve a list of available models that can be used for text generation, chat completions, and other AI tasks.",
@@ -89,7 +111,29 @@
       "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 9,
+      "Order": 11,
+      "Title": "Add file to graph",
+      "Slug": "addfiletograph",
+      "Description": "Add a file to a Knowledge Graph. Team access is inherited from the Knowledge Graph; the file itself does not carry team parameters.",
+      "Language": "http",
+      "Code": "### Add file to graph\n# @name addFileToGraph\nPOST {{host}}/v1/graphs/{{graph_id}}/file\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022file_id\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "addFileToGraph",
+      "Setup": null
+    },
+    {
+      "Order": 12,
+      "Title": "Create graph",
+      "Slug": "creategraph",
+      "Description": "Create a new Knowledge Graph.\n\nBy default, the new Knowledge Graph is org-wide (accessible to every team in the organization). To deploy the Knowledge Graph to specific teams instead, provide a \u0060team_ids\u0060 array in the request body. When the request is authenticated with a team-scoped API key, the new Knowledge Graph is automatically assigned to that key\u0027s team and \u0060team_ids\u0060 in the body is not accepted.",
+      "Language": "http",
+      "Code": "### Create graph\n# @name createGraph\nPOST {{host}}/v1/graphs\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022team_ids\u0022: [\n    0\n  ]\n}\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createGraph",
+      "Setup": null
+    },
+    {
+      "Order": 13,
       "Title": "Delete graph",
       "Slug": "deletegraph",
       "Description": "Delete a Knowledge Graph.",
@@ -100,7 +144,29 @@
       "Setup": null
     },
     {
-      "Order": 10,
+      "Order": 14,
+      "Title": "Retrieve graph",
+      "Slug": "findgraphwithfilestatus",
+      "Description": "Retrieve a Knowledge Graph.",
+      "Language": "http",
+      "Code": "### Retrieve graph\n# @name findGraphWithFileStatus\nGET {{host}}/v1/graphs/{{graph_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "findGraphWithFileStatus",
+      "Setup": null
+    },
+    {
+      "Order": 15,
+      "Title": "List graphs",
+      "Slug": "findgraphswithfilestatus",
+      "Description": "Retrieve a list of Knowledge Graphs.\n\nBy default, the response contains only org-wide Knowledge Graphs. To include Knowledge Graphs that are deployed to specific teams, pass one or more team IDs in the \u0060team_ids\u0060 query parameter. Requests authenticated with a team-scoped API key always return only that key\u0027s team; passing a different value in \u0060team_ids\u0060 is rejected.",
+      "Language": "csharp",
+      "Code": "using var client = new WriterClient(apiKey);\nvar response = await client.KgApi.FindGraphsWithFileStatusAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u002250daa3d0-e7d9-44a4-be42-b53e2379ebf7\u0022,\n//       \u0022created_at\u0022: \u00222024-07-10T15:03:48.785843Z\u0022,\n//       \u0022name\u0022: \u0022Example Knowledge Graph\u0022,\n//       \u0022description\u0022: \u0022Example description\u0022,\n//       \u0022file_status\u0022: {\n//         \u0022in_progress\u0022: 0,\n//         \u0022completed\u0022: 0,\n//         \u0022failed\u0022: 0,\n//         \u0022total\u0022: 11\n//       },\n//       \u0022type\u0022: \u0022manual\u0022,\n//       \u0022urls\u0022: null,\n//       \u0022team_ids\u0022: []\n//     },\n//     {\n//       \u0022id\u0022: \u0022e7392337-1c4e-4bc9-aaf5-b719bf1e938a\u0022,\n//       \u0022created_at\u0022: \u00222024-07-10T15:03:39.881370Z\u0022,\n//       \u0022name\u0022: \u0022Another example Knowledge Graph\u0022,\n//       \u0022description\u0022: \u0022Another example description\u0022,\n//       \u0022file_status\u0022: {\n//         \u0022in_progress\u0022: 0,\n//         \u0022completed\u0022: 0,\n//         \u0022failed\u0022: 0,\n//         \u0022total\u0022: 0\n//       },\n//       \u0022type\u0022: \u0022web\u0022,\n//       \u0022urls\u0022: [\n//         {\n//           \u0022url\u0022: \u0022https://docs.example.com\u0022,\n//           \u0022status\u0022: {\n//             \u0022status\u0022: \u0022success\u0022,\n//             \u0022error_type\u0022: null\n//           },\n//           \u0022type\u0022: \u0022single_page\u0022\n//         }\n//       ],\n//       \u0022team_ids\u0022: []\n//     }\n//   ],\n//   \u0022first_id\u0022: \u002250daa3d0-e7d9-44a4-be42-b53e2379ebf7\u0022,\n//   \u0022last_id\u0022: \u0022e7392337-1c4e-4bc9-aaf5-b719bf1e938a\u0022,\n//   \u0022has_more\u0022: true\n// }",
+      "Format": "sdk",
+      "OperationId": "findGraphsWithFileStatus",
+      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 16,
       "Title": "Question",
       "Slug": "question",
       "Description": "Ask a question to specified Knowledge Graphs.",
@@ -111,7 +177,7 @@
       "Setup": null
     },
     {
-      "Order": 11,
+      "Order": 17,
       "Title": "Remove file from graph",
       "Slug": "removefilefromgraph",
       "Description": "Remove a file from a Knowledge Graph.",
@@ -122,18 +188,29 @@
       "Setup": null
     },
     {
-      "Order": 12,
+      "Order": 18,
+      "Title": "Update graph",
+      "Slug": "updategraph",
+      "Description": "Update the name, description, web connector URLs, or team assignment of a Knowledge Graph.\n\nIncluding a \u0060team_ids\u0060 array replaces the whole team assignment: an empty array makes the Knowledge Graph org-wide, one or more team IDs scope it to exactly those teams. Omitting \u0060team_ids\u0060 leaves the current team assignment unchanged. Team-scoped API keys cannot change the team assignment of a Knowledge Graph.",
+      "Language": "http",
+      "Code": "### Update graph\n# @name updateGraph\nPUT {{host}}/v1/graphs/{{graph_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022urls\u0022: [\n    {\n      \u0022url\u0022: \u0022string\u0022,\n      \u0022exclude_urls\u0022: [],\n      \u0022type\u0022: \u0022single_page\u0022\n    }\n  ],\n  \u0022team_ids\u0022: [\n    0\n  ]\n}\n\n## Responses\n# 200\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "updateGraph",
+      "Setup": null
+    },
+    {
+      "Order": 19,
       "Title": "Web search",
       "Slug": "web-search",
       "Description": "Search the web for information about a given query and return relevant results with source URLs.",
       "Language": "csharp",
-      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.WebSearchRequest\u003E(\n    @\u0022{\n  \u0022\u0022query\u0022\u0022: \u0022\u0022How do I get an API key for the Writer API?\u0022\u0022,\n  \u0022\u0022include_domains\u0022\u0022: [\n    \u0022\u0022dev.writer.com\u0022\u0022\n  ]\n}\u0022)!;\n\nvar response = await client.ToolsApi.CreateToolsWebSearchAsync(\n    request: request\n);",
+      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.WebSearchRequest\u003E(\n    @\u0022{\n  \u0022\u0022query\u0022\u0022: \u0022\u0022How do I get an API key for the Writer API?\u0022\u0022,\n  \u0022\u0022include_domains\u0022\u0022: [\n    \u0022\u0022dev.writer.com\u0022\u0022\n  ]\n}\u0022)!;\n\nvar response = await client.ToolsApi.CreateToolsWebSearchAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022query\u0022: \u0022How do I get an API key for the Writer API?\u0022,\n//   \u0022answer\u0022: \u0022To get an API key for the Writer API, you need to create one in the AI Studio. Here\\u0027s how to do it:\\n\\n1. Go to the AI Studio home page.\\n2. Click on \\u0022API Keys\\u0022 in the navigation menu.\\n\\\\\\nOnce you\\u0027ve created your API key, you can use it to make API calls. It\\u0027s recommended to set the API key as an environment variable named \\u0060WRITER_API_KEY\\u0060 for easier access. \\n\\nFor example, you can store it in a \\u0060.env\\u0060 file and then initialize the Writer client, which will automatically look for the \\u0060WRITER_API_KEY\\u0060 environment variable.\u0022,\n//   \u0022sources\u0022: [\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/home/sdks\u0022,\n//       \u0022raw_content\u0022: null\n//     },\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/api-guides/api-reference/application-api/applications\u0022,\n//       \u0022raw_content\u0022: null\n//     },\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/api-reference/api-keys\u0022,\n//       \u0022raw_content\u0022: null\n//     },\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/home/quickstart\u0022,\n//       \u0022raw_content\u0022: null\n//     },\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/framework/chat-assistant\u0022,\n//       \u0022raw_content\u0022: null\n//     }\n//   ]\n// }",
       "Format": "sdk",
       "OperationId": "createToolsWebSearch",
       "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 13,
+      "Order": 20,
       "Title": "Analyze images",
       "Slug": "analyze-images",
       "Description": "Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.",

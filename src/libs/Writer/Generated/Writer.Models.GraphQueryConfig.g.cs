@@ -45,14 +45,14 @@ namespace Writer
 
         /// <summary>
         /// Threshold for keyword-based matching when searching Knowledge Graph content. Set higher for stricter relevance, lower for broader range. Higher values (closer to 1.0) require stronger keyword matches, while lower values (closer to 0.0) allow more lenient matching. Range: 0.0-1.0, Default: 0.7.<br/>
-        /// Default Value: 0.7
+        /// Default Value: 0.7F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keyword_threshold")]
         public double? KeywordThreshold { get; set; }
 
         /// <summary>
         /// Threshold for semantic similarity matching when searching Knowledge Graph content. Set higher for stricter relevance, lower for broader range. Higher values (closer to 1.0) require stronger semantic similarity, while lower values (closer to 0.0) allow more lenient semantic matching. Range: 0.0-1.0, Default: 0.7.<br/>
-        /// Default Value: 0.7
+        /// Default Value: 0.7F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("semantic_threshold")]
         public double? SemanticThreshold { get; set; }
@@ -95,11 +95,11 @@ namespace Writer
         /// </param>
         /// <param name="keywordThreshold">
         /// Threshold for keyword-based matching when searching Knowledge Graph content. Set higher for stricter relevance, lower for broader range. Higher values (closer to 1.0) require stronger keyword matches, while lower values (closer to 0.0) allow more lenient matching. Range: 0.0-1.0, Default: 0.7.<br/>
-        /// Default Value: 0.7
+        /// Default Value: 0.7F
         /// </param>
         /// <param name="semanticThreshold">
         /// Threshold for semantic similarity matching when searching Knowledge Graph content. Set higher for stricter relevance, lower for broader range. Higher values (closer to 1.0) require stronger semantic similarity, while lower values (closer to 0.0) allow more lenient semantic matching. Range: 0.0-1.0, Default: 0.7.<br/>
-        /// Default Value: 0.7
+        /// Default Value: 0.7F
         /// </param>
         /// <param name="inlineCitations">
         /// Whether to include inline citations in the response, showing which Knowledge Graph sources were used. Default: false.<br/>

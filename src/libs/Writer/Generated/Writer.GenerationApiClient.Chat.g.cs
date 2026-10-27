@@ -492,7 +492,8 @@ namespace Writer
         /// A token or sequence of tokens that, when generated, will cause the model to stop producing further content. This can be a single token or an array of tokens, acting as a signal to end the output.
         /// </param>
         /// <param name="logprobs">
-        /// Specifies whether to return log probabilities of the output tokens.
+        /// Specifies whether to return log probabilities of the output tokens.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="tools">
         /// An array containing tool definitions for tools that the model can use to generate responses. The tool definitions use JSON schema. You can define your own functions or use one of the built-in `graph`, `llm`, `translation`, or `vision` tools. Note that you can only use one built-in tool type in the array (only one of `graph`, `llm`, `translation`, or `vision`). You can pass multiple [custom tools](https://dev.writer.com/home/tool-calling) of type `function` in the same request.

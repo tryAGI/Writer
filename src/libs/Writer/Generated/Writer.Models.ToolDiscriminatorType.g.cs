@@ -23,14 +23,6 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        Translation,
-        /// <summary>
-        ///
-        /// </summary>
-        Vision,
-        /// <summary>
-        ///
-        /// </summary>
         WebSearch,
     }
 
@@ -49,8 +41,6 @@ namespace Writer
                 ToolDiscriminatorType.Function => "function",
                 ToolDiscriminatorType.Graph => "graph",
                 ToolDiscriminatorType.Llm => "llm",
-                ToolDiscriminatorType.Translation => "translation",
-                ToolDiscriminatorType.Vision => "vision",
                 ToolDiscriminatorType.WebSearch => "web_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -65,8 +55,6 @@ namespace Writer
                 "function" => ToolDiscriminatorType.Function,
                 "graph" => ToolDiscriminatorType.Graph,
                 "llm" => ToolDiscriminatorType.Llm,
-                "translation" => ToolDiscriminatorType.Translation,
-                "vision" => ToolDiscriminatorType.Vision,
                 "web_search" => ToolDiscriminatorType.WebSearch,
                 _ => null,
             };

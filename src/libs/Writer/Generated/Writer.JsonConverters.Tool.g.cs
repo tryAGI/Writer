@@ -42,20 +42,6 @@ namespace Writer.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Writer.LlmTool)}");
                 llm = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Writer.TranslationTool? translation = default;
-            if (discriminator?.Type == global::Writer.ToolDiscriminatorType.Translation)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.TranslationTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.TranslationTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Writer.TranslationTool)}");
-                translation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::Writer.VisionTool? vision = default;
-            if (discriminator?.Type == global::Writer.ToolDiscriminatorType.Vision)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.VisionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.VisionTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Writer.VisionTool)}");
-                vision = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
             global::Writer.WebSearchTool? webSearch = default;
             if (discriminator?.Type == global::Writer.ToolDiscriminatorType.WebSearch)
             {
@@ -71,10 +57,6 @@ namespace Writer.JsonConverters
                 graph,
 
                 llm,
-
-                translation,
-
-                vision,
 
                 webSearch
                 );
@@ -108,18 +90,6 @@ namespace Writer.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.LlmTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.LlmTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.LlmTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLlm(), typeInfo);
-            }
-            else if (value.IsTranslation)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.TranslationTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.TranslationTool?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.TranslationTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTranslation(), typeInfo);
-            }
-            else if (value.IsVision)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.VisionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.VisionTool?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.VisionTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVision(), typeInfo);
             }
             else if (value.IsWebSearch)
             {

@@ -15,33 +15,10 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ParsePdfRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.PdfConversionFormat), TypeInfoPropertyName = "PdfConversionFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ParsePdfResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestTopic), TypeInfoPropertyName = "WebSearchRequestTopic2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestSearchDepth), TypeInfoPropertyName = "WebSearchRequestSearchDepth2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestTimeRange), TypeInfoPropertyName = "WebSearchRequestTimeRange2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.OneOf<global::Writer.WebSearchRequestIncludeRawContent?, bool?>), TypeInfoPropertyName = "OneOfWebSearchRequestIncludeRawContentBoolean2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestIncludeRawContent), TypeInfoPropertyName = "WebSearchRequestIncludeRawContent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestCountry), TypeInfoPropertyName = "WebSearchRequestCountry2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.WebSearchResponseSource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchResponseSource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.PdfConversionFormat?), TypeInfoPropertyName = "NullablePdfConversionFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestTopic?), TypeInfoPropertyName = "NullableWebSearchRequestTopic2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestSearchDepth?), TypeInfoPropertyName = "NullableWebSearchRequestSearchDepth2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestTimeRange?), TypeInfoPropertyName = "NullableWebSearchRequestTimeRange2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.OneOf<global::Writer.WebSearchRequestIncludeRawContent?, bool?>?), TypeInfoPropertyName = "NullableOneOfWebSearchRequestIncludeRawContentBoolean2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestIncludeRawContent?), TypeInfoPropertyName = "NullableWebSearchRequestIncludeRawContent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestCountry?), TypeInfoPropertyName = "NullableWebSearchRequestCountry2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.WebSearchResponseSource>))]
     internal sealed partial class ToolsApiSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -91,7 +68,6 @@ namespace Writer
         {
             options.Converters.Add(new global::Writer.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, string>());
             options.Converters.Add(new global::Writer.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, string>());
-            options.Converters.Add(new global::Writer.JsonConverters.OneOfJsonConverter<global::Writer.WebSearchRequestIncludeRawContent?, bool?>());
             options.Converters.Add(new global::Writer.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -116,27 +92,7 @@ namespace Writer
                 return
                     typeToConvert == typeof(global::Writer.PdfConversionFormat)
 
-                    || typeToConvert == typeof(global::Writer.PdfConversionFormat?)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestTopic)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestTopic?)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestSearchDepth)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestSearchDepth?)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestTimeRange)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestTimeRange?)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestIncludeRawContent)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestIncludeRawContent?)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestCountry)
-
-                    || typeToConvert == typeof(global::Writer.WebSearchRequestCountry?);
+                    || typeToConvert == typeof(global::Writer.PdfConversionFormat?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -151,56 +107,6 @@ namespace Writer
                 if (typeToConvert == typeof(global::Writer.PdfConversionFormat?))
                 {
                     return new global::Writer.JsonConverters.PdfConversionFormatNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestTopic))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestTopicJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestTopic?))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestTopicNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestSearchDepth))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestSearchDepthJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestSearchDepth?))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestSearchDepthNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestTimeRange))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestTimeRangeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestTimeRange?))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestTimeRangeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestIncludeRawContent))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestIncludeRawContentJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestIncludeRawContent?))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestIncludeRawContentNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestCountry))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestCountryJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Writer.WebSearchRequestCountry?))
-                {
-                    return new global::Writer.JsonConverters.WebSearchRequestCountryNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

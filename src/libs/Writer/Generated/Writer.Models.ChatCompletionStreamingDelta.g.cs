@@ -42,12 +42,6 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("translation_data")]
-        public global::Writer.TranslationData? TranslationData { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         public string? Refusal { get; set; }
 
@@ -67,7 +61,6 @@ namespace Writer
         /// <param name="toolCalls"></param>
         /// <param name="graphData"></param>
         /// <param name="llmData"></param>
-        /// <param name="translationData"></param>
         /// <param name="refusal"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -78,7 +71,6 @@ namespace Writer
             global::System.Collections.Generic.IList<global::Writer.ToolCallStreaming>? toolCalls,
             global::Writer.GraphData? graphData,
             global::Writer.LlmData? llmData,
-            global::Writer.TranslationData? translationData,
             string? refusal)
         {
             this.Content = content;
@@ -86,7 +78,6 @@ namespace Writer
             this.ToolCalls = toolCalls;
             this.GraphData = graphData;
             this.LlmData = llmData;
-            this.TranslationData = translationData;
             this.Refusal = refusal;
         }
 

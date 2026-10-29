@@ -197,28 +197,6 @@
       "Format": "http",
       "OperationId": "updateGraph",
       "Setup": null
-    },
-    {
-      "Order": 19,
-      "Title": "Web search",
-      "Slug": "web-search",
-      "Description": "Search the web for information about a given query and return relevant results with source URLs.",
-      "Language": "csharp",
-      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.WebSearchRequest\u003E(\n    @\u0022{\n  \u0022\u0022query\u0022\u0022: \u0022\u0022How do I get an API key for the Writer API?\u0022\u0022,\n  \u0022\u0022include_domains\u0022\u0022: [\n    \u0022\u0022dev.writer.com\u0022\u0022\n  ]\n}\u0022)!;\n\nvar response = await client.ToolsApi.CreateToolsWebSearchAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022query\u0022: \u0022How do I get an API key for the Writer API?\u0022,\n//   \u0022answer\u0022: \u0022To get an API key for the Writer API, you need to create one in the AI Studio. Here\\u0027s how to do it:\\n\\n1. Go to the AI Studio home page.\\n2. Click on \\u0022API Keys\\u0022 in the navigation menu.\\n\\\\\\nOnce you\\u0027ve created your API key, you can use it to make API calls. It\\u0027s recommended to set the API key as an environment variable named \\u0060WRITER_API_KEY\\u0060 for easier access. \\n\\nFor example, you can store it in a \\u0060.env\\u0060 file and then initialize the Writer client, which will automatically look for the \\u0060WRITER_API_KEY\\u0060 environment variable.\u0022,\n//   \u0022sources\u0022: [\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/home/sdks\u0022,\n//       \u0022raw_content\u0022: null\n//     },\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/api-guides/api-reference/application-api/applications\u0022,\n//       \u0022raw_content\u0022: null\n//     },\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/api-reference/api-keys\u0022,\n//       \u0022raw_content\u0022: null\n//     },\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/home/quickstart\u0022,\n//       \u0022raw_content\u0022: null\n//     },\n//     {\n//       \u0022url\u0022: \u0022https://dev.writer.com/framework/chat-assistant\u0022,\n//       \u0022raw_content\u0022: null\n//     }\n//   ]\n// }",
-      "Format": "sdk",
-      "OperationId": "createToolsWebSearch",
-      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
-    },
-    {
-      "Order": 20,
-      "Title": "Analyze images",
-      "Slug": "analyze-images",
-      "Description": "Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.",
-      "Language": "csharp",
-      "Code": "using var client = new WriterClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Writer.VisionRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022palmyra-vision\u0022\u0022,\n  \u0022\u0022variables\u0022\u0022: [\n    {\n      \u0022\u0022name\u0022\u0022: \u0022\u0022image_1\u0022\u0022,\n      \u0022\u0022file_id\u0022\u0022: \u0022\u0022f1234\u0022\u0022\n    },\n    {\n      \u0022\u0022name\u0022\u0022: \u0022\u0022image_2\u0022\u0022,\n      \u0022\u0022file_id\u0022\u0022: \u0022\u0022f9876\u0022\u0022\n    }\n  ],\n  \u0022\u0022prompt\u0022\u0022: \u0022\u0022Describe the difference between the image {{image_1}} and the image {{image_2}}.\u0022\u0022\n}\u0022)!;\n\nvar response = await client.Vision.CreateVisionAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022data\u0022: \u0022Image f1234 shows a densely crowded urban beach with many umbrellas, while image f9876 depicts a sparsely populated tropical beach with clear turquoise water and lush greenery\u0022\n// }",
-      "Format": "sdk",
-      "OperationId": "createVision",
-      "Setup": "This example assumes \u0060using Writer;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     }
   ]
 }

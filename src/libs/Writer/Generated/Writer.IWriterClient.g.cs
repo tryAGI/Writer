@@ -69,10 +69,5 @@ namespace Writer
         /// </summary>
         public ToolsApiClient ToolsApi { get; }
 
-        /// <summary>
-        ///
-        /// </summary>
-        public VisionClient Vision { get; }
-
     }
 }

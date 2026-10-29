@@ -92,15 +92,6 @@ namespace Writer
         };
 
         /// <summary>
-        ///
-        /// </summary>
-        public VisionClient Vision => new VisionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-        };
-
-        /// <summary>
         /// Creates a new instance of the WriterClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

@@ -95,14 +95,6 @@ namespace Writer
 
             typeof(global::Writer.JsonConverters.LlmToolTypeNullableJsonConverter),
 
-            typeof(global::Writer.JsonConverters.VisionToolTypeJsonConverter),
-
-            typeof(global::Writer.JsonConverters.VisionToolTypeNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.VisionFunctionModelJsonConverter),
-
-            typeof(global::Writer.JsonConverters.VisionFunctionModelNullableJsonConverter),
-
             typeof(global::Writer.JsonConverters.ToolCallTypeJsonConverter),
 
             typeof(global::Writer.JsonConverters.ToolCallTypeNullableJsonConverter),
@@ -118,38 +110,6 @@ namespace Writer
             typeof(global::Writer.JsonConverters.PdfConversionFormatJsonConverter),
 
             typeof(global::Writer.JsonConverters.PdfConversionFormatNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.VisionRequestModelJsonConverter),
-
-            typeof(global::Writer.JsonConverters.VisionRequestModelNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.TranslationToolTypeJsonConverter),
-
-            typeof(global::Writer.JsonConverters.TranslationToolTypeNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.TranslationFunctionModelJsonConverter),
-
-            typeof(global::Writer.JsonConverters.TranslationFunctionModelNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestTopicJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestTopicNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestSearchDepthJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestSearchDepthNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestTimeRangeJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestTimeRangeNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestIncludeRawContentJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestIncludeRawContentNullableJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestCountryJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchRequestCountryNullableJsonConverter),
 
             typeof(global::Writer.JsonConverters.WebSearchToolTypeJsonConverter),
 
@@ -192,8 +152,6 @@ namespace Writer
             typeof(global::Writer.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
 
             typeof(global::Writer.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Writer.CompositeContent>>),
-
-            typeof(global::Writer.JsonConverters.OneOfJsonConverter<global::Writer.WebSearchRequestIncludeRawContent?, bool?>),
 
             typeof(global::Writer.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -255,7 +213,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolCall))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GraphData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.LlmData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ChatMessageRole), TypeInfoPropertyName = "ChatMessageRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.ToolCallStreaming>))]
@@ -341,8 +298,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.FunctionTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GraphTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.LlmTool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationTool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolDiscriminatorType), TypeInfoPropertyName = "ToolDiscriminatorType2")]
@@ -352,11 +307,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GraphFunction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.LlmToolType), TypeInfoPropertyName = "LlmToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.LlmFunction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionToolType), TypeInfoPropertyName = "VisionToolType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionFunction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.VisionToolRequestFileVariable>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionToolRequestFileVariable))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionFunctionModel), TypeInfoPropertyName = "VisionFunctionModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolCallType), TypeInfoPropertyName = "ToolCallType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.Function))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolCallStreamingType), TypeInfoPropertyName = "ToolCallStreamingType2")]
@@ -366,24 +316,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ParsePdfRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.PdfConversionFormat), TypeInfoPropertyName = "PdfConversionFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ParsePdfResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionRequestModel), TypeInfoPropertyName = "VisionRequestModel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.VisionRequestFileVariable>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionRequestFileVariable))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.VisionResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationToolType), TypeInfoPropertyName = "TranslationToolType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationFunction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TranslationFunctionModel), TypeInfoPropertyName = "TranslationFunctionModel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestTopic), TypeInfoPropertyName = "WebSearchRequestTopic2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestSearchDepth), TypeInfoPropertyName = "WebSearchRequestSearchDepth2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestTimeRange), TypeInfoPropertyName = "WebSearchRequestTimeRange2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.OneOf<global::Writer.WebSearchRequestIncludeRawContent?, bool?>), TypeInfoPropertyName = "OneOfWebSearchRequestIncludeRawContentBoolean2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestIncludeRawContent), TypeInfoPropertyName = "WebSearchRequestIncludeRawContent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchRequestCountry), TypeInfoPropertyName = "WebSearchRequestCountry2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.WebSearchResponseSource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchResponseSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchToolType), TypeInfoPropertyName = "WebSearchToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchFunction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TextFragment))]
@@ -434,9 +366,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.ApplicationInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.FileUploadType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.GenerateApplicationChunkStage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.VisionToolRequestFileVariable>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.VisionRequestFileVariable>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.WebSearchResponseSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.File>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.Web>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.ChatCompletionChunk>))]

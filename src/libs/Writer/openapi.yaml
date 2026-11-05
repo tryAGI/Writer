@@ -1358,7 +1358,7 @@
         "x-codeSamples": [
           {
             "lang": "cURL",
-            "source": "curl --location --request POST https://api.writer.com/v1/files \\\n --header \"Authorization: Bearer <token>\"\n --header \"Accept: */*\" \\\n --header \"Content-Disposition: attachment; filename=descriptions.pdf\" \\\n --header \"Content-Length: size_in_bytes\" \\\n --header \"Content-Type: application/pdf\" \\\n --data-binary \"@descriptions.pdf\""
+            "source": "curl --location --request POST https://api.writer.com/v1/files \\\n --header \"Authorization: Bearer <token>\" \\\n --header \"Accept: */*\" \\\n --header \"Content-Disposition: attachment; filename=descriptions.pdf\" \\\n --header \"Content-Length: size_in_bytes\" \\\n --header \"Content-Type: application/pdf\" \\\n --data-binary \"@descriptions.pdf\""
           },
           {
             "lang": "JavaScript",

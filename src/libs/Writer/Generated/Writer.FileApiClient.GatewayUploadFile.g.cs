@@ -64,7 +64,7 @@ namespace Writer
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/files \<br/>
-        ///  --header "Authorization: Bearer &lt;token&gt;"<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
         ///  --header "Accept: */*" \<br/>
         ///  --header "Content-Disposition: attachment; filename=descriptions.pdf" \<br/>
         ///  --header "Content-Length: size_in_bytes" \<br/>
@@ -109,7 +109,7 @@ namespace Writer
         /// <exception cref="global::Writer.ApiException"></exception>
         /// <remarks>
         /// curl --location --request POST https://api.writer.com/v1/files \<br/>
-        ///  --header "Authorization: Bearer &lt;token&gt;"<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
         ///  --header "Accept: */*" \<br/>
         ///  --header "Content-Disposition: attachment; filename=descriptions.pdf" \<br/>
         ///  --header "Content-Length: size_in_bytes" \<br/>

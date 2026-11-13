@@ -111,10 +111,6 @@ namespace Writer
 
             typeof(global::Writer.JsonConverters.PdfConversionFormatNullableJsonConverter),
 
-            typeof(global::Writer.JsonConverters.WebSearchToolTypeJsonConverter),
-
-            typeof(global::Writer.JsonConverters.WebSearchToolTypeNullableJsonConverter),
-
             typeof(global::Writer.JsonConverters.TextFragmentTypeJsonConverter),
 
             typeof(global::Writer.JsonConverters.TextFragmentTypeNullableJsonConverter),
@@ -213,7 +209,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolCall))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GraphData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.LlmData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ChatMessageRole), TypeInfoPropertyName = "ChatMessageRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.ToolCallStreaming>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolCallStreaming))]
@@ -239,8 +234,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.SubQuery?>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.SubQuery))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.References))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.WebSearchDataSource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchDataSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GraphResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Writer.WebConnectorUrl>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebConnectorUrl))]
@@ -298,7 +291,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.FunctionTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.GraphTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.LlmTool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ToolDiscriminatorType), TypeInfoPropertyName = "ToolDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.FunctionToolType), TypeInfoPropertyName = "FunctionToolType2")]
@@ -316,8 +308,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ParsePdfRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.PdfConversionFormat), TypeInfoPropertyName = "PdfConversionFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ParsePdfResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchToolType), TypeInfoPropertyName = "WebSearchToolType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.WebSearchFunction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TextFragment))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.ImageFragment))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Writer.TextFragmentType), TypeInfoPropertyName = "TextFragmentType2")]
@@ -355,7 +345,6 @@ namespace Writer
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.FileResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.Source?>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.SubQuery?>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.WebSearchDataSource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.WebConnectorUrl>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Writer.UpdateGraphWebUrl>))]

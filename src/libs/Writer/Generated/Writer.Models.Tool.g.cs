@@ -124,43 +124,6 @@ namespace Writer
         public global::Writer.LlmTool PickLlm() => Llm is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Writer.WebSearchTool? WebSearch { get; init; }
-#else
-        public global::Writer.WebSearchTool? WebSearch { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
-#endif
-        public bool IsWebSearch => WebSearch != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickWebSearch(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::Writer.WebSearchTool? value)
-        {
-            value = WebSearch;
-            return IsWebSearch;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Writer.WebSearchTool PickWebSearch() => WebSearch is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -233,35 +196,11 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Tool(global::Writer.WebSearchTool value) => new Tool((global::Writer.WebSearchTool?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::Writer.WebSearchTool?(Tool @this) => @this.WebSearch;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Tool(global::Writer.WebSearchTool? value)
-        {
-            WebSearch = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static Tool FromWebSearch(global::Writer.WebSearchTool? value) => new Tool(value);
-
-        /// <summary>
-        ///
-        /// </summary>
         public Tool(
             global::Writer.ToolDiscriminatorType? type,
             global::Writer.FunctionTool? function,
             global::Writer.GraphTool? graph,
-            global::Writer.LlmTool? llm,
-            global::Writer.WebSearchTool? webSearch
+            global::Writer.LlmTool? llm
             )
         {
             Type = type;
@@ -269,14 +208,12 @@ namespace Writer
             Function = function;
             Graph = graph;
             Llm = llm;
-            WebSearch = webSearch;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            WebSearch as object ??
             Llm as object ??
             Graph as object ??
             Function as object
@@ -288,8 +225,7 @@ namespace Writer
         public override string? ToString() =>
             Function?.ToString() ??
             Graph?.ToString() ??
-            Llm?.ToString() ??
-            WebSearch?.ToString()
+            Llm?.ToString()
             ;
 
         /// <summary>
@@ -297,7 +233,7 @@ namespace Writer
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsGraph && !IsLlm && !IsWebSearch || !IsFunction && IsGraph && !IsLlm && !IsWebSearch || !IsFunction && !IsGraph && IsLlm && !IsWebSearch || !IsFunction && !IsGraph && !IsLlm && IsWebSearch;
+            return IsFunction && !IsGraph && !IsLlm || !IsFunction && IsGraph && !IsLlm || !IsFunction && !IsGraph && IsLlm;
         }
 
         /// <summary>
@@ -307,7 +243,6 @@ namespace Writer
             global::System.Func<global::Writer.FunctionTool, TResult>? function = null,
             global::System.Func<global::Writer.GraphTool, TResult>? graph = null,
             global::System.Func<global::Writer.LlmTool, TResult>? llm = null,
-            global::System.Func<global::Writer.WebSearchTool, TResult>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -327,10 +262,6 @@ namespace Writer
             {
                 return llm(__value2);
             }
-            else if (WebSearch is { } __value3 && webSearch != null)
-            {
-                return webSearch(__value3);
-            }
 
             return default(TResult);
         }
@@ -344,8 +275,6 @@ namespace Writer
             global::System.Action<global::Writer.GraphTool>? graph = null,
 
             global::System.Action<global::Writer.LlmTool>? llm = null,
-
-            global::System.Action<global::Writer.WebSearchTool>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -364,10 +293,6 @@ namespace Writer
             else if (Llm is { } __value2)
             {
                 llm?.Invoke(__value2);
-            }
-            else if (WebSearch is { } __value3)
-            {
-                webSearch?.Invoke(__value3);
             }
         }
 
@@ -378,7 +303,6 @@ namespace Writer
             global::System.Action<global::Writer.FunctionTool>? function = null,
             global::System.Action<global::Writer.GraphTool>? graph = null,
             global::System.Action<global::Writer.LlmTool>? llm = null,
-            global::System.Action<global::Writer.WebSearchTool>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -397,10 +321,6 @@ namespace Writer
             else if (Llm is { } __value2)
             {
                 llm?.Invoke(__value2);
-            }
-            else if (WebSearch is { } __value3)
-            {
-                webSearch?.Invoke(__value3);
             }
         }
 
@@ -417,8 +337,6 @@ namespace Writer
                 typeof(global::Writer.GraphTool),
                 Llm,
                 typeof(global::Writer.LlmTool),
-                WebSearch,
-                typeof(global::Writer.WebSearchTool),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -437,8 +355,7 @@ namespace Writer
             return
                 global::System.Collections.Generic.EqualityComparer<global::Writer.FunctionTool?>.Default.Equals(Function, other.Function) &&
                 global::System.Collections.Generic.EqualityComparer<global::Writer.GraphTool?>.Default.Equals(Graph, other.Graph) &&
-                global::System.Collections.Generic.EqualityComparer<global::Writer.LlmTool?>.Default.Equals(Llm, other.Llm) &&
-                global::System.Collections.Generic.EqualityComparer<global::Writer.WebSearchTool?>.Default.Equals(WebSearch, other.WebSearch)
+                global::System.Collections.Generic.EqualityComparer<global::Writer.LlmTool?>.Default.Equals(Llm, other.Llm)
                 ;
         }
 

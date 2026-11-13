@@ -70,8 +70,7 @@
                           "llm_data": {
                             "prompt": "Write a memo summarizing this earnings report.",
                             "model": "palmyra-x5"
-                          },
-                          "web_search_data": null
+                          }
                         }
                       }
                     ],
@@ -122,8 +121,7 @@
                             "llm_data": {
                               "prompt": "Write a memo summarizing this earnings report.",
                               "model": "palmyra-x5"
-                            },
-                            "web_search_data": null
+                            }
                           },
                           "delta": {
                             "content": "The earnings report shows...",
@@ -138,8 +136,7 @@
                             "llm_data": {
                               "prompt": "Write a memo summarizing this earnings report.",
                               "model": "palmyra-x5"
-                            },
-                            "web_search_data": null
+                            }
                           }
                         }
                       ],
@@ -2591,7 +2588,7 @@
           },
           "tools": {
             "type": "array",
-            "description": "An array containing tool definitions for tools that the model can use to generate responses. The tool definitions use JSON schema. You can define your own functions or use one of the built-in `graph`, `llm`, or `web_search` tools. Note that you can only use one built-in tool type in the array (only one of `graph`, `llm`, or `web_search`). You can pass multiple [custom tools](https://dev.writer.com/home/tool-calling) of type `function` in the same request.",
+            "description": "An array containing tool definitions for tools that the model can use to generate responses. The tool definitions use JSON schema. You can define your own functions or use one of the built-in `graph` or `llm` tools. Note that you can only use one built-in tool type in the array (only one of `graph` or `llm`). You can pass multiple [custom tools](https://dev.writer.com/home/tool-calling) of type `function` in the same request.",
             "items": {
               "$ref": "#/components/schemas/tool",
               "minItems": 1
@@ -2815,9 +2812,6 @@
           },
           "llm_data": {
             "$ref": "#/components/schemas/llm_data"
-          },
-          "web_search_data": {
-            "$ref": "#/components/schemas/web_search_data"
           },
           "refusal": {
             "type": "string",
@@ -3163,29 +3157,6 @@
           "model": {
             "type": "string",
             "description": "The model used by the tool."
-          }
-        }
-      },
-      "web_search_data": {
-        "title": "web_search_data",
-        "required": [
-          "sources"
-        ],
-        "type": "object",
-        "properties": {
-          "sources": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "url": {
-                  "type": "string"
-                },
-                "raw_content": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
@@ -4250,8 +4221,7 @@
           "mapping": {
             "function": "#/components/schemas/function_tool",
             "graph": "#/components/schemas/graph_tool",
-            "llm": "#/components/schemas/llm_tool",
-            "web_search": "#/components/schemas/web_search_tool"
+            "llm": "#/components/schemas/llm_tool"
           }
         },
         "oneOf": [
@@ -4263,9 +4233,6 @@
           },
           {
             "$ref": "#/components/schemas/llm_tool"
-          },
-          {
-            "$ref": "#/components/schemas/web_search_tool"
           }
         ]
       },
@@ -4616,51 +4583,6 @@
           "content": {
             "type": "string",
             "description": "The extracted content from the PDF file, converted to the specified format."
-          }
-        }
-      },
-      "web_search_tool": {
-        "title": "Web search tool",
-        "required": [
-          "function",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The type of tool.",
-            "enum": [
-              "web_search"
-            ]
-          },
-          "function": {
-            "$ref": "#/components/schemas/web_search_function"
-          }
-        }
-      },
-      "web_search_function": {
-        "title": "web_search_function",
-        "description": "A tool that uses web search to find information.",
-        "required": [
-          "exclude_domains",
-          "include_domains"
-        ],
-        "type": "object",
-        "properties": {
-          "exclude_domains": {
-            "type": "array",
-            "description": "An array of domains to exclude from the search results.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "include_domains": {
-            "type": "array",
-            "description": "An array of domains to include in the search results.",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },

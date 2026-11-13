@@ -20,10 +20,6 @@ namespace Writer
         ///
         /// </summary>
         Llm,
-        /// <summary>
-        ///
-        /// </summary>
-        WebSearch,
     }
 
     /// <summary>
@@ -41,7 +37,6 @@ namespace Writer
                 ToolDiscriminatorType.Function => "function",
                 ToolDiscriminatorType.Graph => "graph",
                 ToolDiscriminatorType.Llm => "llm",
-                ToolDiscriminatorType.WebSearch => "web_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,7 +50,6 @@ namespace Writer
                 "function" => ToolDiscriminatorType.Function,
                 "graph" => ToolDiscriminatorType.Graph,
                 "llm" => ToolDiscriminatorType.Llm,
-                "web_search" => ToolDiscriminatorType.WebSearch,
                 _ => null,
             };
         }

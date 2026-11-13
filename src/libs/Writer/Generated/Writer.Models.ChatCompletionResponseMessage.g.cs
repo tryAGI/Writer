@@ -43,12 +43,6 @@ namespace Writer
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("web_search_data")]
-        public global::Writer.WebSearchData? WebSearchData { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         public string? Refusal { get; set; }
 
@@ -70,7 +64,6 @@ namespace Writer
         /// <param name="toolCalls"></param>
         /// <param name="graphData"></param>
         /// <param name="llmData"></param>
-        /// <param name="webSearchData"></param>
         /// <param name="refusal"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -81,7 +74,6 @@ namespace Writer
             global::System.Collections.Generic.IList<global::Writer.ToolCall>? toolCalls,
             global::Writer.GraphData? graphData,
             global::Writer.LlmData? llmData,
-            global::Writer.WebSearchData? webSearchData,
             string? refusal)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
@@ -89,7 +81,6 @@ namespace Writer
             this.ToolCalls = toolCalls;
             this.GraphData = graphData;
             this.LlmData = llmData;
-            this.WebSearchData = webSearchData;
             this.Refusal = refusal;
         }
 

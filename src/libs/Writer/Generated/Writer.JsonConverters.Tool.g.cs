@@ -42,13 +42,6 @@ namespace Writer.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Writer.LlmTool)}");
                 llm = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Writer.WebSearchTool? webSearch = default;
-            if (discriminator?.Type == global::Writer.ToolDiscriminatorType.WebSearch)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.WebSearchTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Writer.WebSearchTool)}");
-                webSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             var __value = new global::Writer.Tool(
                 discriminator?.Type,
@@ -56,9 +49,7 @@ namespace Writer.JsonConverters
 
                 graph,
 
-                llm,
-
-                webSearch
+                llm
                 );
 
             return __value;
@@ -90,12 +81,6 @@ namespace Writer.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.LlmTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.LlmTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.LlmTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLlm(), typeInfo);
-            }
-            else if (value.IsWebSearch)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Writer.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Writer.WebSearchTool?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Writer.WebSearchTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearch(), typeInfo);
             }
         }
     }
